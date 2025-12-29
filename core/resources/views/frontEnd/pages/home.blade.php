@@ -1,0 +1,414 @@
+@extends('frontEnd.layouts.master')
+
+@section('title', 'FinSphere Expo Kuwait')
+
+@section('content')
+
+    <!--==================== MAIN-TWO ====================-->
+    <section class="main-two">
+        <div class="main-slider-two">
+            <div class="main-slide-two">
+                <div class="main-slide-date">January 17</div>
+                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-1.png') }}" alt="img">
+                <div class="container">
+                    <div class="main-slide-item">
+                        <div class="date-slide">January 17, 2019 / Washington DC</div>
+                        <h2><span>Conference on Software</span>Engineering Practices</h2>
+                        <div class="slide-tag">#Web_Conference</div>
+                        <div class="slide-btn-cover">
+                            <a href="single-events.html" class="btn btn-yellow">register now</a>
+                            <a href="single-events.html" class="btn btn-border">more details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-slide-two">
+                <div class="main-slide-date">January 17</div>
+                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-2.png') }}" alt="img">
+                <div class="container">
+                    <div class="main-slide-item">
+                        <div class="date-slide">January 17, 2019 / Washington DC</div>
+                        <h2><span>Technology in</span>The Banking Sector</h2>
+                        <div class="slide-tag">#Web_Conference</div>
+                        <div class="slide-btn-cover">
+                            <a href="single-events.html" class="btn btn-yellow">register now</a>
+                            <a href="single-events.html" class="btn btn-border">more details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-slide-two">
+                <div class="main-slide-date">January 17</div>
+                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-3.png') }}" alt="img">
+                <div class="container">
+                    <div class="main-slide-item">
+                        <div class="date-slide">January 17, 2019 / Washington DC</div>
+                        <h2><span>Ultimate Skills For an</span>Start in IT Recruiting</h2>
+                        <div class="slide-tag">#Web_Conference</div>
+                        <div class="slide-btn-cover">
+                            <a href="single-events.html" class="btn btn-yellow">register now</a>
+                            <a href="single-events.html" class="btn btn-border">more details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-arrow-cover">
+            <div class="container">
+                <div class="main-slide-arrow"></div>
+            </div>
+        </div>
+    </section>
+    <!--=================== MAIN-TWO END ===================-->
+
+    <!--==================== S-ABOUT ====================-->
+    <section class="s-about-home-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 about-info">
+                    <h2 class="title-line-left">More Than a Conference</h2>
+                    <div class="about-slogan-home-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore.</div>
+                    <div class="about-info-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+                    <ul class="soc-link">
+                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li><a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                        <li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
+                        <li><a target="_blank" href="https://vimeo.com/"><i class="fab fa-vimeo"></i></a></li>
+                    </ul>
+                    <a href="{{ url('/events') }}" class="btn btn-yellow">read more</a>
+                </div>
+                <div class="col-12 col-md-6 about-img">
+                    <a data-fancybox
+                        href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="img">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================== S-ABOUTK END ==================-->
+
+    <!--================== OUR-SPEAKERS ==================-->
+    <section class="our-speakers speakers-home-two">
+        <div class="bg-img" style="background-image: url('assets/frontend/img/bg-team-home-2.svg');"></div>
+        <span class="title-position title-position-left">Speakers</span>
+        <span class="title-position title-position-right">Experts</span>
+        <div class="container">
+            <h2 class="title-line">Our Speakers</h2>
+            <p class="slogan">They possess the secret knowledge and interesting experience of creating a digital product.
+            </p>
+            <div class="our-speakers-cover">
+                <div class="speaker-item">
+                    <div class="speaker-item-img">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/speaker-1.jpg') }}" alt="img">
+                    </div>
+                    <div class="speaker-item-content">
+                        <h3>Anthony Watson</h3>
+                        <div class="prof">CEO, IT Metrix</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <ul class="soc-link">
+                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i
+                                        class="fab fa-behance"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="speaker-item">
+                    <div class="speaker-item-img">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/speaker-2.jpg') }}" alt="img">
+                    </div>
+                    <div class="speaker-item-content">
+                        <h3>Marybeth Hoover</h3>
+                        <div class="prof">CEO, IT Metrix</div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
+                        <ul class="soc-link">
+                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i
+                                        class="fab fa-behance"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="speaker-item">
+                    <div class="speaker-item-img">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/speaker-3.jpg') }}" alt="img">
+                    </div>
+                    <div class="speaker-item-content">
+                        <h3>Stewart Collins</h3>
+                        <div class="prof">CEO, IT Metrix</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <ul class="soc-link">
+                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i
+                                        class="fab fa-behance"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="speaker-item">
+                    <div class="speaker-item-img">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/speaker-4.jpg') }}" alt="img">
+                    </div>
+                    <div class="speaker-item-content">
+                        <h3>Theodora Reed</h3>
+                        <div class="prof">CEO, IT Metrix</div>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa</p>
+                        <ul class="soc-link">
+                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i
+                                        class="fab fa-behance"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="speaker-item">
+                    <div class="speaker-item-img">
+                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                            data-src="{{ asset('assets/frontend/img/speaker-5.jpg') }}" alt="img">
+                    </div>
+                    <div class="speaker-item-content">
+                        <h3>Ronald Stanley</h3>
+                        <div class="prof">CEO, IT Metrix</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                        <ul class="soc-link">
+                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i
+                                        class="fab fa-behance"></i></a></li>
+                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                        class="fab fa-linkedin-in"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================ OUR-SPEAKERS END ================-->
+
+    <!--================= S-SCHEDULE-EVENT =================-->
+    <section class="s-schedule-event schedule-event-home-two">
+        <span class="title-position title-position-left">Program</span>
+        <div class="container">
+            <h2 class="title-line">Schedule of Event</h2>
+            <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore.</p>
+            <ul class="schedule-cover">
+                <li class="active">
+                    <div class="schedule-header">
+                        <div class="schedule-time">10:00-11:00</div>
+                        <div class="schedule-title">Check-in. morning coffee</div>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <h3 class="title">Good Service: Detect and avoid errors in the world of microservices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="schedule-header">
+                        <div class="schedule-time">11:00-12:00</div>
+                        <div class="schedule-title">Anthony Watson</div>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <h3 class="title">Good Service: Detect and avoid errors in the world of microservices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="schedule-header">
+                        <div class="schedule-time">12:00-13:00</div>
+                        <div class="schedule-title">lorem ipsum</div>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <h3 class="title">Good Service: Detect and avoid errors in the world of microservices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="schedule-header">
+                        <div class="schedule-time">13:00-14:00</div>
+                        <div class="schedule-title">dolor sit amet</div>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <h3 class="title">Good Service: Detect and avoid errors in the world of microservices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="schedule-header">
+                        <div class="schedule-time">14:00-15:00</div>
+                        <div class="schedule-title">sed do eiusmod tempor incididunt</div>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <h3 class="title">Good Service: Detect and avoid errors in the world of microservices</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--=============== S-SCHEDULE-EVENT END ===============-->
+
+    <!--===================== S-PRICING =====================-->
+    <section class="s-pricing">
+        <span class="title-position title-position-right">pricing</span>
+        <div class="container">
+            <h2 class="title-line">Pricing Plans</h2>
+            <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore.</p>
+            <div class="pricing-cover">
+                <div class="pricing-item">
+                    <h4 class="pricing-header">Basic</h4>
+                    <div class="pricing-item-content">
+                        <div class="price">$120</div>
+                        <div class="pricing-slogan title-line">access to the conference</div>
+                        <div class="pricing-info">
+                            <ul>
+                                <li>Conference Ticket</li>
+                                <li>Coffee Break</li>
+                                <li>Branded T-shirt</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">Buy Now</a>
+                    </div>
+                </div>
+                <div class="pricing-item">
+                    <h4 class="pricing-header">Standart</h4>
+                    <div class="pricing-item-content">
+                        <div class="price">$150</div>
+                        <div class="pricing-slogan title-line">access to the conference</div>
+                        <div class="pricing-info">
+                            <ul>
+                                <li>Conference Ticket</li>
+                                <li>Coffee Break</li>
+                                <li>Branded T-shirt</li>
+                                <li>Afterparty</li>
+                            </ul>
+                        </div>
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">Buy Now</a>
+                    </div>
+                </div>
+                <div class="pricing-item">
+                    <h4 class="pricing-header">Online</h4>
+                    <div class="pricing-item-content">
+                        <div class="price">$80</div>
+                        <div class="pricing-slogan title-line">access to the conference</div>
+                        <div class="pricing-info">
+                            <p>When you purchase this package, you get an online conference recording</p>
+                        </div>
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================== S-PRICING END ==================-->
+
+    <!--===================== S-VENUE =====================-->
+    <section class="s-venue">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <h2 class="title-line-left">Venue</h2>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>7100 Athens Place Washington, DC 20521</li>
+                        <li><i class="fas fa-street-view"></i>AMA Conference Center Hall #1, 6th floor</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-8"><img class="lazy"
+                        src="{{ asset('assets/frontend/img//venue-img.jpg') }}"
+                        data-src="{{ asset('assets/frontend/img/venue-img.jpg') }}" alt="img"></div>
+            </div>
+        </div>
+    </section>
+    <!--=================== S-VENUE END ===================-->
+
+    <!--==================== S-PARTNERS ====================-->
+    {{-- <section class="s-partners partners-home-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-1.png') }}" alt="img"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-2.png') }}" alt="img"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-3.png') }}" alt="img"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-4.png') }}" alt="img"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-5.png') }}" alt="img"></div>
+                <div class="col-6 col-sm-4 col-md-2"><img class="lazy"
+                        src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                        data-src="{{ asset('assets/frontend/img/home-2-partner-6.png') }}" alt="img"></div>
+            </div>
+        </div>
+    </section> --}}
+    @include('frontEnd.includes.partners')
+    <!--================== S-PARTNERS END ==================-->
+
+    <!--================== S-LATEST-NEWS ==================-->
+    <section class="s-latest-news">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h2 class="title-line-left">Let's Keep in Touch</h2>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form action="#">
+                        <input type="email" name="your-email" placeholder="Your Email Address">
+                        <button class="btn btn-yellow" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================== S-LATEST-NEWS END ==================-->
+
+@endsection
