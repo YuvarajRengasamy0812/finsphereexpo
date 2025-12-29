@@ -259,7 +259,7 @@ body {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: linear-gradient(90deg,#976737,#ae4b84);
+  background: linear-gradient(90deg, #976737, #ae4b84);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -286,10 +286,10 @@ body {
 
 /* Cards */
 .IS-card {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px 25px;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.5s ease;
   position: relative;
   overflow: hidden;
@@ -300,7 +300,11 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(151,103,55,0.05), rgba(174,75,132,0.05));
+  background: linear-gradient(
+    45deg,
+    rgba(151, 103, 55, 0.05),
+    rgba(174, 75, 132, 0.05)
+  );
   top: 0;
   left: 0;
   border-radius: 20px;
@@ -314,7 +318,7 @@ body {
 
 .IS-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
 }
 
 .IS-card h4 {
@@ -346,14 +350,14 @@ body {
 /* Wide card */
 .IS-wide {
   grid-column: span 3;
-  background: rgba(255,255,255,0.98);
+  background: rgba(255, 255, 255, 0.98);
   padding: 40px;
   border-radius: 25px;
   display: flex;
   gap: 30px;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
 .IS-wide-text h4 {
@@ -375,26 +379,39 @@ body {
   content: "•";
   color: #976737;
   font-weight: bold;
-  display: inline-block; 
+  display: inline-block;
   width: 1em;
   margin-left: -1em;
 }
 
 /* Responsive */
 @media (max-width: 991px) {
-  .IS-grid { grid-template-columns: repeat(2, 1fr); }
-  .IS-wide { grid-column: span 2; flex-direction: column; text-align: center; }
-  .IS-wide-img img { margin-top: 20px; }
+  .IS-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .IS-wide {
+    grid-column: span 2;
+    flex-direction: column;
+    text-align: center;
+  }
+  .IS-wide-img img {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 575px) {
-  .IS-grid { grid-template-columns: 1fr; }
-  .IS-wide { grid-column: span 1; }
-  .IS-title { font-size: 28px; }
+  .IS-grid {
+    grid-template-columns: 1fr;
+  }
+  .IS-wide {
+    grid-column: span 1;
+  }
+  .IS-title {
+    font-size: 28px;
+  }
 }
 
 /* Optional: Add AOS library for fade-up animations */
-
 
 /* ===== Marketing Partner Section ===== */
 .MP-section {
@@ -487,55 +504,55 @@ body {
 }
 
 .rounded-map {
-    border-radius: 20px;   /* Adjust the roundness */
-    overflow: hidden;      /* Ensures iframe corners are clipped */
-    height: 400px;         /* Optional: set a fixed height */
-    width: 100%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Optional: adds subtle shadow */
+  border-radius: 20px; /* Adjust the roundness */
+  overflow: hidden; /* Ensures iframe corners are clipped */
+  height: 400px; /* Optional: set a fixed height */
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Optional: adds subtle shadow */
 }
 
 /* ===== Countdown Card ===== */
 .countdown-card {
-    background: linear-gradient(135deg, #3E615D, #976737);
-    padding: 25px 20px;
-    border-radius: 16px;
-    max-width: 500px;
-    margin: 20px 0;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #3e615d, #976737);
+  padding: 25px 20px;
+  border-radius: 16px;
+  max-width: 500px;
+  margin: 20px 0;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .countdown-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .countdown-timer {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .countdown-timer .time-box {
-    flex: 1;
-    background: rgba(255,255,255,0.1);
-    padding: 15px;
-    border-radius: 10px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .countdown-timer .time-box span {
-    display: block;
-    font-size: 28px;
-    font-weight: 700;
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
 }
 
 .countdown-timer .time-box small {
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
-    color: #f1f1f1;
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #f1f1f1;
 }
 
 /* Custom css End */
@@ -1032,16 +1049,22 @@ header {
   opacity: 0;
   pointer-events: none;
   z-index: 22;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+
   width: 50px;
-  line-height: 50px;
+  height: 50px; /* add this */
+  line-height: 50px; /* keeps icon centered vertically */
+  border-radius: 50%; /* makes it a perfect circle */
+
   text-align: center;
   color: #fff;
   background-color: #976737;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(44, 207, 187, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
   box-shadow: 0px 0px 10px 0px rgba(44, 207, 187, 0.4);
 }
+
 .to-top:hover {
   color: #fff;
   background-color: #3e615d;
@@ -1525,7 +1548,7 @@ input[type="submit"],
 }
 .btn.btn-yellow {
   border-color: #3e615d;
-  color: #fff!important;
+  color: #fff !important;
 }
 .btn.btn-yellow:hover {
   color: #3e615d;
@@ -1534,6 +1557,20 @@ input[type="submit"],
   width: 0;
 }
 .btn.btn-yellow:before {
+  background-color: #3e615d;
+  width: 100%;
+}
+.btn.btn-primary {
+  border-color: #3e615d;
+  color: #fff !important;
+}
+.btn.btn-primary:hover {
+  color: #3e615d !important;
+}
+.btn.btn-primary:hover:before {
+  width: 0;
+}
+.btn.btn-primary:before {
   background-color: #3e615d;
   width: 100%;
 }

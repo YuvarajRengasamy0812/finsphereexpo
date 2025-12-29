@@ -117,6 +117,10 @@
     }, 1000);
 </script>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
 
 <!-- Start of LiveChat (www.livechat.com) code -->
 <script>
