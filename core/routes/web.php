@@ -50,7 +50,9 @@ Route::get('/speakers', function () {
 Route::get('/exhibitors', function () {
     return view('frontEnd.pages.exhibitors');
 });
-
+Route::get('/Influencer', function () {
+    return view('frontEnd.pages.Influencer');
+});
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
 Route::get('/news', function () {

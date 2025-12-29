@@ -89,6 +89,9 @@
                                      <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">
                                         <a href="{{ url('/exhibitors') }}">Exhibitors</a>
                                     </li>
+                                     <li class="{{ Request::is('Influencer') ? 'active' : '' }}">
+                                        <a href="{{ url('/Influencer') }}">Influencer</a>
+                                    </li>
                                     <li class="{{ Request::is('privacy') ? 'active' : '' }}">
                                         <a href="{{ url('/privacy') }}">Privacy Policy</a>
                                     </li>
