@@ -8,7 +8,7 @@
     <!--=================== PAGE-TITLE ===================-->
     <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
         <div class="container">
-            <h1 class="title-line-left">About Us</h1>
+            <h1 class="title-line-left">About FINSPHERE EXPO </h1>
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
@@ -27,17 +27,13 @@
                     <div class="overview-info">
                         <h2 class="title-line-left">Overview</h2>
                         <div class="overview-info-item">
-                            <h5>Experience Since 2012</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam.</p>
-                            <p>Elementum nibh tellus molestie nunc non blandit massa enim. Pretium aenean pharetra magna
-                                ac placerat vestibulum lectus.</p>
+                            <!-- <h5>Experience Since 2012</h5> -->
+                            <p>FINSPHERE EXPO is an international platform designed to accelerate financial innovation and global collaboration.</p>
+                            <p>Built around the rapidly evolving worlds of fintech, trading, 
+blockchain, and digital assets, FINSPHERE EXPO connects ideas, technologies, and people 
+shaping the future of finance..</p>
                         </div>
-                        <div class="overview-info-item">
-                            <h5>Our Mission</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam. Elementum nibh tellus molestie nunc non blandit massa enim.</p>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-12 col-md-6 overview-img-cover">
@@ -57,22 +53,21 @@
     <!--================== OVERVIEW END ==================-->
     <!--================= OUR-HISTORY END =================-->
     <section class="our-history s-title-bg">
-        <span class="title-bg">Our History</span>
+        <span class="title-bg">Our Mission</span>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6">
                     <div class="our-history-left">
-                        <h2 class="title-line-left">Our History</h2>
+                        <h2 class="title-line-left">Vision & Mission</h2>
                         <div class="overview-info-item">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam.</p>
-                            <p>Elementum nibh tellus molestie nunc non blandit massa enim. Pretium aenean pharetra magna
-                                ac placerat vestibulum lectus.</p>
+                              <h5>Mission  :</h5>
+                            <p>To educate, connect, and empower the global financial community through immersive 
+experiences, thought leadership, and high-impact networking.</p>
+                            
                         </div>
                         <div class="overview-info-item">
-                            <h5>Our Certificates</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim. </p>
+                            <h5>Vision  :</h5>
+                            <p>To position Kuwait as a regional hub for financial innovation and trading excellence.</p>
                         </div>
                         <div class="history-cert">
                             <div class="history-cert-img">
@@ -118,7 +113,7 @@
     <!--================= OUR-HISTORY END =================-->
 
     <!--=================== S-OUR-TEAM ===================-->
-    <section class="s-our-team about-team">
+    <!-- <section class="s-our-team about-team">
         <div class="our-team-bg" style="background-image: url(assets/frontend/img/bg-team-about.svg);"></div>
         <div class="container">
             <h2 class="title-line">Our Team</h2>
@@ -220,29 +215,33 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--================= S-OUR-TEAM END =================-->
 
     <!--================ S-UPCOMING-COURSE ================-->
     <section class="s-upcoming-course s-title-bg">
-        <span class="title-bg-left">Upcoming Course</span>
+        <span class="title-bg-left"> Why Kuwait</span>
         <div class="container">
-            <h2 class="title-line">Upcoming Course</h2>
-            <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore.</p>
+            <h2 class="title-line"> Why Kuwait</h2>
+          
             <div class="upcoming-course-cover">
                 <div class="course-item-left">
                     <div class="upcoming-course-item">
                         <div class="date-cover">
-                            <div class="day">12</div>
+                            <div class="day">5</div>
                             <div class="date-info">
-                                <div class="month">november, 2018</div>
+                                <div class="month">To 6 may 2026</div>
                                 <div class="name">The Plaza Center</div>
                             </div>
                         </div>
-                        <h3 class="title"><a href="{{ url('/events') }}">Information Technology in The Banking
-                                Sector</a></h3>
-                        <div class="upcoming-course-adr">
+                        <!-- <h3 class="title"><a href="{{ url('/events') }}">Information Technology in The Banking
+                                Sector</a></h3> -->
+                                  <p >
+Kuwait stands at the crossroads of financial growth and technological transformation in the 
+Middle East. FINSPHERE EXPO KUWAIT aims to unlock this potential by introducing a 
+world-class platform for innovation, learning, and collaboration within the financial 
+ecosystem..</p>
+                        <div class="upcoming-course-adr mt-4">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>768 Fifth Avenue New York, <br>NY 10019 <span>|</span> The Plaza Center</p>
                         </div>
