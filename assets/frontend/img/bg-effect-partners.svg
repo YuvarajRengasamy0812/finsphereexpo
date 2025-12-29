@@ -5,7 +5,7 @@
 </mask>
 <g mask="url(#mask0)">
 <g opacity="0.2">
-<circle cx="122.5" cy="25.6128" r="18.5" transform="rotate(-180 122.5 25.6128)" stroke="#2CCFBB" stroke-width="6"/>
+<circle cx="122.5" cy="25.6128" r="18.5" transform="rotate(-180 122.5 25.6128)" stroke="#976737" stroke-width="6"/>
 <g filter="url(#filter0_f)">
 <circle cx="1447.5" cy="171.613" r="7.5" transform="rotate(-180 1447.5 171.613)" stroke="#D1F3CC" stroke-width="4"/>
 </g>
@@ -22,8 +22,8 @@
 <rect x="789.879" y="10.1841" width="9.62743" height="9.62743" transform="rotate(135 789.879 10.1841)" stroke="#1079F5" stroke-width="3"/>
 <rect x="593.879" y="150.542" width="17.6066" height="17.6066" transform="rotate(135 593.879 150.542)" stroke="white" stroke-width="3"/>
 <g filter="url(#filter4_f)">
-<rect x="1816.17" y="159.113" width="30" height="4" transform="rotate(-135 1816.17 159.113)" fill="#2CCFBB"/>
-<rect x="1819" y="137.9" width="30" height="4" transform="rotate(135 1819 137.9)" fill="#2CCFBB"/>
+<rect x="1816.17" y="159.113" width="30" height="4" transform="rotate(-135 1816.17 159.113)" fill="#976737"/>
+<rect x="1819" y="137.9" width="30" height="4" transform="rotate(135 1819 137.9)" fill="#976737"/>
 </g>
 <rect width="13.7262" height="1.83015" transform="matrix(-0.707107 0.707107 0.707107 0.707107 363.706 13.1133)" fill="#47D4DD"/>
 <rect width="13.7262" height="1.83015" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 365 22.8193)" fill="#47D4DD"/>

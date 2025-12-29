@@ -83,7 +83,7 @@
 	}
 }
 .main-slide .btn{
-	border-color: #ffe037;
+	border-color: #3E615D;
 	color: $primary__color;
 	transform: translate3d( 1300px, 0, 0 );
 }
@@ -96,7 +96,7 @@
 	transition: transform 400ms ease-in 80ms;
 }
 .main-slide .btn:before{
-	background-color: #ffe037;
+	background-color: #3E615D;
 	width: 100%;
 }
 .main-slide .btn:hover:before{
@@ -1596,7 +1596,7 @@
 		display: flex;
 		align-items: flex-start;
 		li{
-			color: #151515;
+			color: #3E615D;
 			margin-right: 50px;
 			&:last-child{
 				margin-right: 0;
@@ -2278,10 +2278,10 @@ blockquote:before{
 			align-items: center;
 			transform: translate3d( -1300px, 0, 0 );
 			.btn-yellow{
-				border-color: #ffe037;
+				border-color: #3E615D;
 				margin-right: 20px;
 				&:before{
-					background-color: #ffe037;
+					background-color: #3E615D;
 					width: 100%;
 				}
 				&:hover{
@@ -2659,7 +2659,7 @@ blockquote:before{
 	.title-line-left{
 		color: #fff;
 		&:before{
-			background-color: #ffe037;
+			background-color: #3E615D;
 		}
 	}
 	form{
