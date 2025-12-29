@@ -3,6 +3,7 @@
 @section('title', 'Contact Us - FinSphere Expo Kuwait')
 
 @section('content')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!--=================== PAGE-TITLE ===================-->
 	<div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
@@ -23,17 +24,41 @@
 		<div class="container">
 			<h2 class="title-line-left">Get in Touch</h2>
 			<div class="row">
+				@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: "{{ session('success') }}",
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+@if(session('error'))
+<script>
+   Swal.fire({
+            icon: 'error',
+            title: 'Oops!',
+            text: errorMessages,
+            confirmButtonText: 'OK'
+        });
+</script>
+@endif
+
+
 				<div class="col-12 col-sm-8">
-					<form id='contactform' action="php/contact.php" name="contactform">
+			<form action="{{ route('contact-submit') }}" method="POST">
+    @csrf
+					
 						<ul class="form-cover">
-							<li class="inp-name"><input id="name" type="text" name="your-name" placeholder="Name"></li>
-							<li class="inp-name"><input id="last-name" type="text" name="your-last-name"
-									placeholder="Last Name"></li>
-							<li class="inp-phone"><input id="phone" type="tel" name="your-phone" placeholder="Phone">
+							<li class="inp-name"><input id="name" type="text" name="contact_name" placeholder="Name"></li>
+							<li class="inp-name"><input id="last-name" type="text" name="contact_subject"
+									placeholder="Company"></li>
+							<li class="inp-phone"><input id="phone" type="tel" name="contact_phone" placeholder="Phone">
 							</li>
-							<li class="inp-email"><input id="email" type="email" name="your-email" placeholder="E-mail">
+							<li class="inp-email"><input id="email" type="email" name="contact_email" placeholder="E-mail">
 							</li>
-							<li class="inp-text"><textarea id="comments" name="your-text"
+							<li class="inp-text"><textarea id="comments" name="contact_message"
 									placeholder="Message"></textarea></li>
 						</ul>
 						<div class="checkbox-wrap">
@@ -44,7 +69,7 @@
 							</div>
 						</div>
 						<div class="btn-form-cover">
-							<button id="#submit" type="submit" class="btn">Sign up now</button>
+							<button type="submit" class="btn">Contact</button>
 						</div>
 					</form>
 					<div id="message"></div>
@@ -53,7 +78,7 @@
 					<div class="cont-info-item">
 						<i class="fas fa-map-marker-alt"></i>
 						<h5>Address</h5>
-						<p>7100 Athens Place <br>Washington, DC 20521</p>
+						<p>Kuwait (Venue: TBD)</p>
 					</div>
 					<div class="cont-info-item">
 						<i class="fa fa-phone" aria-hidden="true"></i>
@@ -67,7 +92,7 @@
 						<i class="fa fa-envelope" aria-hidden="true"></i>
 						<h5>Email</h5>
 						<ul class="cont-email">
-							<li><a href="mailto:informex@info.mail">informex@info.mail</a></li>
+							<li><a href="mailto:info@finsphereexpo.com">info@finsphereexpo.com</a></li>
 						</ul>
 					</div>
 				</div>
@@ -86,5 +111,8 @@
         </div>
 	</section>
 	<!--==================== S-MAP END ===================-->
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 @endsection

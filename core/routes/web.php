@@ -45,6 +45,9 @@ Route::get('/events', function () {
 Route::get('/speakers', function () {
     return view('frontEnd.pages.speakers');
 });
+Route::get('/exhibitors', function () {
+    return view('frontEnd.pages.exhibitors');
+});
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
 
@@ -117,7 +120,7 @@ Route::post('/comment', [HomeController::class, 'comment_submit'])->name('commen
 Route::post('/order', [HomeController::class, 'order_submit'])->name('orderSubmit');
 
 // - Contact page form submit
-Route::post('/contact-submit', [HomeController::class, 'contact_submit'])->name('contactPageSubmit');
+Route::post('/contact-submit', [HomeController::class, 'contact_submit'])->name('contact-submit');
 
 // - Tags
 Route::get('/tag/{tag_slug?}', [HomeController::class, 'tag'])->name('tag');

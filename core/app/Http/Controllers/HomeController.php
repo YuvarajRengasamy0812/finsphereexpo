@@ -621,9 +621,12 @@ class HomeController extends Controller
                 }
             }
 
-            return response()->json(['stat' => 'success', 'msg' => __('frontend.youMessageSent')]);
+                    return redirect()->back()->with(['success', 'msg' => __('frontend.youMessageSent')]);
+
         }
-        return response()->json(['stat' => 'error', 'msg' => __('frontend.youMessageNotSent')]);
+      
+                return redirect()->back()->with(['error', 'msg' => __('frontend.youMessageNotSent')]);
+
     }
 
     public function subscribe_submit(Request $request)
