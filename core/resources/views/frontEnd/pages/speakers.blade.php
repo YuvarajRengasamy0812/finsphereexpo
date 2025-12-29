@@ -303,5 +303,5 @@ ecosystem, including CEOs, founders, analysts, educators, and technology leaders
         </div>
     </section>
     <!--================ JOIN-OUR-TEAM END ================-->
-
+    @include('frontEnd.includes.cta-section')
 @endsection
