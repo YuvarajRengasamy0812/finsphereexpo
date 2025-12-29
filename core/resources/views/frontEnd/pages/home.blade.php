@@ -5,101 +5,27 @@
 @section('content')
 
     <!--==================== MAIN-TWO ====================-->
-    <section class="main-two">
-        <div class="main-slider-two">
-            <div class="main-slide-two">
-                <div class="main-slide-date">January 17</div>
-                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
-                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-1.png') }}" alt="img">
-                <div class="container">
-                    <div class="main-slide-item">
-                        <div class="date-slide">January 17, 2019 / Washington DC</div>
-                        <h2><span>Conference on Software</span>Engineering Practices</h2>
-                        <div class="slide-tag">#Web_Conference</div>
-                        <div class="slide-btn-cover">
-                            <a href="single-events.html" class="btn btn-yellow">register now</a>
-                            <a href="single-events.html" class="btn btn-border">more details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-slide-two">
-                <div class="main-slide-date">January 17</div>
-                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
-                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-2.png') }}" alt="img">
-                <div class="container">
-                    <div class="main-slide-item">
-                        <div class="date-slide">January 17, 2019 / Washington DC</div>
-                        <h2><span>Technology in</span>The Banking Sector</h2>
-                        <div class="slide-tag">#Web_Conference</div>
-                        <div class="slide-btn-cover">
-                            <a href="single-events.html" class="btn btn-yellow">register now</a>
-                            <a href="single-events.html" class="btn btn-border">more details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="main-slide-two">
-                <div class="main-slide-date">January 17</div>
-                <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
-                <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-3.png') }}" alt="img">
-                <div class="container">
-                    <div class="main-slide-item">
-                        <div class="date-slide">January 17, 2019 / Washington DC</div>
-                        <h2><span>Ultimate Skills For an</span>Start in IT Recruiting</h2>
-                        <div class="slide-tag">#Web_Conference</div>
-                        <div class="slide-btn-cover">
-                            <a href="single-events.html" class="btn btn-yellow">register now</a>
-                            <a href="single-events.html" class="btn btn-border">more details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-arrow-cover">
-            <div class="container">
-                <div class="main-slide-arrow"></div>
-            </div>
-        </div>
-    </section>
+    @include('frontEnd.includes.home-banner')
     <!--=================== MAIN-TWO END ===================-->
 
     <!--==================== S-ABOUT ====================-->
-    <section class="s-about-home-two">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 about-info">
-                    <h2 class="title-line-left">More Than a Conference</h2>
-                    <div class="about-slogan-home-two">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore.</div>
-                    <div class="about-info-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm od tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    </div>
-                    <ul class="soc-link">
-                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li><a target="_blank" href="#"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
-                        <li><a target="_blank" href="https://vimeo.com/"><i class="fab fa-vimeo"></i></a></li>
-                    </ul>
-                    <a href="{{ url('/events') }}" class="btn btn-yellow">read more</a>
-                </div>
-                <div class="col-12 col-md-6 about-img">
-                    <a data-fancybox
-                        href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0">
-                        <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
-                            data-src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="img">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontEnd.includes.about-snippet')
     <!--================== S-ABOUTK END ==================-->
 
+    <!--==================== EVENT HIGHLIGHTS ====================-->
+    @include('frontEnd.includes.event-highlight-snippet')
+    <!--================== EVENT HIGHLIGHTS END ==================-->
+
+    <!--==================== Industry Sector ====================-->
+    @include('frontEnd.includes.industry-sector')
+    <!--================== Industry Sector END ==================-->
+
+    <!--==================== MARKETING-PARTNER ====================-->
+    @include('frontEnd.includes.marketing-partner')
+    <!--================== MARKETING-PARTNER END ==================-->
+
     <!--================== OUR-SPEAKERS ==================-->
-    <section class="our-speakers speakers-home-two">
+    {{-- <section class="our-speakers speakers-home-two">
         <div class="bg-img" style="background-image: url('assets/frontend/img/bg-team-home-2.svg');"></div>
         <span class="title-position title-position-left">Speakers</span>
         <span class="title-position title-position-right">Experts</span>
@@ -210,11 +136,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--================ OUR-SPEAKERS END ================-->
 
     <!--================= S-SCHEDULE-EVENT =================-->
-    <section class="s-schedule-event schedule-event-home-two">
+    {{-- <section class="s-schedule-event schedule-event-home-two">
         <span class="title-position title-position-left">Program</span>
         <div class="container">
             <h2 class="title-line">Schedule of Event</h2>
@@ -288,11 +214,11 @@
                 </li>
             </ul>
         </div>
-    </section>
+    </section> --}}
     <!--=============== S-SCHEDULE-EVENT END ===============-->
 
     <!--===================== S-PRICING =====================-->
-    <section class="s-pricing">
+    {{-- <section class="s-pricing">
         <span class="title-position title-position-right">pricing</span>
         <div class="container">
             <h2 class="title-line">Pricing Plans</h2>
@@ -343,26 +269,15 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!--================== S-PRICING END ==================-->
 
+    <!--================== S-partners ==================-->
+    @include('frontEnd.includes.partners')
+    <!--================ S-partners END =================-->
+
     <!--===================== S-VENUE =====================-->
-    <section class="s-venue">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-sm-4">
-                    <h2 class="title-line-left">Venue</h2>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i>7100 Athens Place Washington, DC 20521</li>
-                        <li><i class="fas fa-street-view"></i>AMA Conference Center Hall #1, 6th floor</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-sm-8"><img class="lazy"
-                        src="{{ asset('assets/frontend/img//venue-img.jpg') }}"
-                        data-src="{{ asset('assets/frontend/img/venue-img.jpg') }}" alt="img"></div>
-            </div>
-        </div>
-    </section>
+    @include('frontEnd.includes.venue')
     <!--=================== S-VENUE END ===================-->
 
     <!--==================== S-PARTNERS ====================-->
@@ -390,25 +305,32 @@
             </div>
         </div>
     </section> --}}
-    @include('frontEnd.includes.partners')
+    {{-- @include('frontEnd.includes.partners') --}}
     <!--================== S-PARTNERS END ==================-->
 
     <!--================== S-LATEST-NEWS ==================-->
     <section class="s-latest-news">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12 col-md-6">
-                    <h2 class="title-line-left">Let's Keep in Touch</h2>
+                    <h2 class="title-line-left">Join the Future of Finance in Kuwait</h2>
+                    <p style="color: #fff!important">
+                        Be part of a landmark financial event that connects innovation, education, and opportunity.
+                        Whether you are a trader, investor, company, or influencer — FINSPHERE EXPO KUWAIT is your gateway
+                        to the future.
+                    </p>
                 </div>
                 <div class="col-12 col-md-6">
-                    <form action="#">
+                    <form action="#" class="cta-form-vertical">
                         <input type="email" name="your-email" placeholder="Your Email Address">
                         <button class="btn btn-yellow" type="submit">Subscribe</button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
+
     <!--================== S-LATEST-NEWS END ==================-->
 
 @endsection

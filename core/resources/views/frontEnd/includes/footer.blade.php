@@ -91,6 +91,32 @@
     </div>
 </footer>
 
+{{-- Countdown Timer --}}
+<script>
+    // Set your event date here
+    const eventDate = new Date("May 5, 2026 09:00:00").getTime();
+
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown-timer").innerHTML = "Event Started!";
+        }
+    }, 1000);
+</script>
+
 
 <!-- Start of LiveChat (www.livechat.com) code -->
 <script>

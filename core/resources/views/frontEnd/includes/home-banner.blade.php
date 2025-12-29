@@ -1,0 +1,140 @@
+<section class="main-two">
+    <div class="main-slider-two">
+
+        <!-- SLIDE 1 -->
+        <div class="main-slide-two">
+            <div class="main-slide-date">TBD</div>
+            <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+
+            <img class="img-slide" style="bottom:240px!important" src="{{ asset('assets/frontend/img/home-2-slide-1.png') }}" alt="FINSPHERE EXPO KUWAIT">
+
+            <div class="container">
+                <div class="main-slide-item" style="margin-top: 100px">
+                    <div class="date-slide">Location: KUWAIT &nbsp; | &nbsp; Dates: 5 - 6 MAY 2026 &nbsp; | &nbsp;
+                        Entry: FREE</div>
+
+                    <h2>
+                        <span>FINSPHERE EXPO</span> KUWAIT
+                    </h2>
+
+                    <p class="slide-desc">
+                        The Ultimate Fintech, Forex, Crypto & Blockchain Expo in Kuwait
+                    </p>
+
+                    <div class="countdown-card">
+                        <div class="countdown-timer" id="countdown-timer">
+                            <div class="time-box">
+                                <span id="days">00</span>
+                                <small>Days</small>
+                            </div>
+                            <div class="time-box">
+                                <span id="hours">00</span>
+                                <small>Hours</small>
+                            </div>
+                            <div class="time-box">
+                                <span id="minutes">00</span>
+                                <small>Min</small>
+                            </div>
+                            <div class="time-box">
+                                <span id="seconds">00</span>
+                                <small>Sec</small>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="slide-tag">
+                        #Fintech #Forex #Crypto #Blockchain
+                    </div>
+
+                    <div class="slide-btn-cover">
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">Register Free</a>
+                        <a href="{{ url('/exhibitors') }}" class="btn btn-border">Become an Exhibitor</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="main-slide-two">
+            <div class="main-slide-date">TBD</div>
+            <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+
+            <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-2.png') }}"
+                alt="FINSPHERE EXPO KUWAIT">
+
+            <div class="container">
+                <div class="main-slide-item">
+                    <div class="date-slide">Global Expo & High-Impact Summit</div>
+
+                    <h2>
+                        <span>Where Finance Meets</span> Innovation
+                    </h2>
+
+                    <p class="slide-desc">
+                        Bringing together traders, investors, institutions, startups,<br>
+                        influencers, and technology providers under one roof.
+                    </p>
+
+                    <div class="slide-tag">
+                        #Finance #Trading #DigitalAssets
+                    </div>
+
+                    <div class="slide-btn-cover">
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">
+                            Register Free
+                        </a>
+                        <a href="{{ url('/expo-summit') }}" class="btn btn-border">
+                            Explore Expo & Summit
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="main-slide-two">
+            <div class="main-slide-date">TBD</div>
+            <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
+
+            <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-3.png') }}"
+                alt="FINSPHERE EXPO KUWAIT">
+
+            <div class="container">
+                <div class="main-slide-item">
+                    <div class="date-slide">Summit • Exhibition • Networking</div>
+
+                    <h2>
+                        <span>Join the Future of</span> Finance in Kuwait
+                    </h2>
+
+                    <p class="slide-desc">
+                        A landmark financial innovation gathering designed to educate,<br>
+                        connect, and empower the global financial community.
+                    </p>
+
+                    <div class="slide-tag">
+                        #FutureOfFinance #FintechExpo
+                    </div>
+
+                    <div class="slide-btn-cover">
+                        <a href="{{ url('/contact') }}" class="btn btn-yellow">
+                            Register Free
+                        </a>
+                        <a href="{{ url('/contact') }}" class="btn btn-border">
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="main-arrow-cover">
+        <div class="container">
+            <div class="main-slide-arrow"></div>
+        </div>
+    </div>
+</section>
