@@ -58,8 +58,13 @@
                             </li>
 
                             <!-- Events -->
-                            <li class="{{ Request::is('events') ? 'active' : '' }}">
+                            {{-- <li class="{{ Request::is('events') ? 'active' : '' }}">
                                 <a href="{{ url('/events') }}">Events</a>
+                            </li> --}}
+
+                            <!-- Expo & Summit  -->
+                            <li class="{{ Request::is('expo-summit') ? 'active' : '' }}">
+                                <a href="{{ url('/expo-summit') }}">Expo & Summit</a>
                             </li>
 
                             <!-- Speakers -->
