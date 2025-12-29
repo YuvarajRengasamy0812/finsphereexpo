@@ -176,7 +176,7 @@
                 <div class="orbit-wrapper">
 
                     <div class="orbit-center">
-                        <img src="{{ asset('assets/frontend/img/influencer.png') }}" alt="Influencer">
+                        <img src="{{ asset('assets/frontend/img/influencer.png') }}" alt="Influencer" >
                     </div>
 
                     <div class="orbit-rotate">

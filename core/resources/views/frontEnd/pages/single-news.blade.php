@@ -8,7 +8,7 @@
     <!--=================== PAGE-TITLE ===================-->
     <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
         <div class="container">
-            <h1 class="title-line-left">Blog News Details</h1>
+            <h1 class="title-line-left"> News Details</h1>
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
@@ -114,7 +114,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="reviews-form">
+                        <!-- <div class="reviews-form">
                             <h4 class="title">Leave a Comment</h4>
                             <form action="/">
                                 <ul class="form-cover">
@@ -136,7 +136,7 @@
                                     <button type="submit" class="btn">send comment</button>
                                 </div>
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!--================= SIDEBAR =================-->
@@ -234,14 +234,14 @@
                         </li>
                         <!--=========== WIDGET-INSTAGRAM END ===========-->
                         <!--=========== WIDGET-NEWSLETTER ===========-->
-                        <li class="widget widget-newsletter">
+                        <!-- <li class="widget widget-newsletter">
                             <h6 class="title">newsletter</h6>
                             <form action="/" class="subscribe-form">
                                 <input type="email" name="subscribe" placeholder="E-mail">
                                 <button class="search-button" type="submit"><i class="fa fa-paper-plane"
                                         aria-hidden="true"></i></button>
                             </form>
-                        </li>
+                        </li> -->
                         <!--=========== WIDGET-NEWSLETTER END ===========-->
                     </ul>
                 </div>

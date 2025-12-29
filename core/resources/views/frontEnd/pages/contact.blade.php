@@ -5,6 +5,7 @@
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
 <!--=================== PAGE-TITLE ===================-->
 	<div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
 		<div class="container">
@@ -112,7 +113,7 @@
 	</section>
 	<!--==================== S-MAP END ===================-->
 <!-- SweetAlert2 CDN -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
 @endsection

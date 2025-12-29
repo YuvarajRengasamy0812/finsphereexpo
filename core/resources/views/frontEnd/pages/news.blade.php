@@ -1,238 +1,207 @@
 @extends('frontEnd.layouts.master')
 
-@section('title', 'News - FinSphere Expo Kuwait')
+@section('title', 'News & Updates - FinSphere Expo Kuwait')
 
 @section('content')
 
-    <!--=================== PAGE-TITLE ===================-->
-    <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
-        <div class="container">
-            <h1 class="title-line-left">News</h1>
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li>News</li>
-                </ul>
-            </div>
+<!-- ================= PAGE HERO ================= -->
+<section class="news-hero" style="background-image:url('{{ asset('assets/frontend/img/bg-page-title.jpg') }}')">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="title-line-left text-white" style="color:#fff">News & Updates</h1>
+            <p class="hero-subtitle">
+                Stay updated with the latest announcements, speaker reveals, exhibitor confirmations,
+                and event milestones of FINSPHERE EXPO KUWAIT.
+            </p>
         </div>
     </div>
-    <!--================= PAGE-TITLE END =================-->
+</section>
 
-    <!--===================== S-NEWS =====================-->
-    <section class="s-news">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8 blog-cover">
-                    <div class="post-item-cover">
-                        <div class="post-header">
-                            <h3 class="title title-line-left"><a href="{{ url('/single-news') }}">Creating a Wordpress Blog
-                                    for
-                                    Beginners</a></h3>
-                            <div class="post-thumbnail">
-                                <a href="{{ url('/single-news') }}">
-                                    <img src="{{ asset('assets/frontend/img/news-1.jpg') }}" alt="img">
-                                </a>
-                            </div>
-                            <div class="meta">
-                                <span class="post-by"><i class="fa fa-user" aria-hidden="true"></i>By <a
-                                        href="{{ url('#') }}">Samson peters</a></span>
-                                <span class="post-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Dec 26, 2019</a></span>
-                                <span class="post-category"><i class="fas fa-tag" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Coaching</a></span>
-                            </div>
-                        </div>
-                        <div class="post-content">
-                            <div class="text">
-                                <p>Ultricies tristique nulla aliquet enim tortor. Arcu bibendum at varius vel pharetra
-                                    vel turpis nunc eget. Et leo duis ut diam quam nulla. Cras pulvinar mattis nunc sed
-                                    blandit libero volutpat. Blandit volutpat maecenas volutpat blandit aliquam etiam
-                                    erat velit. </p>
-                            </div>
+<!-- ================= NEWS SECTION ================= -->
+<section class="news-section py-5">
+    <div class="container">
+
+        <div class="row g-4">
+
+            <!-- NEWS CARD -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="{{ asset('assets/frontend/img/news-1.jpg') }}" alt="">
+                        <div class="news-overlay">
+                            <span class="news-tag">Announcement</span>
                         </div>
                     </div>
-                    <div class="post-item-cover">
-                        <div class="post-header">
-                            <h3 class="title title-line-left"><a href="{{ url('/single-news') }}">Data Analysis with Pandas
-                                    and
-                                    Python</a></h3>
-                            <div class="post-thumbnail">
-                                <a href="{{ url('/single-news') }}">
-                                    <img src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="img">
-                                </a>
-                            </div>
-                            <div class="meta">
-                                <span class="post-by"><i class="fa fa-user" aria-hidden="true"></i>By <a
-                                        href="{{ url('#') }}">Samson peters</a></span>
-                                <span class="post-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Feb 26, 2019</a></span>
-                                <span class="post-category"><i class="fas fa-tag" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Coaching</a></span>
-                            </div>
-                        </div>
-                        <div class="post-content">
-                            <div class="text">
-                                <p>Ultricies tristique nulla aliquet enim tortor. Arcu bibendum at varius vel pharetra
-                                    vel turpis nunc eget. Et leo duis ut diam quam nulla. Cras pulvinar mattis nunc sed
-                                    blandit libero volutpat. Blandit volutpat maecenas volutpat blandit aliquam etiam
-                                    erat velit. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-item-cover">
-                        <blockquote>
-                            <p>“At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias”</p>
-                            <cite>by <a href="{{ url('#') }}">Kerry Ashman</a></cite>
-                        </blockquote>
-                    </div>
-                    <div class="post-item-cover">
-                        <div class="post-header">
-                            <h3 class="title title-line-left"><a href="{{ url('/single-news') }}">UX & Web Design Master
-                                    Course:
-                                    Strategy</a></h3>
-                            <div class="meta">
-                                <span class="post-by"><i class="fa fa-user" aria-hidden="true"></i>By <a
-                                        href="{{ url('#') }}">Samson peters</a></span>
-                                <span class="post-date"><i class="fas fa-calendar-alt" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Feb 26, 2019</a></span>
-                                <span class="post-category"><i class="fas fa-tag" aria-hidden="true"></i><a
-                                        href="{{ url('#') }}">Coaching</a></span>
-                            </div>
-                        </div>
-                        <div class="post-content">
-                            <div class="text">
-                                <p>Ultricies tristique nulla aliquet enim tortor. Arcu bibendum at varius vel pharetra
-                                    vel turpis nunc eget. Et leo duis ut diam quam nulla. Cras pulvinar mattis nunc sed
-                                    blandit libero volutpat. Blandit volutpat maecenas volutpat blandit aliquam etiam
-                                    erat velit. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pagination-cover">
-                        <ul class="pagination">
-                            <li class="pagination-item item-prev"><a href="{{ url('#') }}"><i class="fa fa-angle-left"
-                                        aria-hidden="true"></i></a></li>
-                            <li class="pagination-item active"><a href="{{ url('#') }}">1</a></li>
-                            <li class="pagination-item"><a href="{{ url('#') }}">2</a></li>
-                            <li class="pagination-item"><a href="{{ url('#') }}">3</a></li>
-                            <li class="pagination-item"><a href="{{ url('#') }}">4</a></li>
-                            <li class="pagination-item"><a href="{{ url('#') }}">5</a></li>
-                            <li class="pagination-item item-next"><a href="{{ url('#') }}"><i
-                                        class="fa fa-angle-right" aria-hidden="true"></i></a></li>
-                        </ul>
+                    <div class="news-content">
+                        <h4>Official Speaker Line-up Revealed</h4>
+                        <p>
+                            FINSPHERE EXPO KUWAIT unveils top global speakers shaping the future of finance.
+                        </p>
+                        <a href="{{ url('/single-news') }}" class="news-link">
+                            Read More <i class="fa fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <!--================= SIDEBAR =================-->
-                <div class="col-12 col-lg-4 sidebar">
-                    <ul class="widgets">
-                        <!--=========== WIDGET-SEARCH ===========-->
-                        <li class="widget widget-search">
-                            <h6 class="title">search</h6>
-                            <form action="/" class="search-form">
-                                <input type="text" name="search" placeholder="Search">
-                                <button class="search-button" type="submit"><i class="fa fa-search"
-                                        aria-hidden="true"></i></button>
-                            </form>
-                        </li>
-                        <!--========= WIDGET-SEARCH END =========-->
-                        <!--=============== WIDGET-ARHIVE ===============-->
-                        <li class="widget widget-archive">
-                            <h6 class="title">archive</h6>
-                            <ul>
-                                <li><a href="{{ url('#') }}">January 2019</a></li>
-                                <li><a href="{{ url('#') }}">February 2019</a></li>
-                                <li><a href="{{ url('#') }}">March 2019</a></li>
-                                <li><a href="{{ url('#') }}">April 2019</a></li>
-                                <li><a href="{{ url('#') }}">May 2019</a></li>
-                            </ul>
-                        </li>
-                        <!--============ WIDGET-ARHIVE END ============-->
-                        <!--=========== WIDGET-CATEGORIES ===========-->
-                        <li class="widget widget-categories">
-                            <h6 class="title">categories</h6>
-                            <ul>
-                                <li><a href="{{ url('#') }}">Training</a></li>
-                                <li><a href="{{ url('#') }}">Courses</a></li>
-                                <li><a href="{{ url('#') }}">Conferences</a></li>
-                                <li><a href="{{ url('#') }}">Development</a></li>
-                                <li><a href="{{ url('#') }}">UI/UX Designer</a></li>
-                            </ul>
-                        </li>
-                        <!--========== WIDGET-CATEGORIES END ==========-->
-                        <!--=========== WIDGET-RECENT-POSTS ===========-->
-                        <li class="widget widget-recent-posts">
-                            <h6 class="title">recent blog posts</h6>
-                            <ul>
-                                <li>
-                                    <a href="{{ url('#') }}">Mobile App Design: From Beginner to Intermediate</a>
-                                    <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>Dec 27,
-                                        2019
-                                        at 5:47 pm</div>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}">Et harum quidem rerum facilis est et expedita
-                                        distinctio</a>
-                                    <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>Dec 17,
-                                        2018
-                                        at 5:47 pm</div>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}">Nam libero tempore, cum soluta nobis est eligendi
-                                        optio</a>
-                                    <div class="date"><i class="fas fa-calendar-alt" aria-hidden="true"></i>Dec 8, 2018
-                                        at 5:47 pm</div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--========== WIDGET-RECENT-POSTS END ==========-->
-                        <!--=========== WIDGET-INSTAGRAM ===========-->
-                        <li class="widget widget-instagram">
-                            <h6 class="title">Gallery</h6>
-                            <ul>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-1.jpg') }}" alt="img"></a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-2.jpg') }}" alt="img"></a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-3.jpg') }}" alt="img"></a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-4.jpg') }}" alt="img"></a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-5.jpg') }}" alt="img"></a>
-                                </li>
-                                <li>
-                                    <a href="{{ url('#') }}"><img
-                                            src="{{ asset('assets/frontend/img/gal-6.jpg') }}" alt="img"></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <!--=========== WIDGET-INSTAGRAM END ===========-->
-                        <!--=========== WIDGET-NEWSLETTER ===========-->
-                        <li class="widget widget-newsletter">
-                            <h6 class="title">newsletter</h6>
-                            <form action="/" class="subscribe-form">
-                                <input type="email" name="subscribe" placeholder="E-mail">
-                                <button class="search-button" type="submit"><i class="fa fa-paper-plane"
-                                        aria-hidden="true"></i></button>
-                            </form>
-                        </li>
-                        <!--=========== WIDGET-NEWSLETTER END ===========-->
-                    </ul>
-                </div>
-                <!--=============== SIDEBAR END ===============-->
             </div>
+
+            <!-- NEWS CARD -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="">
+                        <div class="news-overlay">
+                            <span class="news-tag">Exhibitors</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h4>Leading Fintech Brands Confirmed</h4>
+                        <p>
+                            Major fintech companies confirm their participation at FINSPHERE EXPO KUWAIT.
+                        </p>
+                        <a href="{{ url('/single-news') }}" class="news-link">
+                            Read More <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NEWS CARD -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="{{ asset('assets/frontend/img/overview-2.jpg') }}" alt="">
+                        <div class="news-overlay">
+                            <span class="news-tag">Milestone</span>
+                        </div>
+                    </div>
+                    <div class="news-content">
+                        <h4>Expo Registration Hits Major Milestone</h4>
+                        <p>
+                            Thousands of attendees register as excitement builds for FINSPHERE EXPO KUWAIT.
+                        </p>
+                        <a href="{{ url('/single-news') }}" class="news-link">
+                            Read More <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
-    <!--=================== S-NEWS END ===================-->
+
+    </div>
+</section>
+
+<!-- ================= CTA ================= -->
+@include('frontEnd.includes.cta-section')
+
+<!-- ================= STYLES ================= -->
+<style>
+/* HERO */
+.news-hero {
+    position: relative;
+    padding: 120px 0;
+    background-size: cover;
+    background-position: center;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,.7), rgba(0,0,0,.4));
+}
+.hero-content {
+    position: relative;
+    max-width: 700px;
+}
+.hero-subtitle {
+    color: #ddd;
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+/* NEWS CARDS */
+.news-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+    transition: all .4s ease;
+    height: 100%;
+}
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 55px rgba(0,0,0,.15);
+}
+
+/* IMAGE */
+.news-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+.news-card:hover img {
+    transform: scale(1.1);
+}
+
+/* OVERLAY */
+.news-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+}
+.news-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background: #f39c12;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: .8rem;
+}
+
+/* CONTENT */
+.news-content {
+    padding: 25px;
+}
+.news-content h4 {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.news-content p {
+    font-size: .95rem;
+    color: #555;
+}
+.news-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #f39c12;
+}
+.news-link i {
+    margin-left: 5px;
+    transition: transform .3s;
+}
+.news-link:hover i {
+    transform: translateX(5px);
+}
+</style>
+
+<!-- ================= AOS ================= -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+    once: true,
+    duration: 1200,
+    easing: 'ease-in-out'
+});
+</script>
 
 @endsection
