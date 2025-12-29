@@ -36,18 +36,7 @@
                     <nav class="nav-menu">
                         <ul class="nav-list">
 
-                            <!-- Home Dropdown -->
-                            {{-- <li class="dropdown">
-                                <a>Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                <ul>
-                                    <li class="{{ Request::is('/') ? 'active' : '' }}">
-                                        <a href="{{ url('/') }}">Home 1</a>
-                                    </li>
-                                    <li class="{{ Request::is('home1') ? 'active' : '' }}">
-                                        <a href="{{ url('/home1') }}">Home 2</a>
-                                    </li>
-                                </ul>
-                            </li> --}}
+                            <!-- Home -->
                             <li class="{{ Request::is('/') ? 'active' : '' }}">
                                 <a href="{{ url('/') }}">Home</a>
                             </li>
@@ -57,14 +46,14 @@
                                 <a href="{{ url('/about') }}">About us</a>
                             </li>
 
-                            <!-- Events -->
-                            {{-- <li class="{{ Request::is('events') ? 'active' : '' }}">
-                                <a href="{{ url('/events') }}">Events</a>
-                            </li> --}}
-
                             <!-- Expo & Summit  -->
                             <li class="{{ Request::is('expo-summit') ? 'active' : '' }}">
                                 <a href="{{ url('/expo-summit') }}">Expo & Summit</a>
+                            </li>
+                            
+                            <!-- PROFXMEDIA Marketing Partner  -->
+                            <li class="{{ Request::is('profxmedia') ? 'active' : '' }}">
+                                <a href="{{ url('/profxmedia') }}">PROFX MEDIA</a>
                             </li>
 
                             <!-- Speakers -->

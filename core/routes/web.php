@@ -41,6 +41,9 @@ Route::get('/about', function () {
 Route::get('/expo-summit', function () {
     return view('frontEnd.pages.expo-summit');
 });
+Route::get('/profxmedia', function () {
+    return view('frontEnd.pages.profxmedia');
+});
 Route::get('/events', function () {
     return view('frontEnd.pages.events');
 });
