@@ -35,9 +35,11 @@ Route::get('/', function () {
 Route::get('/home1', function () {
     return view('frontEnd.pages.home-1');
 });
-
 Route::get('/about', function () {
     return view('frontEnd.pages.about');
+});
+Route::get('/expo-summit', function () {
+    return view('frontEnd.pages.expo-summit');
 });
 Route::get('/events', function () {
     return view('frontEnd.pages.events');
