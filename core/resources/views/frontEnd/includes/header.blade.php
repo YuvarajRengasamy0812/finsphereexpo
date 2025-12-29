@@ -37,7 +37,7 @@
                         <ul class="nav-list">
 
                             <!-- Home Dropdown -->
-                            <li class="dropdown">
+                            {{-- <li class="dropdown">
                                 <a>Home <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul>
                                     <li class="{{ Request::is('/') ? 'active' : '' }}">
@@ -47,6 +47,9 @@
                                         <a href="{{ url('/home1') }}">Home 2</a>
                                     </li>
                                 </ul>
+                            </li> --}}
+                            <li class="{{ Request::is('/') ? 'active' : '' }}">
+                                <a href="{{ url('/') }}">Home</a>
                             </li>
 
                             <!-- About -->
