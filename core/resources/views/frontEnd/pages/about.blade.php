@@ -28,10 +28,8 @@
                         <h2 class="title-line-left">Overview</h2>
                         <div class="overview-info-item">
                             <!-- <h5>Experience Since 2012</h5> -->
-                            <p>FINSPHERE EXPO is an international platform designed to accelerate financial innovation and global collaboration.</p>
-                            <p>Built around the rapidly evolving worlds of fintech, trading, 
-blockchain, and digital assets, FINSPHERE EXPO connects ideas, technologies, and people 
-shaping the future of finance..</p>
+                            <p>FINSPHERE EXPO is a premier international platform dedicated to accelerating financial innovation and fostering global collaboration across the financial ecosystem. Built around the rapidly evolving worlds of fintech, trading, blockchain, artificial intelligence, and digital assets, FINSPHERE EXPO brings together industry leaders, innovators, investors, regulators, and entrepreneurs under one roof</p>
+                            <p>The expo serves as a dynamic meeting point where ideas transform into action, emerging technologies gain real-world exposure, and strategic partnerships are forged. Through keynote sessions, expert panels, live demonstrations, workshops, and networking forums, FINSPHERE EXPO delivers a future-focused experience designed to shape the next era of finance</p>
                         </div>
                        
                     </div>
@@ -60,14 +58,15 @@ shaping the future of finance..</p>
                     <div class="our-history-left">
                         <h2 class="title-line-left">Vision & Mission</h2>
                         <div class="overview-info-item">
-                              <h5>Mission  :</h5>
-                            <p>To educate, connect, and empower the global financial community through immersive 
-experiences, thought leadership, and high-impact networking.</p>
+                              <h5>Vision  :</h5>
+                            <p>To position Kuwait as a leading regional hub for financial innovation, digital transformation, and trading excellence, connecting the Middle East to the global financial future. FINSPHERE EXPO envisions a thriving financial ecosystem where technology, innovation, and talent converge, creating opportunities for growth, collaboration, and sustainable economic development.</p>
                             
                         </div>
                         <div class="overview-info-item">
-                            <h5>Vision  :</h5>
-                            <p>To position Kuwait as a regional hub for financial innovation and trading excellence.</p>
+                            <h5>Mission  :</h5>
+                            <p>Our mission is to educate, connect, and empower the global financial community by delivering immersive experiences, thought leadership, and high-impact networking opportunities. FINSPHERE EXPO aims to bridge the gap between traditional finance and emerging technologies while enabling collaboration between global innovators and regional markets..</p>
+                       <p>Showcasing breakthrough financial technologies and solutions that shape the future of the industry.Creating an inclusive platform for dialogue between startups, corporates, governments, and academia</p>
+                            <p>Through knowledge-sharing, innovation showcases, and strategic dialogue, FINSPHERE EXPO supports sustainable growth, financial inclusion, and technological advancement across the financial sector</p>
                         </div>
                         <div class="history-cert">
                             <div class="history-cert-img">
@@ -86,24 +85,20 @@ experiences, thought leadership, and high-impact networking.</p>
                 <div class="col-12 col-sm-6">
                     <div class="history-info-cover">
                         <div class="history-info">
-                            <h4 class="title"><span>2012-2014. </span>Our Establishment</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam. Elementum nibh tellus molestie.</p>
+                            <h4 class="title"><span>◇</span> Our Establishment</h4>
+                            <p>FINSPHERE EXPO was established to serve as a global platform for financial innovation, collaboration, and thought leadership. Founded by industry experts, the expo was created to connect emerging technologies with real-world financial applications, empowering stakeholders across fintech, trading, blockchain, and digital assets. Rooted in Kuwait and driven by a global outlook, FINSPHERE EXPO represents a new era of financial engagement and opportunity</p>
                         </div>
                         <div class="history-info">
-                            <h4 class="title"><span>2014. </span>The Early Days</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam.</p>
+                            <h4 class="title"><span>◇ </span>The Early Days</h4>
+                            <p>FINSPHERE EXPO began as a vision to unite financial innovation, education, and collaboration. In its early days, careful planning and engagement with industry experts laid the foundation for a platform designed to drive growth, connect global stakeholders, and shape the future of finance.</p>
                         </div>
                         <div class="history-info">
-                            <h4 class="title"><span>2015-2016. </span>Prosperity of Company</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam.</p>
+                            <h4 class="title"><span>◇</span>Prosperity of Company</h4>
+                            <p>Since its inception, FINSPHERE EXPO has grown steadily, earning recognition as a leading platform for financial innovation and global collaboration. Its success is built on strong partnerships, visionary leadership, and a commitment to connecting ideas, technology, and people shaping the future of finance.</p>
                         </div>
                         <div class="history-info">
-                            <h4 class="title"><span>2017-2018. </span>Worldwide Recognition</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod aliqua. Ut enim
-                                ad minim veniam.</p>
+                            <h4 class="title"><span>◇ </span>Worldwide Recognition</h4>
+                            <p>FINSPHERE EXPO has gained international acclaim, attracting global experts, innovators, and investors, and establishing itself as a premier platform for financial innovation and collaboration..</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +226,7 @@ experiences, thought leadership, and high-impact networking.</p>
                             <div class="day">5</div>
                             <div class="date-info">
                                 <div class="month">To 6 may 2026</div>
-                                <div class="name">The Plaza Center</div>
+                                <div class="name">Kuwait (Venue: TBD)</div>
                             </div>
                         </div>
                         <!-- <h3 class="title"><a href="{{ url('/events') }}">Information Technology in The Banking
@@ -243,9 +238,9 @@ world-class platform for innovation, learning, and collaboration within the fina
 ecosystem..</p>
                         <div class="upcoming-course-adr mt-4">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>768 Fifth Avenue New York, <br>NY 10019 <span>|</span> The Plaza Center</p>
+                            <p>Venue: TBD <span>|</span>Kuwait</p>
                         </div>
-                        <a href="single-events.html" class="btn">register</a>
+                        <a href="{{  url('/contact') }}" class="btn">Register</a>
                     </div>
                 </div>
                 <div class="upcoming-course-img">
@@ -300,38 +295,34 @@ ecosystem..</p>
         </ul>
         <div class="container">
             <h2 class="title-line">What People Say About Us</h2>
-            <p class="slogan">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                ut labore.</p>
+            <p class="slogan">Our attendees and partners consistently praise FINSPHERE EXPO for its innovation, networking opportunities, and impact on the global financial community.</p>
             <div class="slider-testimonials">
                 <div class="slide-testimonial">
                     <div class="testimonial-item">
                         <img src="{{ asset('assets/frontend/img/testimonials-1.jpg') }}" alt="img">
                         <span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
-                        <div class="testimon-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod aliqua. Ut enim ad minim veniam. Elementum nibh tellus molestie nunc non</div>
-                        <h4 class="name">Louisa Russell</h4>
-                        <div class="prof">Regular Client</div>
+                        <div class="testimon-content">FINSPHERE EXPO is unlike any other platform I’ve attended. It brings together visionaries, innovators, and investors in a way that sparks real collaboration. The insights I gained here have transformed how we approach fintech solutions in our company.</div>
+                        <h4 class="name">Sarah Al-Mutairi</h4>
+                        <div class="prof">Fintech Innovator</div>
                     </div>
                 </div>
                 <div class="slide-testimonial">
                     <div class="testimonial-item">
                         <img src="{{ asset('assets/frontend/img/testimonials-2.jpg') }}" alt="img">
                         <span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
-                        <div class="testimon-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Molestiae veritatis odio autem explicabo dicta voluptatum nulla qui, ipsam cupiditate neque!
+                        <div class="testimon-content">Attending FINSPHERE EXPO gave me a unique perspective on global financial trends and emerging technologies. The networking opportunities are unmatched, and the quality of discussions has been incredibly valuable for shaping our investment strategies!
                         </div>
-                        <h4 class="name">Samson Peters</h4>
-                        <div class="prof">Regular Client</div>
+                        <h4 class="name">Ahmed Khan</h4>
+                        <div class="prof">Investment Strategist</div>
                     </div>
                 </div>
                 <div class="slide-testimonial">
                     <div class="testimonial-item">
                         <img src="{{ asset('assets/frontend/img/testimonials-3.jpg') }}" alt="img">
                         <span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
-                        <div class="testimon-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-                            similique delectus possimus consequuntur quia vel neque animi eveniet voluptatum hic.</div>
-                        <h4 class="name">Marry James</h4>
-                        <div class="prof">Regular Client</div>
+                        <div class="testimon-content">FINSPHERE EXPO has been a game-changer for our business. The platform connects us directly with industry leaders and potential partners, providing both exposure and actionable insights. It’s more than an event—it’s a hub for innovation and growth.</div>
+                        <h4 class="name">Lina Farouk</h4>
+                        <div class="prof">Blockchain Entrepreneur</div>
                     </div>
                 </div>
             </div>
