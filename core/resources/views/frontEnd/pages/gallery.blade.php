@@ -53,7 +53,7 @@
                             </div>
                             <div class="gallery-overlay d-flex flex-column justify-content-center align-items-center text-center">
                                 <i class="fas fa-plus fa-2x text-white mb-2"></i>
-                                <h5 class="text-white">{{ $item['alt'] }}</h5>
+                                <h5 style="color: #fff!important">{{ $item['alt'] }}</h5>
                             </div>
                         </a>
                     </div>

@@ -44,7 +44,7 @@
 
             <!-- QUICK LINKS -->
             <div class="col-12 col-sm-6 col-md-4">
-                <h6 class="mb-3">Quick Links</h6>
+                <h6 class="mb-3" style="text-align:center">Quick Links</h6>
                 <div class="row">
                     <div class="col-6">
                         <ul class="footer-contacts">
@@ -52,12 +52,12 @@
                             <li><a href="{{ url('/expo-summit') }}">Expo & Summit</a></li>
                             <li><a href="{{ url('/speakers') }}">Speakers</a></li>
                             <li><a href="{{ url('/exhibitors') }}">Exhibitors</a></li>
-                            <li><a href="{{ url('/influencers') }}">Influencers</a></li>
+                            <li><a href="{{ url('/Influencer') }}">Influencers</a></li>
                         </ul>
                     </div>
                     <div class="col-6">
                         <ul class="footer-contacts">
-                            <li><a href="{{ url('/profx-media') }}">ProFX Media</a></li>
+                            <li><a href="{{ url('/profxmedia') }}">ProFX Media</a></li>
                             <li><a href="{{ url('/gallery') }}">Gallery</a></li>
                             <li><a href="{{ url('/news') }}">News & Updates</a></li>
                             <li><a href="{{ url('/contact') }}">Contact Us</a></li>

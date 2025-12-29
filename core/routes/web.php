@@ -32,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontEnd.pages.home');
 });
-Route::get('/home1', function () {
-    return view('frontEnd.pages.home-1');
-});
+// Route::get('/home1', function () {
+//     return view('frontEnd.pages.home-1');
+// });
 Route::get('/about', function () {
     return view('frontEnd.pages.about');
 });

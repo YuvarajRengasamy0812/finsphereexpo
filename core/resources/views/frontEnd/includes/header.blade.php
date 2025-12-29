@@ -20,7 +20,8 @@
                 </div>
                 <div class="col-3 header-top-info">
                     <ul class="header-two-adr header-cont">
-                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Kuwait (Venue: TBD)</a></li>
+                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Kuwait (Venue: TBD)</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 header-two-btn">
@@ -50,49 +51,51 @@
                             <li class="{{ Request::is('expo-summit') ? 'active' : '' }}">
                                 <a href="{{ url('/expo-summit') }}">Expo & Summit</a>
                             </li>
-                            
-                            <!-- PROFXMEDIA Marketing Partner  -->
-                            <li class="{{ Request::is('profxmedia') ? 'active' : '' }}">
-                                <a href="{{ url('/profxmedia') }}">PROFX MEDIA</a>
-                            </li>
 
                             <!-- Speakers -->
                             <li class="{{ Request::is('speakers') ? 'active' : '' }}">
                                 <a href="{{ url('/speakers') }}">Speakers</a>
                             </li>
 
-                            <!-- Gallery -->
-                            <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-                                <a href="{{ url('/gallery') }}">Gallery</a>
+                            <!-- Exhibitors -->
+                            <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">
+                                <a href="{{ url('/exhibitors') }}">Exhibitors</a>
                             </li>
 
-                            <!-- News -->
-                            <li class="{{ Request::is('news') ? 'active' : '' }}">
-                                <a href="{{ url('/news') }}">News</a>
+                            <!-- Influencers -->
+                            <li class="{{ Request::is('Influencer') ? 'active' : '' }}">
+                                <a href="{{ url('/Influencer') }}">Influencer</a>
                             </li>
                             <!-- Pages Dropdown -->
-                            <li
-                                class="dropdown">
-                                <a href="#">Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                            <li class="dropdown">
+                                <a href="#">Company <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul>
-                                     <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">
-                                        <a href="{{ url('/exhibitors') }}">Exhibitors</a>
-                                    </li>
-                                     <li class="{{ Request::is('Influencer') ? 'active' : '' }}">
-                                        <a href="{{ url('/Influencer') }}">Influencer</a>
-                                    </li>
-                                    <li class="{{ Request::is('privacy') ? 'active' : '' }}">
+                                    {{-- <li class="{{ Request::is('privacy') ? 'active' : '' }}">
                                         <a href="{{ url('/privacy') }}">Privacy Policy</a>
                                     </li>
                                     <li class="{{ Request::is('error-404') ? 'active' : '' }}">
                                         <a href="{{ url('/error-404') }}">404</a>
+                                    </li> --}}
+                                    <!-- Contact -->
+                                    <!-- PROFXMEDIA Marketing Partner  -->
+                                    <li class="{{ Request::is('profxmedia') ? 'active' : '' }}">
+                                        <a href="{{ url('/profxmedia') }}">PROFX MEDIA</a>
+                                    </li>
+                                    <!-- Gallery -->
+                                    <li class="{{ Request::is('gallery') ? 'active' : '' }}">
+                                        <a href="{{ url('/gallery') }}">Gallery</a>
+                                    </li>
+
+                                    <!-- News -->
+                                    <li class="{{ Request::is('news') ? 'active' : '' }}">
+                                        <a href="{{ url('/news') }}">News</a>
+                                    </li>
+                                    <li class="{{ Request::is('contact') ? 'active' : '' }}">
+                                        <a href="{{ url('/contact') }}">Contacts</a>
                                     </li>
                                 </ul>
                             </li>
-                            <!-- Contact -->
-                            <li class="{{ Request::is('contact') ? 'active' : '' }}">
-                                <a href="{{ url('/contact') }}">Contacts</a>
-                            </li>
+
                         </ul>
                     </nav>
                 </div>
