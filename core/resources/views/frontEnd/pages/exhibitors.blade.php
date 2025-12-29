@@ -70,7 +70,7 @@
         </div>
     </div>
 </section>
-
+    @include('frontEnd.includes.cta-section')
 <!--==================== STYLES ====================-->
 @push('styles')
 <style>
