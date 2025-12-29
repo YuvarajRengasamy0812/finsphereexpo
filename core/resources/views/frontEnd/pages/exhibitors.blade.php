@@ -51,7 +51,7 @@
                     ['img'=>'snack-booth.png','title'=>'High-visibility Booth Placement','desc'=>'Ensure your brand is seen by top industry professionals and attendees.'],
                     ['img'=>'branding.png','title'=>'Brand Exposure & Media Coverage','desc'=>'Gain maximum visibility across our marketing channels and media partners.'],
                     ['img'=>'lead.png','title'=>'Lead Generation & Partnerships','desc'=>'Connect with potential clients and strategic partners for business growth.'],
-                    ['img'=>'customer-loyalty.png','title'=>'Direct Engagement with Attendees','desc'=>'Interact directly with decision-makers and attendees during the expo.'],
+                    ['img'=>'engagement.png','title'=>'Direct Engagement with Attendees','desc'=>'Interact directly with decision-makers and attendees during the expo.'],
                 ];
             @endphp
 
