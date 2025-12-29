@@ -25,7 +25,8 @@
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 header-two-btn">
-                    <a href="{{ url('/events') }}" class="btn">show all events</a>
+                    {{-- <a href="{{ url('/events') }}" class="btn">show all events</a> --}}
+                    <a href="{{ url('/contact') }}" class="btn">Register Free</a>
                 </div>
             </div>
         </div>

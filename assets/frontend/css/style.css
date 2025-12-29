@@ -1551,7 +1551,7 @@ input[type="submit"],
   color: #fff !important;
 }
 .btn.btn-yellow:hover {
-  color: #3e615d;
+  color: #3e615d!important;
 }
 .btn.btn-yellow:hover:before {
   width: 0;
