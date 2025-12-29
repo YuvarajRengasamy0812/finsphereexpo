@@ -55,15 +55,18 @@
                 ];
             @endphp
 
-            @foreach($benefits as $index => $benefit)
-            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="{{ ($index+1)*150 }}">
-                <div class="benefit-card text-center p-4 shadow-lg rounded-4 hover-shadow hover-scale">
-                    <img src="{{ asset('assets/frontend/img/icons/'.$benefit['img']) }}" alt="{{ $benefit['title'] }}" class="mb-3 border-radius-custom" width="70">
-                    <h5 class="fw-bold">{{ $benefit['title'] }}</h5>
-                    <p>{{ $benefit['desc'] }}</p>
-                </div>
-            </div>
-            @endforeach
+          
+            
+            <div class="IS-grid">
+                  @foreach($benefits as $index => $benefit)
+      <div class="IS-card" data-aos="fade-up" data-aos-delay="50">
+        <img class="img-fluid IS-card-img "style="display:block; margin:0 auto 15px;" src="{{ asset('assets/frontend/img/icons/'.$benefit['img']) }}" alt="{{ $benefit['title'] }}" alt=""width="70">
+        <h4>{{ $benefit['title'] }}</h4>
+        <p>{{ $benefit['desc'] }}</p>
+      </div>
+ @endforeach
+      </div>
+           
         </div>
     </div>
 </section>
