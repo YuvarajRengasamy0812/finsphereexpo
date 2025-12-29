@@ -20,8 +20,7 @@
                 </div>
                 <div class="col-3 header-top-info">
                     <ul class="header-two-adr header-cont">
-                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Washington, DC
-                                20521</a></li>
+                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Kuwait (Venue: TBD)</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 header-two-btn">
