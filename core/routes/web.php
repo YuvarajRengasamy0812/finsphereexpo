@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteMapController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,9 +45,9 @@ Route::get('/events', function () {
 Route::get('/speakers', function () {
     return view('frontEnd.pages.speakers');
 });
-Route::get('/gallery', function () {
-    return view('frontEnd.pages.gallery');
-});
+
+Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery');
+
 Route::get('/news', function () {
     return view('frontEnd.pages.news');
 });
