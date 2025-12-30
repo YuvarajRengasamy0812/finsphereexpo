@@ -16,9 +16,8 @@
                     <h2>
                         <span>FINSPHERE EXPO</span> KUWAIT
                     </h2>
-
                     <p class="slide-desc">
-                        The Ultimate Fintech, Forex, Crypto & Blockchain Expo in Kuwait
+                        The Ultimate Fintech, Forex, Financial Expo in Kuwait
                     </p>
 
                     <div class="countdown-card">
@@ -44,7 +43,7 @@
 
 
                     <div class="slide-tag">
-                        #Fintech #Forex #Crypto #Blockchain
+                        #Fintech #Forex  #Financial 
                     </div>
 
                     <div class="slide-btn-cover">
@@ -115,7 +114,7 @@
                     </p>
 
                     <div class="slide-tag">
-                        #FutureOfFinance #FintechExpo
+                        #FutureOfFinance #FintechExpo #FinancialExpo
                     </div>
 
                     <div class="slide-btn-cover">

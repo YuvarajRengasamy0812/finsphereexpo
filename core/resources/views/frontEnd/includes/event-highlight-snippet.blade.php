@@ -13,7 +13,7 @@
                 <h4>Global Financial Exhibition</h4>
                 <p>
                     A large-scale exhibition featuring global leaders from
-                    Forex, Crypto, Blockchain, and Fintech industries.
+                    Forex, financial expo, and Fintech industries.
                 </p>
             </div>
 

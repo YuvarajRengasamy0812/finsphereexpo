@@ -9,7 +9,7 @@
 
                 <p class="footer-text">
                     FINSPHERE EXPO KUWAIT is a premier financial innovation platform
-                    bringing together fintech, forex, crypto, blockchain, and trading
+                    bringing together fintech, forex,financial expo, and trading
                     leaders through a world-class expo and summit experience.
                 </p>
 

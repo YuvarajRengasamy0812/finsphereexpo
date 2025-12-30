@@ -28,7 +28,7 @@
                         <h2 class="title-line-left">Overview</h2>
                         <div class="overview-info-item">
                             <!-- <h5>Experience Since 2012</h5> -->
-                            <p>FINSPHERE EXPO is a premier international platform dedicated to accelerating financial innovation and fostering global collaboration across the financial ecosystem. Built around the rapidly evolving worlds of fintech, trading, blockchain, artificial intelligence, and digital assets, FINSPHERE EXPO brings together industry leaders, innovators, investors, regulators, and entrepreneurs under one roof</p>
+                            <p>FINSPHERE EXPO is a premier international platform dedicated to accelerating financial innovation and fostering global collaboration across the financial ecosystem. Built around the rapidly evolving worlds of fintech, trading,  artificial intelligence, and digital assets, FINSPHERE EXPO brings together industry leaders, innovators, investors, regulators, and entrepreneurs under one roof</p>
                             <p>The expo serves as a dynamic meeting point where ideas transform into action, emerging technologies gain real-world exposure, and strategic partnerships are forged. Through keynote sessions, expert panels, live demonstrations, workshops, and networking forums, FINSPHERE EXPO delivers a future-focused experience designed to shape the next era of finance</p>
                         </div>
                        
@@ -86,7 +86,7 @@
                     <div class="history-info-cover">
                         <div class="history-info">
                             <h4 class="title"><span>◇</span> Our Establishment</h4>
-                            <p>FINSPHERE EXPO was established to serve as a global platform for financial innovation, collaboration, and thought leadership. Founded by industry experts, the expo was created to connect emerging technologies with real-world financial applications, empowering stakeholders across fintech, trading, blockchain, and digital assets. Rooted in Kuwait and driven by a global outlook, FINSPHERE EXPO represents a new era of financial engagement and opportunity</p>
+                            <p>FINSPHERE EXPO was established to serve as a global platform for financial innovation, collaboration, and thought leadership. Founded by industry experts, the expo was created to connect emerging technologies with real-world financial applications, empowering stakeholders across fintech, trading, and digital assets. Rooted in Kuwait and driven by a global outlook, FINSPHERE EXPO represents a new era of financial engagement and opportunity</p>
                         </div>
                         <div class="history-info">
                             <h4 class="title"><span>◇ </span>The Early Days</h4>
@@ -322,7 +322,7 @@ ecosystem..</p>
                         <span class="slide-quote"><i class="fa fa-quote-left" aria-hidden="true"></i></span>
                         <div class="testimon-content">FINSPHERE EXPO has been a game-changer for our business. The platform connects us directly with industry leaders and potential partners, providing both exposure and actionable insights. It’s more than an event—it’s a hub for innovation and growth.</div>
                         <h4 class="name">Lina Farouk</h4>
-                        <div class="prof">Blockchain Entrepreneur</div>
+                        <div class="prof">Financial Entrepreneur</div>
                     </div>
                 </div>
             </div>

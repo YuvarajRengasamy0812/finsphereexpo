@@ -412,7 +412,7 @@
 
                     <p class="pm-description">
                         ProFX Media is a globally recognized event management and marketing company
-                        specializing in <strong>forex, fintech, crypto, and blockchain</strong> events.
+                        specializing in <strong>forex, fintech, financial expo</strong> events.
                         With a strong international presence, ProFX Media delivers high-impact expos,
                         summits, and award ceremonies across major global markets.
                     </p>

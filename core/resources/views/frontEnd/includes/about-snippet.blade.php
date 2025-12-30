@@ -14,7 +14,7 @@
                     <p>
                         FINSPHERE EXPO KUWAIT marks a historic milestone as a landmark platform
                         connecting the entire financial value chain — from brokers, fintech innovators,
-                        crypto projects, and blockchain platforms to traders, investors, educators,
+                       financial expo platforms to traders, investors, educators,
                         and influencers.
                     </p>
 
