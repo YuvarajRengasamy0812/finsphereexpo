@@ -21,13 +21,13 @@
 
       <div class="IS-card" data-aos="fade-up" data-aos-delay="100">
         <img class="img-fluid IS-card-img" src="{{ asset('assets/frontend/img/resources/crypto.png') }}" alt="">
-        <h4>Cryptocurrency & Digital Assets</h4>
-        <p>Exchanges, custodians, wallets, and institutional crypto solutions.</p>
+        <h4> Digital Assets</h4>
+        <p>Exchanges, custodians, wallets, and institutional.</p>
       </div>
 
       <div class="IS-card" data-aos="fade-up" data-aos-delay="150">
         <img class="img-fluid IS-card-img" src="{{ asset('assets/frontend/img/resources/blockchain.png') }}" alt="">
-        <h4>Blockchain Technology</h4>
+        <h4>Financial Expo </h4>
         <p>Infrastructure, smart contracts, Web3 platforms, and tokenization.</p>
       </div>
 

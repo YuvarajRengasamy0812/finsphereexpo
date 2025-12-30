@@ -8,7 +8,7 @@
                 <p class="MP-description">
                     FINSPHERE EXPO KUWAIT is proudly marketed by PROFX Media, a globally recognized
                     financial events and marketing powerhouse. Known for delivering world-class expos,
-                    summits, and awards across the Forex, Fintech, and Crypto industries, PROFX Media
+                    summits, and awards across the Forex, Fintech, and financial expo, PROFX Media
                     brings unmatched global reach and execution excellence.
                 </p>
                 <p class="MP-description">

@@ -287,8 +287,8 @@
                     </p>
                     <ul class="es-topics mb-4">
                         <li>Future of Trading & Digital Finance</li>
-                        <li>Blockchain & Web3 Innovation</li>
-                        <li>Crypto Markets & Regulation</li>
+                        <li>Financial Expo & Web3 Innovation</li>
+                        <li>Financial Markets & Regulation</li>
                         <li>Fintech Transformation</li>
                         <li>Technology in Financial Markets</li>
                     </ul>
@@ -404,7 +404,7 @@
                         <div class="es-attend-icon">
                             <i data-lucide="cpu"></i>
                         </div>
-                        <h5>Fintech, Crypto & Blockchain Companies</h5>
+                        <h5>Fintech, Financial Companies</h5>
                         <p>Showcase solutions, gain visibility, and build partnerships.</p>
                     </div>
                 </div>
