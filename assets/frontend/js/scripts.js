@@ -239,16 +239,23 @@
 	/**
 	 *---------------------- FANCYBOX 3 ---------------------
 	*/
-	if( $( '[data-fancybox]' )[0] ){
-		$( '[data-fancybox]' ).fancybox({
-			loop: true,
-			infobar: false,
-			transitionEffect: 'tube',
-			buttons: [
-			'close'
-			],
-		});
-	}
+if ( $('[data-fancybox]')[0] ) {
+    $('[data-fancybox]').fancybox({
+        loop: true,
+        infobar: false,
+        transitionEffect: 'tube',
+        buttons: [
+            'zoom',
+            'share',     // ⬅️ share button
+            'download',  // ⬅️ download button
+            'close'
+        ],
+        protect: true, // optional: prevents image right-click save if needed
+        animationEffect: "zoom",
+        animationDuration: 400
+    });
+}
+
 
 	/**
 	 *-------------------------- TABS -------------------------
