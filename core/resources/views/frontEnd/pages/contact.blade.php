@@ -93,7 +93,7 @@
 						<i class="fa fa-envelope" aria-hidden="true"></i>
 						<h5>Email</h5>
 						<ul class="cont-email">
-							<li><a href="mailto:info@finsphereexpo.com">info@finsphereexpo.com</a></li>
+							<li><a href="mailto:info@profxmedia.com">info@profxmedia.com</a></li>
 						</ul>
 					</div>
 				</div>

@@ -31,8 +31,8 @@
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <a href="mailto:info@finsphereexpo.com">
-                            info@finsphereexpo.com
+                        <a href="mailto:info@profxmedia.com">
+                            info@profxmedia.com
                         </a>
                     </li>
                     <li>
