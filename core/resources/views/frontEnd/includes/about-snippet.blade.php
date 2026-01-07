@@ -13,8 +13,8 @@
                 <div class="about-info-text">
                     <p>
                         FINSPHERE EXPO KUWAIT marks a historic milestone as a landmark platform
-                        connecting the entire financial value chain — from brokers, fintech innovators,
-                       financial expo platforms to traders, investors, educators,
+                        connecting the entire financial value chain - from brokers, fintech innovators,
+                        crypto projects, and blockchain platforms to traders, investors, educators,
                         and influencers.
                     </p>
 
@@ -38,10 +38,8 @@
             </div>
 
             <div class="col-12 col-md-6 about-img">
-                <img class="lazy"
-                     src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
-                     data-src="{{ asset('assets/frontend/img/news-2.jpg') }}"
-                     alt="FINSPHERE EXPO KUWAIT">
+                <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
+                    data-src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="FINSPHERE EXPO KUWAIT">
             </div>
         </div>
     </div>

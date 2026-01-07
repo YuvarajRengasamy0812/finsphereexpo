@@ -256,125 +256,122 @@
 
     /* ================= PM ROLE SECTION ================= */
     /* ================= PM ROLE SECTION ================= */
-.pm-role-section {
-    background: #ffffff;
-    padding: 110px 0;
-}
-
-/* HEADER */
-.pm-role-header {
-    max-width: 760px;
-    margin: 0 auto 70px;
-    text-align: center;
-}
-
-.pm-role-tag {
-    display: inline-block;
-    font-size: 13px;
-    letter-spacing: 1.3px;
-    text-transform: uppercase;
-    color: #976737;
-    font-weight: 700;
-    margin-bottom: 14px;
-}
-
-.pm-role-title {
-    font-size: 42px;
-    line-height: 1.25;
-    font-weight: 800;
-    color: #223645;
-    margin-bottom: 14px;
-}
-
-.pm-role-title span {
-    color: #3E615D;
-}
-
-.pm-role-subtitle {
-    font-size: 16.5px;
-    line-height: 1.8;
-    color: #707070;
-}
-
-/* GRID */
-.pm-role-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 26px;
-}
-
-/* CARD */
-.pm-role-card {
-    background: #ffffff;
-    border-radius: 20px;
-    padding: 30px 26px;
-    text-align: center;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.pm-role-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(62, 97, 93, 0.08),
-        rgba(151, 103, 55, 0.08)
-    );
-    opacity: 0;
-    transition: opacity 0.35s ease;
-}
-
-.pm-role-card:hover::before {
-    opacity: 1;
-}
-
-.pm-role-card:hover {
-    transform: translateY(-8px);
-}
-
-/* ICON */
-.pm-role-card i {
-    width: 32px;
-    height: 32px;
-    color: #3E615D;
-    margin-bottom: 14px;
-}
-
-/* TEXT */
-.pm-role-card h4 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #223645;
-    margin-bottom: 8px;
-}
-
-.pm-role-card p {
-    font-size: 14.5px;
-    line-height: 1.7;
-    color: #707070;
-}
-
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-    .pm-role-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .pm-role-section {
+        background: #ffffff;
+        padding: 110px 0;
     }
-}
 
-@media (max-width: 768px) {
-    .pm-role-grid {
-        grid-template-columns: repeat(1, 1fr);
+    /* HEADER */
+    .pm-role-header {
+        max-width: 760px;
+        margin: 0 auto 70px;
+        text-align: center;
+    }
+
+    .pm-role-tag {
+        display: inline-block;
+        font-size: 13px;
+        letter-spacing: 1.3px;
+        text-transform: uppercase;
+        color: #976737;
+        font-weight: 700;
+        margin-bottom: 14px;
     }
 
     .pm-role-title {
-        font-size: 34px;
+        font-size: 42px;
+        line-height: 1.25;
+        font-weight: 800;
+        color: #223645;
+        margin-bottom: 14px;
     }
-}
 
+    .pm-role-title span {
+        color: #3E615D;
+    }
+
+    .pm-role-subtitle {
+        font-size: 16.5px;
+        line-height: 1.8;
+        color: #707070;
+    }
+
+    /* GRID */
+    .pm-role-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 26px;
+    }
+
+    /* CARD */
+    .pm-role-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 30px 26px;
+        text-align: center;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+        transition: all 0.35s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .pm-role-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg,
+                rgba(62, 97, 93, 0.08),
+                rgba(151, 103, 55, 0.08));
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .pm-role-card:hover::before {
+        opacity: 1;
+    }
+
+    .pm-role-card:hover {
+        transform: translateY(-8px);
+    }
+
+    /* ICON */
+    .pm-role-card i {
+        width: 32px;
+        height: 32px;
+        color: #3E615D;
+        margin-bottom: 14px;
+    }
+
+    /* TEXT */
+    .pm-role-card h4 {
+        font-size: 17px;
+        font-weight: 700;
+        color: #223645;
+        margin-bottom: 8px;
+    }
+
+    .pm-role-card p {
+        font-size: 14.5px;
+        line-height: 1.7;
+        color: #707070;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1200px) {
+        .pm-role-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .pm-role-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .pm-role-title {
+            font-size: 34px;
+        }
+    }
 </style>
 
 @section('content')
@@ -465,7 +462,7 @@
 
                     <p class="pm-record-text">
                         ProFX Media proudly holds a <strong>Guinness World Record</strong> for organizing
-                        the world’s most participated live trading competition — a landmark achievement
+                        the world’s most participated live trading competition - a landmark achievement
                         that reflects unmatched execution excellence, operational scale, and audience
                         engagement.
                     </p>

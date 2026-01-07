@@ -5,7 +5,7 @@
                 <h2 class="title-line-left">Join the Future of Finance in Kuwait</h2>
                 <p style="color: #fff!important">
                     Be part of a landmark financial event that connects innovation, education, and opportunity.
-                    Whether you are a trader, investor, company, or influencer — FINSPHERE EXPO KUWAIT is your gateway
+                    Whether you are a trader, investor, company, or influencer - FINSPHERE EXPO KUWAIT is your gateway
                     to the future.
                 </p>
             </div>

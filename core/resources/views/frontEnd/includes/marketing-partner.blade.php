@@ -13,7 +13,7 @@
                 </p>
                 <p class="MP-description">
                     PROFX Media is also a Guinness World Record holder, recognized for organizing the
-                    world’s most participated live trading competition — reinforcing its leadership in
+                    world’s most participated live trading competition - reinforcing its leadership in
                     large-scale financial event promotion and community engagement.
                 </p>
                 <a href="{{ url('/profx-media') }}" class="btn btn-yellow">Learn More About PROFX Media</a>
