@@ -27,7 +27,7 @@
                 <ul class="footer-contacts">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Kuwait (Venue: TBD)</span>
+                        <span>Kuwait International Fairgrounds</span>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
@@ -37,7 +37,9 @@
                     </li>
                     <li>
                         <i class="fa fa-phone"></i>
-                        <span>Available on Request</span>
+                        <a href="https://wa.me/96552222347" target="_blank">
+                            +965 5222 2347
+                        </a>
                     </li>
                 </ul>
             </div>
