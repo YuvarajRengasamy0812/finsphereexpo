@@ -39,7 +39,7 @@
 
             <div class="col-12 col-md-6 about-img">
                 <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
-                    data-src="{{ asset('assets/frontend/img/news-2.jpg') }}" alt="FINSPHERE EXPO KUWAIT">
+                    data-src="{{ asset('assets/frontend/img/resources/finshpareabout.png') }}" alt="FINSPHERE EXPO KUWAIT">
             </div>
         </div>
     </div>
