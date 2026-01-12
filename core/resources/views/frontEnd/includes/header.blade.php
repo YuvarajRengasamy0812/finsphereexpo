@@ -13,14 +13,15 @@
                         {{-- <div class="logo-text"><span>info</span>rmex</div> --}}
                     </a>
                 </div>
-                <div class="col-3 header-top-info">
+                <div class="col-2 header-top-info">
                     <ul class="header-two-phone header-cont">
-                        <li><a href="tel:18008763765"><i class="fas fa-phone"></i>1-800-8763-765</a></li>
+                        <li><a href="https://wa.me/96552222347" target="_blank"><i class="fas fa-phone"></i>+965 5222 2347</a></li>
                     </ul>
                 </div>
-                <div class="col-3 header-top-info">
+                <div class="col-4 header-top-info">
                     <ul class="header-two-adr header-cont">
-                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Kuwait (Venue: TBD)</a>
+                        <li><a href="{{ url('/contact') }}"><i class="fas fa-map-marker-alt"></i>Kuwait International
+                                Fairgrounds</a>
                         </li>
                     </ul>
                 </div>
