@@ -6,7 +6,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide" style="bottom:240px!important" src="{{ asset('assets/frontend/img/home-2-slide-1.png') }}" alt="FINSPHERE EXPO KUWAIT">
+            <img class="img-slide" style="bottom:240px!important" src="{{ asset('assets/frontend/img/banner/5.png') }}" alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
                 <div class="main-slide-item" style="margin-top: 100px">
@@ -42,9 +42,9 @@
                     </div>
 
 
-                    <div class="slide-tag">
+                    <!-- <div class="slide-tag">
                         #Fintech #Forex  #Financial 
-                    </div>
+                    </div> -->
 
                     <div class="slide-btn-cover">
                         <a href="{{ url('/contact') }}" class="btn btn-yellow">Register Free</a>
@@ -60,7 +60,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-2.png') }}"
+            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/6.png') }}"
                 alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
@@ -76,9 +76,9 @@
                         influencers, and technology providers under one roof.
                     </p>
 
-                    <div class="slide-tag">
+                    <!-- <div class="slide-tag">
                         #Finance #Trading #DigitalAssets
-                    </div>
+                    </div> -->
 
                     <div class="slide-btn-cover">
                         <a href="{{ url('/contact') }}" class="btn btn-yellow">
@@ -97,7 +97,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide" src="{{ asset('assets/frontend/img/home-2-slide-3.png') }}"
+            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/4.png') }}"
                 alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
@@ -113,9 +113,9 @@
                         connect, and empower the global financial community.
                     </p>
 
-                    <div class="slide-tag">
+                    <!-- <div class="slide-tag">
                         #FutureOfFinance #FintechExpo #FinancialExpo
-                    </div>
+                    </div> -->
 
                     <div class="slide-btn-cover">
                         <a href="{{ url('/contact') }}" class="btn btn-yellow">

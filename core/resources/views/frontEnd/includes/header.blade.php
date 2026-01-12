@@ -89,9 +89,9 @@
                                     </li>
 
                                     <!-- News -->
-                                    <li class="{{ Request::is('news') ? 'active' : '' }}">
+                                    <!-- <li class="{{ Request::is('news') ? 'active' : '' }}">
                                         <a href="{{ url('/news') }}">News</a>
-                                    </li>
+                                    </li> -->
                                     <li class="{{ Request::is('contact') ? 'active' : '' }}">
                                         <a href="{{ url('/contact') }}">Contacts</a>
                                     </li>
