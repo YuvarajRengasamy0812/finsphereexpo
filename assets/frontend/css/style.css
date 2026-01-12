@@ -3421,7 +3421,7 @@ footer h6 {
 }
 .upcoming-course-img img {
   display: block;
-  height: 100%;
+  height: 80%;
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;

@@ -19,7 +19,7 @@
                 <a href="{{ url('/profx-media') }}" class="btn btn-yellow">Learn More About PROFX Media</a>
             </div>
             <div class="MP-image">
-                <img src="{{ asset('assets/frontend/img/profx-media.png') }}" alt="PROFX Media">
+                <img src="{{ asset('assets/frontend/img/banner/profx-media.png') }}" alt="PROFX Media">
             </div>
         </div>
     </div>

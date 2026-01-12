@@ -54,9 +54,9 @@
                             </li>
 
                             <!-- Speakers -->
-                            <li class="{{ Request::is('speakers') ? 'active' : '' }}">
+                            <!-- <li class="{{ Request::is('speakers') ? 'active' : '' }}">
                                 <a href="{{ url('/speakers') }}">Speakers</a>
-                            </li>
+                            </li> -->
 
                             <!-- Exhibitors -->
                             <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">

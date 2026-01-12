@@ -25,7 +25,7 @@
             <!-- Left side image -->
             <div class="col-lg-6 mb-4 mb-lg-0" data-aos="zoom-in" data-aos-duration="1200">
                 <div class="why-img overflow-hidden rounded-4 shadow-lg hover-scale">
-                    <img src="{{ asset('assets/frontend/img/exhibit.jpg') }}" alt="Why Exhibit" class="img-fluid w-100 border-radius-custom">
+                    <img src="{{ asset('assets/frontend/img/banner/exhibit.jpg') }}" alt="Why Exhibit" class="img-fluid w-100 border-radius-custom">
                 </div>
             </div>
 

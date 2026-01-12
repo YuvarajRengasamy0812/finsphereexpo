@@ -45,11 +45,11 @@
                 <div class="col-12 col-md-6 overview-img-cover">
                     <div class="overview-img-cover">
                         <div class="overview-img">
-                            <img src="{{ asset('assets/frontend/img/overview-1.jpg') }}" alt="img">
-                            <img src="{{ asset('assets/frontend/img/overview-2.jpg') }}" alt="img">
+                            <img src="{{ asset('assets/frontend/img/banner/overview-1.jpg') }}" alt="img">
+                            <img src="{{ asset('assets/frontend/img/banner/overview-2.jpg') }}" alt="img">
                         </div>
                         <div class="overview-img">
-                            <img src="{{ asset('assets/frontend/img/overview-3.jpg') }}" alt="img">
+                            <img src="{{ asset('assets/frontend/img/banner/overview-3.jpg') }}" alt="img">
                         </div>
                     </div>
                 </div>
@@ -276,7 +276,7 @@
                     </div>
                 </div>
                 <div class="upcoming-course-img">
-                    <img src="{{ asset('assets/frontend/img/curses-1.jpg') }}" alt="img">
+                    <img src="{{ asset('assets/frontend/img/banner/curses-1.jpg') }}" alt="img">
                 </div>
             </div>
         </div>
