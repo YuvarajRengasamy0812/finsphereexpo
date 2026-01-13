@@ -1002,6 +1002,14 @@ header {
 .soc-link li a:hover {
   color: #976737;
 }
+.soc-link li a svg {
+  stroke: #c4c4c4;
+}
+
+.soc-link li a:hover svg {
+  stroke: #976737;
+}
+
 .version-2 .soc-link li a:hover {
   color: #976737;
 }

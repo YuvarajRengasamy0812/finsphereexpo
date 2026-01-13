@@ -22,6 +22,8 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body id="home" class="version-2" style="background-color: #fff;">
@@ -76,6 +78,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
     <script src="{{ asset('assets/frontend/js/slick.min.js ') }}"></script>
     <script src="{{ asset('assets/frontend/js/scripts.js ') }}"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
