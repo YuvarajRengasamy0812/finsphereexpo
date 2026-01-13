@@ -1,9 +1,9 @@
-{{-- Book Visitor Modal --}}
+{{-- Free visitor pass Modal --}}
 <div class="bv-modal-overlay" id="bvModal">
     <div class="bv-modal">
         <span class="bv-close" onclick="bvCloseModal()">&times;</span>
 
-        <h3>Book Visitor</h3>
+        <h3>Free visitor pass</h3>
 
         <form class="bv-form">
             <div class="bv-field">

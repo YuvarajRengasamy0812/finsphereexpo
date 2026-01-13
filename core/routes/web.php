@@ -32,6 +32,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontEnd.pages.home');
 });
+Route::get('/register', function () {
+    return view('frontEnd.pages.register');
+});
+Route::get('/login', function () {
+    return view('frontEnd.pages.login');
+});
+Route::get('/forgot-password', function () {
+    return view('frontEnd.pages.forgot-password');
+});
+Route::get('/reset-password', function () {
+    return view('frontEnd.pages.reset-password');
+});
+Route::get('/profile', function () {
+    return view('frontEnd.pages.profile');
+});
 // Route::get('/home1', function () {
 //     return view('frontEnd.pages.home-1');
 // });

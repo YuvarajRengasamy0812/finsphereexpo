@@ -22,7 +22,7 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
-    
+
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -70,6 +70,7 @@
             document.getElementById('beModal').style.display = 'none';
         }
     </script>
+
 
     {{-- Modal End --}}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

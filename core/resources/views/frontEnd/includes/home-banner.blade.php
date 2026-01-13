@@ -6,7 +6,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide "  src="{{ asset('assets/frontend/img/banner/5.png') }}" alt="FINSPHERE EXPO KUWAIT">
+            <img class="img-slide " src="{{ asset('assets/frontend/img/banner/5.png') }}" alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
                 <div class="main-slide-item" style="margin-top: 100px">
@@ -43,14 +43,15 @@
 
 
                     <!-- <div class="slide-tag">
-                        #Fintech #Forex  #Financial 
+                        #Fintech #Forex  #Financial
                     </div> -->
 
                     <div class="slide-btn-cover">
                         <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
-                            Book Visitor
+                            Free visitor pass
                         </a>
-                        <a href="javascript:void(0)" onclick="beOpenModal()" class="btn btn-border">Become an Exhibitor</a>
+                        <a href="javascript:void(0)" onclick="beOpenModal()" class="btn btn-border">Become an
+                            Exhibitor</a>
                     </div>
                 </div>
 
@@ -62,8 +63,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/6.png') }}"
-                alt="FINSPHERE EXPO KUWAIT">
+            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/6.png') }}" alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
                 <div class="main-slide-item">
@@ -84,7 +84,7 @@
 
                     <div class="slide-btn-cover">
                         <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
-                            Book Visitor
+                            Free visitor pass
                         </a>
                         <a href="{{ url('/expo-summit') }}" class="btn btn-border">
                             Explore Expo & Summit
@@ -99,8 +99,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/4.png') }}"
-                alt="FINSPHERE EXPO KUWAIT">
+            <img class="img-slide" src="{{ asset('assets/frontend/img/banner/4.png') }}" alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
                 <div class="main-slide-item">
@@ -121,7 +120,7 @@
 
                     <div class="slide-btn-cover">
                         <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
-                            Book Visitor
+                            Free visitor pass
                         </a>
                         <a href="javascript:void(0)" class="btn btn-border" onclick="bsOpenModal()">
                             Become a Speaker
