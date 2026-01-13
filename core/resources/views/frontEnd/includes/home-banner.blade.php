@@ -47,8 +47,10 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/contact') }}" class="btn btn-yellow">Register Free</a>
-                        <a href="{{ url('/exhibitors') }}" class="btn btn-border">Become an Exhibitor</a>
+                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                            Book Visitor
+                        </a>
+                        <a href="javascript:void(0)" onclick="beOpenModal()" class="btn btn-border">Become an Exhibitor</a>
                     </div>
                 </div>
 
@@ -71,7 +73,7 @@
                         <span>Where Finance Meets</span> Innovation
                     </h2>
 
-                    <p class="slide-desc">
+                    <p class="slide-desc" style="margin-bottom: 1rem!important">
                         Bringing together traders, investors, institutions, startups,<br>
                         influencers, and technology providers under one roof.
                     </p>
@@ -81,8 +83,8 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/contact') }}" class="btn btn-yellow">
-                            Register Free
+                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                            Book Visitor
                         </a>
                         <a href="{{ url('/expo-summit') }}" class="btn btn-border">
                             Explore Expo & Summit
@@ -108,7 +110,7 @@
                         <span>Join the Future of</span> Finance in Kuwait
                     </h2>
 
-                    <p class="slide-desc">
+                    <p class="slide-desc" style="margin-bottom: 1rem!important">
                         A landmark financial innovation gathering designed to educate,<br>
                         connect, and empower the global financial community.
                     </p>
@@ -118,11 +120,11 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/contact') }}" class="btn btn-yellow">
-                            Register Free
+                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                            Book Visitor
                         </a>
-                        <a href="{{ url('/contact') }}" class="btn btn-border">
-                            Partner With Us
+                        <a href="javascript:void(0)" class="btn btn-border" onclick="bsOpenModal()">
+                            Become a Speaker
                         </a>
                     </div>
                 </div>

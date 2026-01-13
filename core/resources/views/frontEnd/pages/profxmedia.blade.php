@@ -379,11 +379,11 @@
     <!--=================== PAGE-TITLE ===================-->
     <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
         <div class="container">
-            <h1 class="title-line-left">PROFX MEDIA</h1>
+            <h1 class="title-line-left"><b>PROFX Media</b></h1>
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li>PROFX MEDIA</li>
+                    <li><b>PROFX Media</b></li>
                 </ul>
             </div>
         </div>
@@ -408,9 +408,9 @@
                     <div class="pm-divider"></div>
 
                     <p class="pm-description">
-                        ProFX Media is a globally recognized event management and marketing company
+                        <b>PROFX Media</b> is a globally recognized event management and marketing company
                         specializing in <strong>forex, fintech, financial expo</strong> events.
-                        With a strong international presence, ProFX Media delivers high-impact expos,
+                        With a strong international presence, <b>PROFX Media</b> delivers high-impact expos,
                         summits, and award ceremonies across major global markets.
                     </p>
                 </div>
@@ -461,7 +461,7 @@
                     <div class="pm-record-divider"></div>
 
                     <p class="pm-record-text">
-                        ProFX Media proudly holds a <strong>Guinness World Record</strong> for organizing
+                        <b>PROFX Media</b> proudly holds a <strong>Guinness World Record</strong> for organizing
                         the world’s most participated live trading competition - a landmark achievement
                         that reflects unmatched execution excellence, operational scale, and audience
                         engagement.
@@ -507,10 +507,10 @@
                 <span class="pm-role-tag">Official Marketing Partner</span>
                 <h2 class="pm-role-title">
                     Driving Global Visibility for <br>
-                    <span>FINSPHERE EXPO KUWAIT</span>
+                    <span><b>FINSPHERE EXPO KUWAIT</b></span>
                 </h2>
                 <p class="pm-role-subtitle">
-                    As the official marketing partner, ProFX Media orchestrates end-to-end
+                    As the official marketing partner, <b>PROFX Media</b> orchestrates end-to-end
                     global promotion, strategic outreach, and audience growth for FINSPHERE
                     EXPO KUWAIT.
                 </p>

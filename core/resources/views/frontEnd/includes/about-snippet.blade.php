@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 col-md-6 about-info">
                 <h2 class="title-line-left">
-                    Welcome to FINSPHERE EXPO KUWAIT
+                    Welcome to <b>FINSPHERE EXPO KUWAIT</b>
                 </h2>
 
                 <div class="about-slogan-home-two">
@@ -12,7 +12,7 @@
 
                 <div class="about-info-text">
                     <p>
-                        FINSPHERE EXPO KUWAIT marks a historic milestone as a landmark platform
+                        <b>FINSPHERE EXPO KUWAIT</b> marks a historic milestone as a landmark platform
                         connecting the entire financial value chain - from brokers, fintech innovators,
                         crypto projects, and blockchain platforms to traders, investors, educators,
                         and influencers.
@@ -39,7 +39,8 @@
 
             <div class="col-12 col-md-6 about-img">
                 <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
-                    data-src="{{ asset('assets/frontend/img/resources/finshpareabout.png') }}" alt="FINSPHERE EXPO KUWAIT">
+                    data-src="{{ asset('assets/frontend/img/resources/finshpareabout.png') }}"
+                    alt="FINSPHERE EXPO KUWAIT">
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 
         <div class="eh-header">
             <h2>
-                What Makes <span>FINSPHERE EXPO KUWAIT</span> Unique
+                What Makes <span><b>FINSPHERE EXPO KUWAIT</b></span> Unique
             </h2>
         </div>
 

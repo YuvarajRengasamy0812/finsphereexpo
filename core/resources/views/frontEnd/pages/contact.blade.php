@@ -83,7 +83,10 @@
                     <div class="cont-info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <h5>Address</h5>
-                        <p>Kuwait International Fairgrounds</p>
+                        <p>
+                            Kuwait international Fair,
+                            Mubarak Al Abdullah Al Jaber, Block 6, Sixth Ring Road.
+                        </p>
                     </div>
                     <div class="cont-info-item">
                         <i class="fa fa-phone" aria-hidden="true"></i>
@@ -97,7 +100,7 @@
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <h5>Email</h5>
                         <ul class="cont-email">
-                            <li><a href="mailto:info@profxmedia.com">info@profxmedia.com</a></li>
+                            <li><a href="mailto:info@thelinee.com">info@thelinee.com</a></li>
                         </ul>
                     </div>
                 </div>

@@ -180,7 +180,12 @@ body {
 }
 
 .eh-header h2 span {
-  color: #976737;
+  background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* standard version */
+  color: transparent; /* fallback */
+  font-weight: bold;
 }
 
 /* GRID */
@@ -448,7 +453,12 @@ body {
 }
 
 .MP-title span {
-  color: #976737;
+  background: linear-gradient(135deg, #A12B36, #CB404C, #E06670);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* standard version */
+  color: transparent; /* fallback */
+  font-weight: bold;
 }
 
 .MP-description {
@@ -1551,7 +1561,7 @@ input[type="submit"],
   color: #fff !important;
 }
 .btn.btn-yellow:hover {
-  color: #3e615d!important;
+  color: #3e615d !important;
 }
 .btn.btn-yellow:hover:before {
   width: 0;

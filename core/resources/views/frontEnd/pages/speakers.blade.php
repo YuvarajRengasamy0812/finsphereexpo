@@ -22,8 +22,8 @@
     <section class="our-speakers">
         <div class="container">
             <h2 class="title-line">Our Speakers</h2>
-            <p class="slogan">FINSPHERE EXPO KUWAIT features influential speakers from across the global financial 
-ecosystem, including CEOs, founders, analysts, educators, and technology leaders. </p>
+            <p class="slogan"><b>FINSPHERE EXPO KUWAIT</b> features influential speakers from across the global financial
+                ecosystem, including CEOs, founders, analysts, educators, and technology leaders. </p>
             <div class="our-speakers-cover">
                 <div class="speaker-item">
                     <div class="speaker-item-img">

@@ -8,14 +8,14 @@
                 </a>
 
                 <p class="footer-text">
-                    FINSPHERE EXPO KUWAIT is a premier financial innovation platform
+                    <b>FINSPHERE EXPO KUWAIT</b> is a premier financial innovation platform
                     bringing together fintech, forex,financial expo, and trading
                     leaders through a world-class expo and summit experience.
                 </p>
 
                 <ul class="soc-link mt-3">
                     <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a target="_blank" href="#"><i class="fab fa-x"></i></a></li>
                     <li><a target="_blank" href="#"><i class="fab fa-instagram"></i></a></li>
                     <li><a target="_blank" href="https://www.youtube.com"><i class="fab fa-youtube"></i></a></li>
                 </ul>
@@ -31,14 +31,20 @@
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <a href="mailto:info@profxmedia.com">
-                            info@profxmedia.com
+                        <a href="mailto:info@thelinee.com">
+                            info@thelinee.com
                         </a>
                     </li>
                     <li>
                         <i class="fa fa-phone"></i>
                         <a href="https://wa.me/96552222347" target="_blank">
                             +965 5222 2347
+                        </a>
+                    </li>
+                    <li>
+                        <i class="fa fa-phone"></i>
+                        <a href="https://wa.me/96555554293" target="_blank">
+                            +965 5555 4293
                         </a>
                     </li>
                 </ul>
@@ -76,7 +82,7 @@
             <div class="row align-items-center gy-2">
                 <div class="col-12 col-md-6">
                     <div class="copyright">
-                        © FINSPHERE EXPO KUWAIT. All Rights Reserved.
+                        © <b>FINSPHERE EXPO KUWAIT</b>. All Rights Reserved.
                     </div>
                 </div>
 
