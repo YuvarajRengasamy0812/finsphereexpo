@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\GalleryController;
@@ -35,6 +36,8 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('frontEnd.pages.register');
 });
+
+Route::post('/create', [RegisterController::class, 'create'])->name('create');
 Route::get('/login', function () {
     return view('frontEnd.pages.login');
 });
