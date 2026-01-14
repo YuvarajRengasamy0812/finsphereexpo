@@ -47,10 +47,10 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
                             Free visitor pass
                         </a>
-                        <a href="javascript:void(0)" onclick="beOpenModal()" class="btn btn-border">Become an
+                        <a href="{{ url('/exhibitor-booking') }}" class="btn btn-border">Become an
                             Exhibitor</a>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
                             Free visitor pass
                         </a>
                         <a href="{{ url('/expo-summit') }}" class="btn btn-border">
@@ -119,10 +119,10 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="javascript:void(0)" onclick="bvOpenModal()" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
                             Free visitor pass
                         </a>
-                        <a href="javascript:void(0)" class="btn btn-border" onclick="bsOpenModal()">
+                        <a class="btn btn-border" href="{{ url('/speaker-booking') }}">
                             Become a Speaker
                         </a>
                     </div>

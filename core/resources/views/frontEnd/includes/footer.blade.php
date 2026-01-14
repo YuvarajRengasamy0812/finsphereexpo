@@ -14,7 +14,7 @@
                 </p>
 
                 <ul class="soc-link mt-3">
-                    
+
                     <li>
                         <a target="_blank" href="www.instagram.com/finsphereexpo">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
@@ -53,8 +53,8 @@
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
-                        <a href="mailto:info@thelinee.com">
-                            info@thelinee.com
+                        <a href="mailto:info@finsphereexpo.com">
+                            info@finsphereexpo.com
                         </a>
                     </li>
                     <li>
@@ -65,8 +65,11 @@
                     </li>
                     <li>
                         <i class="fa fa-phone"></i>
-                        <a href="https://wa.me/96555554293" target="_blank">
+                        {{-- <a href="https://wa.me/96555554293" target="_blank">
                             +965 5555 4293
+                        </a> --}}
+                        <a href="https://wa.me/+971588845033" target="_blank">
+                            +971 5888 45033
                         </a>
                     </li>
                 </ul>
