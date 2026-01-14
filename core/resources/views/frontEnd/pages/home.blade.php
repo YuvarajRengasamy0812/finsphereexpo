@@ -1,14 +1,14 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'FinSphere Expo Kuwait')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<style>
+{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"> --}}
+{{-- <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script> --}}
+{{-- <style>
     /* Optional custom styles for Toastify */
     .toastify {
         font-weight: bold;
     }
-</style>
+</style> --}}
 @section('content')
 
         {{-- Toastify Alerts --}}
