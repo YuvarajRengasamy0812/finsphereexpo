@@ -117,9 +117,9 @@
         width: 100% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-
+    border: 1px solid #c6c6c6;
         background: #F7F7F7;
-        border: none;
+        /* border: none; */
         border-radius: 25px;
         height: 50px;
         padding: 0 20px;
@@ -269,6 +269,59 @@
     .fk-reg-accept-terms a:hover {
         text-decoration: underline;
     }
+
+.fk-phone-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 0 12px;
+    height: 48px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+
+/* Focus glow */
+.fk-phone-wrapper:focus-within {
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
+}
+
+/* Country code select */
+.fk-phone-wrapper select {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Remove default arrow styling */
+.fk-phone-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Phone input */
+.fk-phone-wrapper input {
+    flex: 1;
+    border: none !important;
+    outline: none !important;
+    padding: 0 8px;
+    font-size: 14px;
+    background: transparent;
+}
+
+/* Placeholder style */
+.fk-phone-wrapper input::placeholder {
+    color: #aaa;
+}
+
+
+
 </style>
 @section('content')
     <div class="fk-reg-wrapper">
@@ -313,27 +366,83 @@
                     <h2 class="fk-reg-title">Register for FinSphere Expo Kuwait 2026</h2>
                     <p class="fk-reg-subtitle">Join FinSphere Expo</p>
 
-                    <form class="fk-reg-form">
+                      @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+                    <form class="fk-reg-form"  method="POST" action="{{ route('sportsRegister') }}">
+      @csrf
                         <div class="fk-reg-row">
-                            <input class="fk-reg-input" placeholder="Full Name">
-                            <input class="fk-reg-input" placeholder="Email">
+                            <input class="fk-reg-input" name="name" placeholder="Full Name">
+                            <input class="fk-reg-input" name="email" placeholder="Email">
                         </div>
 
                         <div class="fk-reg-row">
-                            <input class="fk-reg-input" placeholder="Phone Number" id="phone_number">
-                            <input class="fk-reg-input" placeholder="Nationality" id="nationality">
+                             <select class="fk-reg-input" name="nationalities">
+                                <option value="">Select Country</option>
+                                @foreach($countries as $country)
+                                    <option value="{{ $country['title_en'] }}">
+                                        {{ $country['title_en'] }}
+                                    </option>
+                                @endforeach
+                                
+                            </select>
+ <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
+
+<div class="fk-phone-wrapper">
+    <select id="country_code" name="country_code">
+        <option value="">+Code</option>
+        @foreach($countries as $country)
+            <option value="{{ $country->code }}">
+              {{ $country->code }} {{ $country->tel }}
+            </option>
+        @endforeach
+    </select>
+
+    <input
+        type="text"
+        id="phone_number"
+        name="phone"
+        placeholder="Enter phone "
+        required
+    >
+</div>
+
+
 
                         </div>
 
                         <div class="fk-reg-row">
-                            <input class="fk-reg-input" placeholder="Company Name">
-                            <input class="fk-reg-input" placeholder="Position">
+                            <input class="fk-reg-input" name="company" placeholder="Company Name">
+                            <input class="fk-reg-input" name="designation" placeholder="Position">
                         </div>
 
                         <div class="fk-reg-row">
                             <div class="fk-reg-password">
-                                <input type="password" id="password" class="fk-reg-input" placeholder="Password">
+                                <input type="password" name="password" id="password" class="fk-reg-input" placeholder="Password">
 
                                 <span class="fk-reg-eye" data-target="password">
                                     <i data-lucide="eye"></i>
@@ -342,7 +451,7 @@
                             </div>
 
                             <div class="fk-reg-password">
-                                <input type="password" id="confirm_password" class="fk-reg-input"
+                                <input type="password" name="real_password" id="confirm_password" class="fk-reg-input"
                                     placeholder="Confirm Password">
 
                                 <span class="fk-reg-eye" data-target="confirm_password">
@@ -355,7 +464,7 @@
 
 
                         <div class="fk-reg-row">
-                            <select class="fk-reg-input">
+                            <select class="fk-reg-input" name="type">
                                 <option value="">User Type</option>
                                 <option value="trader">Trader</option>
                                 <option value="visitor">Visitor</option>
@@ -369,7 +478,7 @@
                                 <option value="fund_manager">Fund Manager & Institutional Traders</option>
                             </select>
 
-                            <select class="fk-reg-input">
+                            <select class="fk-reg-input" name="source">
                                 <option value="">Refferal Source</option>
                                 <option value="Facebook">Facebook</option>
                                 <option value="Linkdin">Linkdin</option>
@@ -387,12 +496,12 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <button class="fk-reg-btn">Register</button>
+                            <button  type="submit" class="fk-reg-btn">Register</button>
                         </div>
 
                         <p class="fk-reg-switch">
                             Already have an account?
-                            <a href="{{ url('login') }}">Login</a>
+                            <a href="{{ url('/login') }}">Login</a>
                         </p>
 
                     </form>
@@ -403,6 +512,26 @@
     </div>
 
 @endsection
+<script>
+document.getElementById('country_select').addEventListener('change', function () {
+    let code = this.value;   // +91, +971 etc
+    let phoneInput = document.getElementById('phone_number');
+
+    if(code){
+        phoneInput.value = code + ' ';
+        phoneInput.focus();
+    }
+});
+
+// Allow only numbers after country code
+document.getElementById('phone_number').addEventListener('input', function(){
+    let value = this.value;
+
+    // keep + at start
+    let clean = value.replace(/(?!^\+)[^0-9]/g, '');
+    this.value = clean;
+});
+</script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -430,4 +559,3 @@
         });
     });
 </script>
-

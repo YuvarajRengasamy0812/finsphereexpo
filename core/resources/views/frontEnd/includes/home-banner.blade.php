@@ -1,3 +1,8 @@
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
+
+
 <section class="main-two">
     <div class="main-slider-two">
 
@@ -50,7 +55,7 @@
                         <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
                             Free visitor pass
                         </a>
-                        <a href="{{ url('/exhibitor-booking') }}" class="btn btn-border">Become an
+                        <a href="{{ Auth::check() ? url('/exhibitor-booking') : url('/login') }}" class="btn btn-border">Become an
                             Exhibitor</a>
                     </div>
                 </div>

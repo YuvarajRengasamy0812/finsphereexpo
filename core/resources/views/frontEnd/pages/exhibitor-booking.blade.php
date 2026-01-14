@@ -1,7 +1,14 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'Exhibitors Booking - FinSphere Expo Kuwait')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
 @section('content')
 
     <style>
@@ -134,42 +141,71 @@
                 <!-- Right Form -->
                 <div class="exhibitor-booking-form">
                     <h3 class="exhibitor-title">Become an Exhibitor</h3>
+ {{-- Toastify Alerts --}}
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
-                    <form class="be-form">
-                        <div class="be-field">
-                            <label>Company Name</label>
-                            <input type="text" placeholder="Company name" required>
-                        </div>
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+                    <form class="be-form" method="POST" action="{{ route('exhibitor.request.submit') }}">
+    @csrf
 
-                        <div class="be-field">
-                            <label>Contact Person</label>
-                            <input type="text" placeholder="Full name" required>
-                        </div>
+    <div class="be-field">
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Full name" required>
+    </div>
 
-                        <div class="be-field">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="Email" required>
-                        </div>
+    <div class="be-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Email" required>
+    </div>
 
-                        <div class="be-field">
-                            <label>Phone Number</label>
-                            <input type="tel" placeholder="+965" required>
-                        </div>
+    <div class="be-field">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="+965" required>
+    </div>
 
-                        <div class="be-field">
-                            <label>Industry / Category</label>
-                            <input type="text" placeholder="FinTech, Trading, AI">
-                        </div>
+    <div class="be-field">
+        <label>Company Name</label>
+        <input type="text" name="company" placeholder="Company name" required>
+    </div>
 
-                        <div class="be-field">
-                            <label>Brief Description</label>
-                            <textarea rows="3" placeholder="Tell us about your company"></textarea>
-                        </div>
+    <div class="be-field">
+        <label>Designation</label>
+        <input type="text" name="designation" placeholder="FinTech, Trading, AI">
+    </div>
 
-                        <div class="be-actions">
-                            <button type="submit" class="btn">Submit Request</button>
-                        </div>
-                    </form>
+    <div class="be-field">
+        <label>Brief Description</label>
+        <textarea rows="3" name="description" placeholder="Tell us about your company"></textarea>
+    </div>
+
+    <div class="be-actions">
+        <button type="submit" class="btn">Submit </button>
+    </div>
+</form>
                 </div>
 
             </div>

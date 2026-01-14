@@ -1,3 +1,4 @@
+
 @php
     use Illuminate\Support\Facades\Auth;
 @endphp
@@ -6,25 +7,25 @@
 <style>
     /* ===== Profile Container ===== */
 .header-profile {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 /* ===== Avatar ===== */
 .profile-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    background:
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(to right, #c19a5f, #976737, #6b4a26) border-box;
-    transition: transform 0.3s ease;
+  width: 50px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(to right, #c19a5f, #976737, #6b4a26) border-box;
+  transition: transform 0.3s ease;
 }
 
 .header-profile:hover .profile-avatar {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* ===== Dropdown ===== */
@@ -94,7 +95,6 @@
 .profile-dropdown li button i {
     font-size: 16px;
 }
-
 </style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
@@ -137,28 +137,23 @@
 
                 <!-- Buttons -->
 
-                @if (Auth::check())
-                    <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
-                        <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free
-                            visitor pass</a>
-                        <a style="padding: 0 5px;" class="btn" href="{{ url('/speaker-booking') }}">Become a
-                            speaker</a>
+        <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
 
-                        <!-- Header Profile -->
-                        <!-- Header Profile -->
-<div class="header-profile">
-    <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
-    <ul class="profile-dropdown">
-        <!-- Profile Link -->
-        <li>
-            <a href="{{ url('/profile') }}">
-                <i class="fas fa-user"></i>
-                Profile
-            </a>
-        </li>
+    {{-- Always visible button --}}
+    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free visitor pass</a>
 
-        <!-- Logout Link -->
-        <li>
+    {{-- Become a speaker button changes route depending on login --}}
+    <a style="padding: 0 5px;" class="btn" href="{{ Auth::check() ? url('/speaker-booking') : url('/login') }}">
+        Become a speaker
+    </a>
+
+    @if(Auth::check())
+        {{-- Logged in: show profile dropdown --}}
+        <div class="header-profile">
+            <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
+            <ul class="profile-dropdown">
+                <li><a href="{{ url('/profile') }}">Profile</a></li>
+              <li>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit">
@@ -167,17 +162,21 @@
                 </button>
             </form>
         </li>
-    </ul>
+            </ul>
+        </div>
+    @else
+        {{-- Not logged in: show login/register links --}}
+        <a style="padding: 0 5px;" href="{{ url('/login') }}" class="btn">Login</a>
+       
+    @endif
+
 </div>
 
-                    @else
-                        {{-- Show login button only if not logged in --}}
-                        <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
-                @endif
-            </div>
 
+                </div>
+
+            </div>
         </div>
-    </div>
 
     </div>
     <div class="header-menu header-menu-two">
@@ -250,14 +249,12 @@
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)"
-                                    class="mob-btn-1 mb-2" onclick="bvOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-1 mb-2" onclick="bvOpenModal()">
                                     Free visitor pass
                                 </a>
                             </li>
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2"
-                                    onclick="bsOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2" onclick="bsOpenModal()">
                                     Become a speaker
                                 </a>
                             </li>

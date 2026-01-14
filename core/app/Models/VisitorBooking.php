@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class VisitorBooking extends Model
+{
+    use HasFactory;
+ protected $table = 'visitor_bookings';
+    protected $fillable = [
+        'name',
+        'email',
+        'company',
+        'designation',
+        'country',
+        'phone'
+    ];
+}
