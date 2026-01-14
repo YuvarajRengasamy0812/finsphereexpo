@@ -243,6 +243,9 @@
         <div class="fkp-tabs">
             <div class="fkp-tab active" data-tab="profile">My Profile</div>
             <div class="fkp-tab" data-tab="booths">Booths</div>
+            <div class="fkp-tab" data-tab="speakers">Speakers</div>
+            <div class="fkp-tab" data-tab="exhibitors">Exhibitors</div>
+            <div class="fkp-tab" data-tab="visitor-pass">Visitor Pass</div>
         </div>
 
         <!-- Profile Content -->
@@ -296,6 +299,27 @@
             <div class="fkp-card">
                 <h2 class="fkp-card-title">My Booths</h2>
                 <p>No booths added yet.</p>
+            </div>
+        </div>
+        <!-- Speakers Content -->
+        <div class="fkp-tab-content" id="speakers">
+            <div class="fkp-card">
+                <h2 class="fkp-card-title">Speaker</h2>
+                <p>you have not added any speakers.</p>
+            </div>
+        </div>
+        <!-- Exhibitors Content -->
+        <div class="fkp-tab-content" id="exhibitors">
+            <div class="fkp-card">
+                <h2 class="fkp-card-title">Exhibitor</h2>
+                <p>you have not added any exhibitors.</p>
+            </div>
+        </div>
+        <!-- Visitor Pass Content -->
+        <div class="fkp-tab-content" id="visitor-pass">
+            <div class="fkp-card">
+                <h2 class="fkp-card-title">Visitor Pass</h2>
+                <p>you have not booked any visitor pass.</p>
             </div>
         </div>
     </div>
