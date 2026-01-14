@@ -270,28 +270,57 @@
         text-decoration: underline;
     }
 
-    .fk-phone-wrapper{
-    display:flex;
-    border:1px solid #ddd;
-    border-radius: 20px;
-    overflow:hidden;
-    background:#fff;
+.fk-phone-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 0 12px;
+    height: 48px;
+    background: #fff;
+    transition: 0.3s ease;
 }
 
-.fk-phone-wrapper select{
-    border:none;
-    padding:12px;
-    background:#f5f5f5;
-    font-weight:600;
-    outline:none;
+/* Focus glow */
+.fk-phone-wrapper:focus-within {
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
 }
 
-.fk-phone-wrapper input{
-  
-    padding:12px;
-    width:100%;
-    outline:none;
+/* Country code select */
+.fk-phone-wrapper select {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    padding-right: 10px;
+    cursor: pointer;
+    color: #333;
 }
+
+/* Remove default arrow styling */
+.fk-phone-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Phone input */
+.fk-phone-wrapper input {
+    flex: 1;
+    border: none !important;
+    outline: none !important;
+    padding: 0 8px;
+    font-size: 14px;
+    background: transparent;
+}
+
+/* Placeholder style */
+.fk-phone-wrapper input::placeholder {
+    color: #aaa;
+}
+
+
 
 </style>
 @section('content')
@@ -383,26 +412,25 @@
                             </select>
  <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
 
- <div class="fk-phone-wrapper">
-    
+<div class="fk-phone-wrapper">
     <select id="country_code" name="country_code">
-        <option value="">Code</option>
-                              @foreach($countries as $country)
-    <option value="{{ $country['code'] . $country['tel'] }}">
-        {{ $country['code'] }} {{ $country['tel'] }}
-    </option>
-@endforeach
+        <option value="">+Code</option>
+        @foreach($countries as $country)
+            <option value="{{ $country->code }}">
+              {{ $country->code }} {{ $country->tel }}
+            </option>
+        @endforeach
     </select>
 
-    <input 
+    <input
         type="text"
         id="phone_number"
         name="phone"
-        placeholder="Enter phone number"
+        placeholder="Enter phone "
         required
     >
-
 </div>
+
 
 
                         </div>
