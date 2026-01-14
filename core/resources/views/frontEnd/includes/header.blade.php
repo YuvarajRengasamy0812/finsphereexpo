@@ -1,132 +1,3 @@
-<style>
-    /* ===== Common Overlay ===== */
-    .bv-modal-overlay,
-    .bs-modal-overlay,
-    .be-modal-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.7);
-        display: none;
-        align-items: center;
-        justify-content: center;
-        z-index: 1050;
-    }
-
-    /* ===== Base Modal ===== */
-    .bv-modal,
-    .bs-modal,
-    .be-modal {
-        background: #fff;
-        padding: 30px;
-        width: 90%;
-        max-width: 420px;
-        border-radius: 8px;
-        position: relative;
-        max-height: 85vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* ===== Modal Accent ===== */
-    .bv-modal,
-    .bs-modal,
-    .be-modal {
-        border-top: 5px solid #976737;
-    }
-
-    /* ===== Headings ===== */
-    .bv-modal h3,
-    .bs-modal h3,
-    .be-modal h3 {
-        background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-        font-weight: bold;
-    }
-
-    /* ===== Close Buttons ===== */
-    .bv-close,
-    .bs-close,
-    .be-close {
-        position: absolute;
-        top: 12px;
-        right: 14px;
-        font-size: 22px;
-        cursor: pointer;
-        color: #976737;
-    }
-
-    /* ===== Forms ===== */
-    .bv-form,
-    .bs-form,
-    .be-form {
-        margin-top: 20px;
-        overflow-y: auto;
-        padding-right: 6px;
-    }
-
-    .bv-field,
-    .bs-field,
-    .be-field {
-        margin-bottom: 15px;
-    }
-
-    .bv-field label,
-    .bs-field label,
-    .be-field label {
-        display: block;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 6px;
-        color: #3E615D;
-    }
-
-    .bv-field input,
-    .bs-field input,
-    .be-field input,
-    .bs-field textarea,
-    .be-field textarea {
-        width: 100%;
-        padding: 10px 12px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 14px;
-    }
-
-    /* Accessible focus */
-    .bv-field input:focus,
-    .bs-field input:focus,
-    .be-field input:focus,
-    .bs-field textarea:focus,
-    .be-field textarea:focus {
-        border-color: #976737;
-        box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25);
-    }
-
-    /* ===== Actions ===== */
-    .bv-actions,
-    .bs-actions,
-    .be-actions {
-        margin-top: 20px;
-        text-align: right;
-    }
-
-    /* ===== Scrollbar (optional) ===== */
-    .bv-form::-webkit-scrollbar,
-    .bs-form::-webkit-scrollbar,
-    .be-form::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    .bv-form::-webkit-scrollbar-thumb,
-    .bs-form::-webkit-scrollbar-thumb,
-    .be-form::-webkit-scrollbar-thumb {
-        background: #976737;
-        border-radius: 4px;
-    }
-</style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
         <span></span>
@@ -168,9 +39,9 @@
 
                 <!-- Buttons -->
                 <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
-                    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn-gold" onclick="bvOpenModal()">Free
+                    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free
                         visitor pass</a>
-                    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn" onclick="bsOpenModal()">Become a
+                    <a style="padding: 0 5px;" class="btn" href="{{ url('/speaker-booking') }}">Become a
                         speaker</a>
                     <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
                 </div>
@@ -249,12 +120,14 @@
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-1 mb-2" onclick="bvOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" class="mob-btn-1 mb-2"
+                                    href="{{ url('/visitor-booking') }}">
                                     Free visitor pass
                                 </a>
                             </li>
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2" onclick="bsOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" class="mob-btn-2"
+                                    href="{{ url('/speaker-booking') }}">
                                     Become a speaker
                                 </a>
                             </li>

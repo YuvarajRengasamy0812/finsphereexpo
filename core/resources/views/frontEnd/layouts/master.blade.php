@@ -39,40 +39,9 @@
     </a>
     <!--=================== TO TOP END ===================-->
 
-    @include('frontEnd.includes.bookvisitormodal')
-    @include('frontEnd.includes.bookspeakermodal')
-    @include('frontEnd.includes.becomeexhibitormodal')
 
     <!--===================== SCRIPT	=====================-->
-    {{-- Modal Start --}}
-    <script>
-        function bvOpenModal() {
-            document.getElementById('bvModal').style.display = 'flex';
-        }
 
-        function bvCloseModal() {
-            document.getElementById('bvModal').style.display = 'none';
-        }
-
-        function bsOpenModal() {
-            document.getElementById('bsModal').style.display = 'flex';
-        }
-
-        function bsCloseModal() {
-            document.getElementById('bsModal').style.display = 'none';
-        }
-
-        function beOpenModal() {
-            document.getElementById('beModal').style.display = 'flex';
-        }
-
-        function beCloseModal() {
-            document.getElementById('beModal').style.display = 'none';
-        }
-    </script>
-
-
-    {{-- Modal End --}}
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

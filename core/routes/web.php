@@ -47,6 +47,15 @@ Route::get('/reset-password', function () {
 Route::get('/profile', function () {
     return view('frontEnd.pages.profile');
 });
+Route::get('/visitor-booking', function () {
+    return view('frontEnd.pages.visitor-booking');
+});
+Route::get('/speaker-booking', function () {
+    return view('frontEnd.pages.speaker-booking');
+});
+Route::get('/exhibitor-booking', function () {
+    return view('frontEnd.pages.exhibitor-booking');
+});
 // Route::get('/home1', function () {
 //     return view('frontEnd.pages.home-1');
 // });
