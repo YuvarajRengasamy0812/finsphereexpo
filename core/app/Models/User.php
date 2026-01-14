@@ -18,9 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'userid',
         'name',
+		'lastname',
         'email',
         'password',
+        'real_password',
         'photo',
         'permissions_id',
         'status',
@@ -29,7 +32,25 @@ class User extends Authenticatable
         'connect_password',
         'provider_id',
         'provider',
-        'access_token'
+        'access_token',
+    	'referred_by',
+    	'registration_mode',
+    	'wallet_amount',
+    	'nationalities',
+    	'user_type',
+    	 'phone',
+         'role',
+         'designation',
+         'company',
+        'country_code',
+        'email_verified_at',
+        'payment_status',
+        'certificate_path',
+        'kyc_document_type',
+        'kyc_status',
+        'kyc_document_path',
+        'profile_image',
+        'resendemail_date'
     ];
 
     /**

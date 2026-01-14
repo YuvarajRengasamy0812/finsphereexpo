@@ -1,11 +1,13 @@
 <?php
-
+use App\Http\Controllers\Frontend\AuthController;
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ClientAuthController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteMapController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 /*
@@ -32,12 +34,42 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontEnd.pages.home');
 });
-Route::get('/register', function () {
-    return view('frontEnd.pages.register');
-});
-Route::get('/login', function () {
-    return view('frontEnd.pages.login');
-});
+// Route::get('/register', function () {
+//     return view('frontEnd.pages.register');
+// });
+
+Route::get('/login', [AuthController::class, 'customer'])->name('customer');
+Route::get('/register', [AuthController::class, 'customerdashboard'])->name('customerdashboard');
+Route::post('/sportsRegister', [AuthController::class, 'sportsRegister'])->name('sportsRegister');
+Route::post('/customerlogin', [AuthController::class, 'customerlogin'])->name('customerlogin');
+Route::post('/logout', [AuthController::class, 'logoutcustomer'])->name('logoutcustomer');
+// Route::get('/clientregister', fn()=>view('frontEnd.pages.register'));
+// Route::get('/clientlogin', fn()=>view('frontEnd.pages.login'));
+
+// // Register & Login
+// Route::post('/clientregister', [ClientAuthController::class,'clientregister'])->name('clientregister');
+// Route::post('/clientlogin', [ClientAuthController::class,'clientlogin'])->name('clientlogin');
+
+// // Email verify notice
+// Route::get('/verify-email', function () {
+//     return view('frontEnd.pages.verify');
+// })->name('verify.notice');
+
+// // Verify link from email
+// Route::get('/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//     $request->fulfill();
+//     return redirect('/clientlogin')->with('verified','Email verified. Please login');
+// })->middleware(['signed'])->name('verification.verify');
+
+// // Dashboard
+// Route::get('/client/dashboard', function(){
+//     return view('frontEnd.pages.home');
+// })->middleware(['auth:client','verified'])->name('frontEnd.pages.home');
+
+
+// Route::get('/login', function () {
+//     return view('frontEnd.pages.login');
+// });
 Route::get('/forgot-password', function () {
     return view('frontEnd.pages.forgot-password');
 });
