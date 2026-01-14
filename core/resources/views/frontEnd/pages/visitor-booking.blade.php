@@ -149,10 +149,10 @@
                             <input type="tel" placeholder="+965" required>
                         </div>
 
-                        <div class="bv-field">
+                        {{-- <div class="bv-field">
                             <label>Visit Date</label>
                             <input type="date" required>
-                        </div>
+                        </div> --}}
 
                         <div class="bv-actions">
                             <button type="submit" class="btn">Submit</button>

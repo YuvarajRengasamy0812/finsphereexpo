@@ -92,15 +92,16 @@
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <h5>Phones</h5>
                         <ul class="cont-phone">
-                            <li><a href="https://wa.me/96555554293" target="_blank">+965 5555 4293</a></li>
                             <li><a href="https://wa.me/96552222347" target="_blank">+965 5222 2347</a></li>
+                            {{-- <li><a href="https://wa.me/96555554293" target="_blank">+965 5555 4293</a></li> --}}
+                            <li><a href="https://wa.me/+971588845033" target="_blank">+971 588845033</a></li>
                         </ul>
                     </div>
                     <div class="cont-info-item">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <h5>Email</h5>
                         <ul class="cont-email">
-                            <li><a href="mailto:info@thelinee.com">info@thelinee.com</a></li>
+                            <li><a href="mailto:info@finsphereexpo.com">info@finsphereexpo.com</a></li>
                         </ul>
                     </div>
                 </div>
