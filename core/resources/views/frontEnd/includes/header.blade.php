@@ -2,7 +2,34 @@
     use Illuminate\Support\Facades\Auth;
 @endphp
 
+        {{-- Toastify Alerts --}}
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
 <style>
     /* ===== Common Overlay ===== */
