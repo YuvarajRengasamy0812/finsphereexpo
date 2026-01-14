@@ -388,7 +388,7 @@
     <select id="country_code" name="country_code">
         <option value="">Code</option>
                               @foreach($countries as $country)
-    <option value="{{{{ $country['code'] . $country['tel'] }}}}">
+    <option value="{{ $country['code'] . $country['tel'] }}">
         {{ $country['code'] }} {{ $country['tel'] }}
     </option>
 @endforeach
