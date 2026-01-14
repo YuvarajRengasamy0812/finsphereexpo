@@ -42,7 +42,7 @@ Route::get('/login', [AuthController::class, 'customer'])->name('customer');
 Route::get('/register', [AuthController::class, 'customerdashboard'])->name('customerdashboard');
 Route::post('/sportsRegister', [AuthController::class, 'sportsRegister'])->name('sportsRegister');
 Route::post('/customerlogin', [AuthController::class, 'customerlogin'])->name('customerlogin');
-Route::post('/logout', [AuthController::class, 'logoutcustomer'])->name('logoutcustomer');
+Route::post('/logoutcustomer', [AuthController::class, 'logoutcustomer'])->name('logoutcustomer');
 // Route::get('/clientregister', fn()=>view('frontEnd.pages.register'));
 // Route::get('/clientlogin', fn()=>view('frontEnd.pages.login'));
 

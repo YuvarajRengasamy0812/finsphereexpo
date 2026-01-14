@@ -1,3 +1,9 @@
+
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
+
+
 <style>
     /* ===== Profile Container ===== */
 .header-profile {
@@ -110,21 +116,33 @@
                 </div>
 
                 <!-- Buttons -->
+
+                 @if(Auth::check())
                 <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
                     <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free
                         visitor pass</a>
                     <a style="padding: 0 5px;" class="btn" href="{{ url('/speaker-booking') }}">Become a
                         speaker</a>
-                    <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
+                   
                     <!-- Header Profile -->
                     <div class="header-profile">
                         <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
                         <ul class="profile-dropdown">
                             <li><a href="{{ url('/profile') }}">Profile</a></li>
-                            <li><a href="{{ url('#') }}">Logout</a></li>
+                            <!-- <li><a href="{{ url('#') }}">Logout</a></li> -->
+                              <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button  type="submit">Logout</button>
+                    </form>
+                </li>
                         </ul>
                     </div>
 
+                     @else
+        {{-- Show login button only if not logged in --}}
+        <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
+    @endif
                 </div>
 
             </div>
@@ -201,14 +219,12 @@
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" class="mob-btn-1 mb-2"
-                                    href="{{ url('/visitor-booking') }}">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-1 mb-2" onclick="bvOpenModal()">
                                     Free visitor pass
                                 </a>
                             </li>
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" class="mob-btn-2"
-                                    href="{{ url('/speaker-booking') }}">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2" onclick="bsOpenModal()">
                                     Become a speaker
                                 </a>
                             </li>
