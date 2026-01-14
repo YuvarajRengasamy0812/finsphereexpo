@@ -10,88 +10,424 @@
     .toastify {
         font-weight: bold;
     }
+
+    /* ===== Wrapper ===== */
+    .fk-reg-wrapper {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #3E615D, #976737);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .fk-reg-container {
+        width: 100%;
+        max-width: 1100px;
+    }
+
+    /* ===== Grid ===== */
+    .fk-reg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    /* ===== Cards ===== */
+    .fk-reg-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ===== Contact Card ===== */
+    .fk-reg-contact {
+        justify-content: space-between;
+    }
+
+    .fk-reg-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #976737;
+        margin-bottom: 15px;
+    }
+
+    .fk-reg-item {
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .fk-reg-item i {
+        color: #976737;
+        margin-right: 10px;
+    }
+
+    /* ===== Map ===== */
+    .fk-reg-map {
+        margin-top: 15px;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .fk-reg-map iframe {
+        width: 100%;
+        height: 200px;
+        border: none;
+    }
+
+    /* ===== Right Form ===== */
+    .fk-reg-title {
+        font-size: 22px;
+        font-weight: 800;
+        background: linear-gradient(to right, #976737, #3E615D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .fk-reg-subtitle {
+        text-align: center;
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    /* ===== Form ===== */
+    .fk-reg-form {
+        flex-grow: 1;
+    }
+
+    /* 🔒 GRID HARDENING (prevents width jump) */
+    .fk-reg-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* ===== Inputs (BASE) ===== */
+    .fk-reg-input {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        background: #F7F7F7;
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+
+        display: block;
+        box-sizing: border-box !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* 🔒 LOCK password & text to identical UI */
+    .fk-reg-input[type="password"],
+    .fk-reg-input[type="text"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        background: #F7F7F7;
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+
+        display: block;
+        box-sizing: border-box !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* Focus */
+    .fk-reg-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25);
+    }
+
+    /* 🔒 PASSWORD WRAPPER FIX */
+    .fk-reg-password {
+        position: relative;
+        width: 100%;
+        flex: 1 1 0%;
+        min-width: 0;
+        /* CRITICAL */
+    }
+
+    /* Eye icon */
+    .fk-reg-eye {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #777;
+        z-index: 5;
+    }
+
+    .fk-reg-eye svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* ===== Button ===== */
+    .fk-reg-btn {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient(135deg, #976737, #3E615D);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .fk-reg-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ===== Switch ===== */
+    .fk-reg-switch {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+    }
+
+    .fk-reg-switch a {
+        color: #976737;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+        .fk-reg-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .fk-reg-accept-terms {
+        color: #976737;
+        font-size: 13px;
+        font-weight: 400;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        user-select: none;
+    }
+
+    /* Normalize checkbox UI across browsers */
+    .fk-reg-accept-terms input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        margin: 0;
+
+        accent-color: #976737;
+        /* modern browsers */
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+    /* Optional hover effect */
+    .fk-reg-accept-terms:hover {
+        opacity: 0.9;
+    }
+
+    /* Link inside terms text (if any) */
+    .fk-reg-accept-terms a {
+        color: #976737;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .fk-reg-accept-terms a:hover {
+        text-decoration: underline;
+    }
 </style>
 @section('content')
-<div class="fk-auth-wrapper min-h-screen flex items-center justify-center bg-gray-100 p-6">
-    <div class="fk-auth-card bg-white rounded-3xl shadow-2xl p-10 w-full max-w-md">
-        <h2 class="fk-auth-title text-3xl font-black mb-2">Create Account</h2>
-        <p class="fk-auth-subtitle text-gray-500 mb-6">Join FinSphere Expo</p>
- <!-- Toastify Alerts -->
-        @if (session('success'))
-            <script>
-                Toastify({
-                    text: "{{ session('success') }}",
-                    duration: 3000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#4CAF50",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
+    <div class="fk-reg-wrapper">
+        <div class="fk-reg-container">
 
-        @if ($errors->any())
-            <script>
-                Toastify({
-                    text: "{{ $errors->first() }}",
-                    duration: 4000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#f44336",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
+            <div class="fk-reg-grid">
+
+                {{-- LEFT CARD --}}
+                <div class="fk-reg-card fk-reg-contact">
+                    <h4 class="fk-reg-card-title">CONTACT INFO:</h4>
+
+                    <p class="fk-reg-item">
+                        <i data-lucide="pin" class="w-4 h-4"></i>
+                        Kuwait International Fair,<br>
+                        Mubarak Al Abdullah Al Jaber, Block 6
+                    </p>
+
+                    <p class="fk-reg-item">
+                        <i data-lucide="mail" class="w-4 h-4"></i> <a
+                            href="mailto:info@finsphereexpo.com">info@finsphereexpo.com</a>
+                    </p>
+
+                    <p class="fk-reg-item">
+                        <i data-lucide="phone"></i> <a href="https://wa.me/96552222347" target="_blank">+965 5222 2347</a>
+                    </p>
+
+                    <p class="fk-reg-item">
+                        <i data-lucide="phone"></i> <a href="https://wa.me/+971588845033" target="_blank">+971 588845033</a>
+                    </p>
 
 
+                    <div class="fk-reg-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.61839005281!2d48.04374752498063!3d29.269360204878335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9f71cb7149ff%3A0x82a12e9f4958c2e8!2sKuwait%20International%20Fairground!5e1!3m2!1sen!2sae!4v1767853127479!5m2!1sen!2sae"
+                            loading="lazy" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
 
-        <form class="fk-auth-form space-y-4" method="POST" action="{{ route('sportsRegister') }}">
-            @csrf
+                {{-- RIGHT CARD --}}
+                <div class="fk-reg-card">
+                    <h2 class="fk-reg-title">Register for FinSphere Expo Kuwait 2026</h2>
+                    <p class="fk-reg-subtitle">Join FinSphere Expo</p>
 
-            <input type="text" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" name="name" placeholder="Full name" required>
+                    <form class="fk-reg-form">
 
-            <input type="email" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" name="email" placeholder="Email address" required>
+                        <div class="fk-reg-row">
+                            <input class="fk-reg-input" placeholder="Full Name">
+                            <input class="fk-reg-input" placeholder="Email">
+                        </div>
 
-            <input type="tel" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" name="phone" placeholder="Phone number" required>
+                        <div class="fk-reg-row">
+                            <input class="fk-reg-input" placeholder="Phone Number" id="phone_number">
+                            <input class="fk-reg-input" placeholder="Nationality" id="nationality">
 
-            <input type="text" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" name="nationalities" placeholder="Location" required>
+                        </div>
 
-            <div class="fk-input-wrapper relative">
-                <input type="password" id="password" name="password" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" placeholder="Password" required>
-                <i class="fa fa-eye fk-eye-toggle absolute right-3 top-3 cursor-pointer text-gray-400" data-target="password"></i>
+                        <div class="fk-reg-row">
+                            <input class="fk-reg-input" placeholder="Company Name">
+                            <input class="fk-reg-input" placeholder="Position">
+                        </div>
+
+                        <div class="fk-reg-row">
+                            <div class="fk-reg-password">
+                                <input type="password" id="password" class="fk-reg-input" placeholder="Password">
+
+                                <span class="fk-reg-eye" data-target="password">
+                                    <i data-lucide="eye"></i>
+                                    <i data-lucide="eye-off" class="hidden"></i>
+                                </span>
+                            </div>
+
+                            <div class="fk-reg-password">
+                                <input type="password" id="confirm_password" class="fk-reg-input"
+                                    placeholder="Confirm Password">
+
+                                <span class="fk-reg-eye" data-target="confirm_password">
+                                    <i data-lucide="eye"></i>
+                                    <i data-lucide="eye-off" class="hidden"></i>
+                                </span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="fk-reg-row">
+                            <select class="fk-reg-input">
+                                <option value="">User Type</option>
+                                <option value="trader">Trader</option>
+                                <option value="visitor">Visitor</option>
+                                <option value="investor">Investor</option>
+                                <option value="ib">IB</option>
+                                <option value="liquidity_provider">Liquidity Provider</option>
+                                <option value="influencer">Influencer</option>
+                                <option value="media_companies">Media Companies</option>
+                                <option value="technology_provider">Technology Provider</option>
+                                <option value="payment_solution">Payment Solution</option>
+                                <option value="fund_manager">Fund Manager & Institutional Traders</option>
+                            </select>
+
+                            <select class="fk-reg-input">
+                                <option value="">Refferal Source</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Linkdin">Linkdin</option>
+                                <option value="Instgram">Instgram</option>
+                                <option value="GoogleSearch">Google Search</option>
+                                <option value="News">News</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="fk-reg-accept-terms">
+                            <input type="checkbox">
+                            <p>Accept <a href="#">Terms & Conditions</a></p>
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+
+                            <button class="fk-reg-btn">Register</button>
+                        </div>
+
+                        <p class="fk-reg-switch">
+                            Already have an account?
+                            <a href="{{ url('login') }}">Login</a>
+                        </p>
+
+                    </form>
+                </div>
+
             </div>
-
-            <div class="fk-input-wrapper relative">
-                <input type="password" id="confirm-password" name="real_password" class="fk-input w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-400" placeholder="Confirm password" required>
-                <i class="fa fa-eye fk-eye-toggle absolute right-3 top-3 cursor-pointer text-gray-400" data-target="confirm-password"></i>
-            </div>
-
-            <button type="submit" class="fk-btn-primary w-full bg-orange-500 text-white font-black py-3 rounded-xl hover:bg-orange-600 transition">Register</button>
-        </form>
-
-        <p class="fk-switch text-center mt-6 text-gray-500 text-sm">
-            Already have an account?
-            <a href="{{ url('/login') }}" class="text-orange-500 font-bold hover:underline">Sign in</a>
-        </p>
+        </div>
     </div>
-</div>
+
 @endsection
 
-@section('scripts')
 <script>
-document.addEventListener('click', function(e) {
-    const icon = e.target.closest('.fk-eye-toggle');
-    if (!icon) return;
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
 
-    const input = document.getElementById(icon.dataset.target);
-    const isPassword = input.type === 'password';
+        document.addEventListener('click', function(e) {
+            const eyeWrapper = e.target.closest('.fk-reg-eye');
+            if (!eyeWrapper) return;
 
-    input.type = isPassword ? 'text' : 'password';
+            const input = document.getElementById(eyeWrapper.dataset.target);
+            if (!input) return;
 
-    icon.classList.toggle('fa-eye', !isPassword);
-    icon.classList.toggle('fa-eye-slash', isPassword);
-});
+            const eye = eyeWrapper.querySelector('[data-lucide="eye"]');
+            const eyeOff = eyeWrapper.querySelector('[data-lucide="eye-off"]');
+
+            if (input.type === 'password') {
+                input.type = 'text';
+                eye.classList.add('hidden');
+                eyeOff.classList.remove('hidden');
+            } else {
+                input.type = 'password';
+                eyeOff.classList.add('hidden');
+                eye.classList.remove('hidden');
+            }
+        });
+    });
 </script>
-@endsection
+
