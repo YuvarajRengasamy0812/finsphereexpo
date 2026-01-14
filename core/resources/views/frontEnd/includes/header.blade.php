@@ -1,3 +1,75 @@
+<style>
+    /* ===== Profile Container ===== */
+.header-profile {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* ===== Avatar ===== */
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(to right, #c19a5f, #976737, #6b4a26) border-box;
+  transition: transform 0.3s ease;
+}
+
+.header-profile:hover .profile-avatar {
+  transform: scale(1.1);
+}
+
+/* ===== Dropdown ===== */
+.profile-dropdown {
+  position: absolute;
+  top: 57px; /* below avatar */
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  padding: 10px 0;
+  list-style: none;
+  min-width: 140px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* Show dropdown on hover */
+.header-profile:hover .profile-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown items */
+.profile-dropdown li {
+  padding: 10px 20px;
+  transition: background 0.2s;
+}
+
+.profile-dropdown li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+}
+
+/* Hover effect for items */
+.profile-dropdown li:hover {
+  background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
+}
+
+.profile-dropdown li:hover a {
+  color: #fff;
+}
+
+</style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
         <span></span>
@@ -44,6 +116,15 @@
                     <a style="padding: 0 5px;" class="btn" href="{{ url('/speaker-booking') }}">Become a
                         speaker</a>
                     <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
+                    <!-- Header Profile -->
+                    <div class="header-profile">
+                        <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
+                        <ul class="profile-dropdown">
+                            <li><a href="{{ url('/profile') }}">Profile</a></li>
+                            <li><a href="{{ url('#') }}">Logout</a></li>
+                        </ul>
+                    </div>
+
                 </div>
 
             </div>
@@ -114,9 +195,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="{{ Request::is('login') ? 'active' : '' }}">
+                            {{-- <li class="{{ Request::is('login') ? 'active' : '' }}">
                                 <a href="{{ url('/login') }}">Login</a>
-                            </li>
+                            </li> --}}
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
