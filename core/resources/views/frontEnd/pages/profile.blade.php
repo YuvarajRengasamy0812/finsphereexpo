@@ -1,9 +1,44 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'Profile - FinSphere Expo Kuwait')
+<!-- Include Toastify CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
+<style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
 @section('content')
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
     <style>
         /* ===== Wrapper ===== */
         .fkp-profile-wrapper {
@@ -189,6 +224,7 @@
             }
         }
     </style>
+
 
     <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
         <div class="container">

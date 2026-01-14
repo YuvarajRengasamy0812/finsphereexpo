@@ -1,3 +1,9 @@
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
+
+
+
 <style>
     /* ===== Common Overlay ===== */
     .bv-modal-overlay,
@@ -167,13 +173,35 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
-                    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn-gold" onclick="bvOpenModal()">Free
-                        visitor pass</a>
-                    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn" onclick="bsOpenModal()">Become a
-                        speaker</a>
-                    <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
-                </div>
+<div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
+
+    {{-- Free visitor pass button --}}
+    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn-gold" onclick="bvOpenModal()">Free visitor pass</a>
+
+    {{-- Become a speaker button (always visible) --}}
+    <a style="padding: 0 5px;" href="javascript:void(0)" class="btn" onclick="bsOpenModal()">Become a speaker</a>
+
+    {{-- Check if user is logged in --}}
+    @if(Auth::check())
+        {{-- Show profile dropdown if logged in --}}
+        <div class="dropdown">
+       
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                <li><a class="dropdown-item" href="{{ url('/profile') }}">Profile</a></li>
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="dropdown-item" type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    @else
+        {{-- Show login button only if not logged in --}}
+        <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
+    @endif
+
+</div>
 
             </div>
         </div>
