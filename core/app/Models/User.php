@@ -40,6 +40,8 @@ class User extends Authenticatable
     	'user_type',
     	 'phone',
          'role',
+         'type',
+         'source',
          'designation',
          'company',
         'country_code',

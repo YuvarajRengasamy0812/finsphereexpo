@@ -1,7 +1,14 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'Visitor Booking - FinSphere Expo Kuwait')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
 @section('content')
 
     <style>
@@ -133,20 +140,61 @@
                 <div class="visitor-booking-form">
                     <h3 class="visitor-title">Free Visitor Pass</h3>
 
-                    <form class="bv-form">
+        {{-- Toastify Alerts --}}
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+            
+                        <form class="bv-form" method="POST" action="{{ route('visitor.booking.submit') }}">
+    @csrf
                         <div class="bv-field">
                             <label>Full Name</label>
-                            <input type="text" placeholder="Enter your name" required>
+                            <input type="text" name="name" placeholder="Enter your name" required>
                         </div>
 
                         <div class="bv-field">
                             <label>Email Address</label>
-                            <input type="email" placeholder="Enter your email" required>
+                            <input type="email" name="email" placeholder="Enter your email" required>
                         </div>
-
+ <div class="bv-field">
+                            <label>Company Name</label>
+                            <input type="text" name="company" placeholder="Enter your company name" required>
+                        </div>
+                         <div class="bv-field">
+                            <label>Designation</label>
+                            <input type="text" name="designation" placeholder="Enter your email" required>
+                        </div>
+                         <div class="bv-field">
+                            <label>Country</label>
+                            <input type="text" name="country" placeholder="Enter your email" required>
+                        </div>
                         <div class="bv-field">
                             <label>Phone Number</label>
-                            <input type="tel" placeholder="+965" required>
+                            <input type="tel" name="phone" placeholder="+965" required>
                         </div>
 
                         {{-- <div class="bv-field">

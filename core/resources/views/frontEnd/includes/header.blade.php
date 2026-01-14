@@ -30,51 +30,71 @@
 
 /* ===== Dropdown ===== */
 .profile-dropdown {
-  position: absolute;
-  top: 57px; /* below avatar */
-  right: 0;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  padding: 10px 0;
-  list-style: none;
-  min-width: 140px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 100;
+    position: absolute;
+    top: 57px;
+    right: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    list-style: none;
+    min-width: 160px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    padding: 5px 0;
 }
 
 /* Show dropdown on hover */
 .header-profile:hover .profile-dropdown {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 /* Dropdown items */
 .profile-dropdown li {
-  padding: 10px 20px;
-  transition: background 0.2s;
+    margin: 0;
+    padding: 0;
 }
 
-.profile-dropdown li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  display: block;
+/* Links & Buttons inside dropdown */
+.profile-dropdown li a,
+.profile-dropdown li button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
 }
 
-/* Hover effect for items */
-.profile-dropdown li:hover {
-  background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
+/* Hover effect */
+.profile-dropdown li a:hover,
+.profile-dropdown li button:hover {
+    background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
+    color: #fff;
 }
 
-.profile-dropdown li:hover a {
-  color: #fff;
+.profile-dropdown li button i,
+.profile-dropdown li a i {
+    width: 18px;
+    text-align: center;
 }
 
+/* Optional: add smooth icon + text alignment */
+.profile-dropdown li a i,
+.profile-dropdown li button i {
+    font-size: 16px;
+}
 </style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
@@ -117,32 +137,42 @@
 
                 <!-- Buttons -->
 
-                 @if(Auth::check())
-                <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
-                    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free
-                        visitor pass</a>
-                    <a style="padding: 0 5px;" class="btn" href="{{ url('/speaker-booking') }}">Become a
-                        speaker</a>
-                   
-                    <!-- Header Profile -->
-                    <div class="header-profile">
-                        <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
-                        <ul class="profile-dropdown">
-                            <li><a href="{{ url('/profile') }}">Profile</a></li>
-                            <!-- <li><a href="{{ url('#') }}">Logout</a></li> -->
-                              <li>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button  type="submit">Logout</button>
-                    </form>
-                </li>
-                        </ul>
-                    </div>
+        <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
 
-                     @else
-        {{-- Show login button only if not logged in --}}
-        <a style="padding: 0 10px;" href="{{ url('/login') }}" class="btn">Login</a>
+    {{-- Always visible button --}}
+    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free visitor pass</a>
+
+    {{-- Become a speaker button changes route depending on login --}}
+    <a style="padding: 0 5px;" class="btn" href="{{ Auth::check() ? url('/speaker-booking') : url('/login') }}">
+        Become a speaker
+    </a>
+
+    @if(Auth::check())
+        {{-- Logged in: show profile dropdown --}}
+        <div class="header-profile">
+            <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
+            <ul class="profile-dropdown">
+                <li><a href="{{ url('/profile') }}">Profile</a></li>
+              <li>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </form>
+        </li>
+            </ul>
+        </div>
+    @else
+        {{-- Not logged in: show login/register links --}}
+        <a style="padding: 0 5px;" href="{{ url('/login') }}" class="btn">Login</a>
+       
     @endif
+
+</div>
+
+
                 </div>
 
             </div>

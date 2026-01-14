@@ -1,9 +1,16 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'Contact Us - FinSphere Expo Kuwait')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
 @section('content')
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
     <!--=================== PAGE-TITLE ===================-->
@@ -25,29 +32,36 @@
         <div class="container">
             <h2 class="title-line-left">Get in Touch</h2>
             <div class="row">
-                @if (session('success'))
-                    <script>
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Success!',
-                            text: "{{ session('success') }}",
-                            confirmButtonText: 'OK'
-                        });
-                    </script>
-                @endif
-                @if (session('error'))
-                    <script>
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops!',
-                            text: errorMessages,
-                            confirmButtonText: 'OK'
-                        });
-                    </script>
-                @endif
-
-
+               
                 <div class="col-12 col-sm-8">
+                     {{-- Toastify Alerts --}}
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
                     <form action="{{ route('contact-submit') }}" method="POST">
                         @csrf
 

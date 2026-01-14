@@ -6,6 +6,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ClientAuthController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteMapController;
+use App\Http\Controllers\VisitorBookingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
@@ -43,7 +44,11 @@ Route::get('/register', [AuthController::class, 'customerdashboard'])->name('cus
 Route::post('/sportsRegister', [AuthController::class, 'sportsRegister'])->name('sportsRegister');
 Route::post('/customerlogin', [AuthController::class, 'customerlogin'])->name('customerlogin');
 Route::post('/logoutcustomer', [AuthController::class, 'logoutcustomer'])->name('logoutcustomer');
-// Route::get('/clientregister', fn()=>view('frontEnd.pages.register'));
+
+Route::post('/visitor-booking-submit', [VisitorBookingController::class, 'store'])->name('visitor.booking.submit');
+Route::post('/exhibitor-request-submit', [VisitorBookingController::class, 'exhibitorstore'])->name('exhibitor.request.submit');
+
+Route::post('/speaker-apply', [VisitorBookingController::class, 'speakerstore'])->name('speaker.apply');// Route::get('/clientregister', fn()=>view('frontEnd.pages.register'));
 // Route::get('/clientlogin', fn()=>view('frontEnd.pages.login'));
 
 // // Register & Login

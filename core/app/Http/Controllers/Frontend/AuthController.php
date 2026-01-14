@@ -53,7 +53,7 @@ class AuthController extends Controller
             if ($request->ajax()) {
                 return response()->json(['redirect' => $redirect]);
             }
-            return redirect($redirect)->with('success', 'Login Page successfully.');
+            return redirect($redirect)->with('success', 'Login  successfully.');
         }
 
         if ($request->ajax()) {
@@ -86,12 +86,17 @@ public function logoutcustomer(Request $request)
 {
     $validator = Validator::make($request->all(), [
         'name'              => 'required|string|max:255',
-      
+        
         'email'                  => 'required|string|email|max:255|unique:users',
         'password'               => 'required|string|min:6',
         'real_password'          => 'required|string|min:6|same:password',
         'phone'          => 'required|string|max:20',
         'nationalities'          => 'required|string|max:20',
+         'company'          => 'required|string|max:20',
+        'designation'          => 'required|string|max:20',
+         'source'          => 'required|string|max:20',
+        'type'          => 'required|string|max:20',
+        'country_code' =>'required|string|max:20',
       
     ], [
         'email.unique'           => 'This email is already registered.',
@@ -109,12 +114,14 @@ public function logoutcustomer(Request $request)
     try {
         $user = User::create([
             'name'      => $request->name,
-          
-            // 'company'  => $request->company,
-            //  'designation'  => $request->designation,
+          'type'  => $request->type,
+             'source'  => $request->source,
+            'company'  => $request->company,
+             'designation'  => $request->designation,
             'email'     => $request->email,
             'phone'     => $request->phone,
             'nationalities'=>$request->nationalities,
+            'country_code' => $request->country_code,
             'password'  => Hash::make($request->password),
             'real_password'   => $request->real_password,
             'status'    => true,
@@ -129,7 +136,7 @@ public function logoutcustomer(Request $request)
         DB::commit();
 
         return redirect("/login")
-            ->with('success', 'Register Page successfully.');
+            ->with('success', 'Register  successfully.');
 
     } catch (\Exception $e) {
         DB::rollBack();

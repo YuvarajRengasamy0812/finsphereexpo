@@ -1,7 +1,14 @@
 @extends('frontEnd.layouts.master')
 
 @section('title', 'Speaker Booking - FinSphere Expo Kuwait')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
 @section('content')
     <style>
         /* ===== Section ===== */
@@ -132,36 +139,69 @@
                 <!-- Right Form -->
                 <div class="speaker-booking-form">
                     <h3 class="speaker-title">Become a Speaker</h3>
+{{-- Toastify Alerts --}}
+        @if (session('success'))
+            <script>
+                Toastify({
+                    text: "{{ session('success') }}",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
 
-                    <form class="bs-form">
+        @if ($errors->any())
+            <script>
+                Toastify({
+                    text: "{{ $errors->first() }}",
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#f44336",
+                    stopOnFocus: true
+                }).showToast();
+            </script>
+        @endif
+                  <form class="bs-form" method="POST" action="{{ route('speaker.apply') }}">
+    @csrf
                         <div class="bs-field">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Your name" required>
-                        </div>
+        <label>Full Name</label>
+        <input type="text" name="name" placeholder="Your name" required>
+    </div>
 
-                        <div class="bs-field">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="Your email" required>
-                        </div>
+    <div class="bs-field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="Your email" required>
+    </div>
 
-                        <div class="bs-field">
-                            <label>Company / Organization</label>
-                            <input type="text" placeholder="Company name">
-                        </div>
+    <div class="bs-field">
+        <label>Company</label>
+        <input type="text" name="company" placeholder="Company name">
+    </div>
 
-                        <div class="bs-field">
-                            <label>Topic Expertise</label>
-                            <input type="text" placeholder="e.g. FinTech, AI, Blockchain">
-                        </div>
+    <div class="bs-field">
+        <label>Designation</label>
+        <input type="text" name="designation" placeholder="Designation">
+    </div>
 
-                        <div class="bs-field">
-                            <label>Brief Description</label>
-                            <textarea rows="3" placeholder="Tell us about your experience"></textarea>
-                        </div>
+    <div class="bs-field">
+        <label>Topic Expertise</label>
+        <input type="text" name="topic" placeholder="e.g. FinTech, AI, Blockchain" required>
+    </div>
 
-                        <div class="bs-actions">
-                            <button type="submit" class="btn">Apply Now</button>
-                        </div>
+    <div class="bs-field">
+        <label>About Us</label>
+        <textarea rows="3" name="about" placeholder="Tell us about your experience" required></textarea>
+    </div>
+
+    <div class="bs-actions">
+        <button type="submit" class="btn">Apply</button>
+    </div>
                     </form>
                 </div>
 
