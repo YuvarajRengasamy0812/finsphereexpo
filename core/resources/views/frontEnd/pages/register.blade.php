@@ -117,7 +117,7 @@
         width: 100% !important;
         min-width: 100% !important;
         max-width: 100% !important;
-    border: 1px solid #c6c6c6;
+        border: 1px solid #c6c6c6;
         background: #F7F7F7;
         /* border: none; */
         border-radius: 25px;
@@ -270,58 +270,55 @@
         text-decoration: underline;
     }
 
-.fk-phone-wrapper {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    padding: 0 12px;
-    height: 48px;
-    background: #fff;
-    transition: 0.3s ease;
-}
+    .fk-phone-wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 0 12px;
+        height: 48px;
+        background: #fff;
+        transition: 0.3s ease;
+    }
 
-/* Focus glow */
-.fk-phone-wrapper:focus-within {
-    border-color: #f97316;
-    box-shadow: 0 0 0 2px rgba(249,115,22,0.25);
-}
+    /* Focus glow */
+    .fk-phone-wrapper:focus-within {
+        border-color: #f97316;
+        box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25);
+    }
 
-/* Country code select */
-.fk-phone-wrapper select {
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 14px;
-    padding-right: 10px;
-    cursor: pointer;
-    color: #333;
-}
+    /* Country code select */
+    .fk-phone-wrapper select {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        padding-right: 10px;
+        cursor: pointer;
+        color: #333;
+    }
 
-/* Remove default arrow styling */
-.fk-phone-wrapper select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
+    /* Remove default arrow styling */
+    .fk-phone-wrapper select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
 
-/* Phone input */
-.fk-phone-wrapper input {
-    flex: 1;
-    border: none !important;
-    outline: none !important;
-    padding: 0 8px;
-    font-size: 14px;
-    background: transparent;
-}
+    /* Phone input */
+    .fk-phone-wrapper input {
+        flex: 1;
+        border: none !important;
+        outline: none !important;
+        padding: 0 8px;
+        font-size: 14px;
+        background: transparent;
+    }
 
-/* Placeholder style */
-.fk-phone-wrapper input::placeholder {
-    color: #aaa;
-}
-
-
-
+    /* Placeholder style */
+    .fk-phone-wrapper input::placeholder {
+        color: #aaa;
+    }
 </style>
 @section('content')
     <div class="fk-reg-wrapper">
@@ -366,70 +363,64 @@
                     <h2 class="fk-reg-title">Register for FinSphere Expo Kuwait 2026</h2>
                     <p class="fk-reg-subtitle">Join FinSphere Expo</p>
 
-                      @if (session('success'))
-            <script>
-                Toastify({
-                    text: "{{ session('success') }}",
-                    duration: 3000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#4CAF50",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
+                    @if (session('success'))
+                        <script>
+                            Toastify({
+                                text: "{{ session('success') }}",
+                                duration: 3000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#4CAF50",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
 
-        @if ($errors->any())
-            <script>
-                Toastify({
-                    text: "{{ $errors->first() }}",
-                    duration: 4000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#f44336",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
-                    <form class="fk-reg-form"  method="POST" action="{{ route('sportsRegister') }}">
-      @csrf
+                    @if ($errors->any())
+                        <script>
+                            Toastify({
+                                text: "{{ $errors->first() }}",
+                                duration: 4000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#f44336",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
+                    <form class="fk-reg-form" method="POST" action="{{ route('sportsRegister') }}">
+                        @csrf
                         <div class="fk-reg-row">
                             <input class="fk-reg-input" name="name" placeholder="Full Name">
                             <input class="fk-reg-input" name="email" placeholder="Email">
                         </div>
 
                         <div class="fk-reg-row">
-                             <select class="fk-reg-input" name="nationalities">
+                            <select class="fk-reg-input" name="nationalities">
                                 <option value="">Select Country</option>
-                                @foreach($countries as $country)
+                                @foreach ($countries as $country)
                                     <option value="{{ $country['title_en'] }}">
                                         {{ $country['title_en'] }}
                                     </option>
                                 @endforeach
-                                
+
                             </select>
- <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
+                            <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
 
-<div class="fk-phone-wrapper">
-    <select id="country_code" name="country_code">
-        <option value="">+Code</option>
-        @foreach($countries as $country)
-            <option value="{{ $country->code }}">
-              {{ $country->code }} {{ $country->tel }}
-            </option>
-        @endforeach
-    </select>
+                            <div class="fk-phone-wrapper">
+                                <select id="country_code" name="country_code">
+                                    <option value="">+Code</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->code }}">
+                                            {{ $country->code }} {{ $country->tel }}
+                                        </option>
+                                    @endforeach
+                                </select>
 
-    <input
-        type="text"
-        id="phone_number"
-        name="phone"
-        placeholder="Enter phone "
-        required
-    >
-</div>
+                                <input type="text" id="phone_number" name="phone" placeholder="Enter phone " required>
+                            </div>
 
 
 
@@ -442,7 +433,8 @@
 
                         <div class="fk-reg-row">
                             <div class="fk-reg-password">
-                                <input type="password" name="password" id="password" class="fk-reg-input" placeholder="Password">
+                                <input type="password" name="password" id="password" class="fk-reg-input"
+                                    placeholder="Password">
 
                                 <span class="fk-reg-eye" data-target="password">
                                     <i data-lucide="eye"></i>
@@ -496,7 +488,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <button  type="submit" class="fk-reg-btn">Register</button>
+                            <button type="submit" class="fk-reg-btn">Register</button>
                         </div>
 
                         <p class="fk-reg-switch">
@@ -513,24 +505,24 @@
 
 @endsection
 <script>
-document.getElementById('country_select').addEventListener('change', function () {
-    let code = this.value;   // +91, +971 etc
-    let phoneInput = document.getElementById('phone_number');
+    document.getElementById('country_select').addEventListener('change', function() {
+        let code = this.value; // +91, +971 etc
+        let phoneInput = document.getElementById('phone_number');
 
-    if(code){
-        phoneInput.value = code + ' ';
-        phoneInput.focus();
-    }
-});
+        if (code) {
+            phoneInput.value = code + ' ';
+            phoneInput.focus();
+        }
+    });
 
-// Allow only numbers after country code
-document.getElementById('phone_number').addEventListener('input', function(){
-    let value = this.value;
+    // Allow only numbers after country code
+    document.getElementById('phone_number').addEventListener('input', function() {
+        let value = this.value;
 
-    // keep + at start
-    let clean = value.replace(/(?!^\+)[^0-9]/g, '');
-    this.value = clean;
-});
+        // keep + at start
+        let clean = value.replace(/(?!^\+)[^0-9]/g, '');
+        this.value = clean;
+    });
 </script>
 
 <script>

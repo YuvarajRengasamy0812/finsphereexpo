@@ -1,4 +1,3 @@
-
 @php
     use Illuminate\Support\Facades\Auth;
 @endphp
@@ -6,95 +5,95 @@
 
 <style>
     /* ===== Profile Container ===== */
-.header-profile {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
+    .header-profile {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
 
-/* ===== Avatar ===== */
-.profile-avatar {
-  width: 50px;
-  height: 50px;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  background:
-    linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(to right, #c19a5f, #976737, #6b4a26) border-box;
-  transition: transform 0.3s ease;
-}
+    /* ===== Avatar ===== */
+    .profile-avatar {
+        width: 50px;
+        height: 50px;
+        border: 2px solid transparent;
+        border-radius: 50px;
+        background:
+            linear-gradient(#ffffff, #ffffff) padding-box,
+            linear-gradient(to right, #c19a5f, #976737, #6b4a26) border-box;
+        transition: transform 0.3s ease;
+    }
 
-.header-profile:hover .profile-avatar {
-  transform: scale(1.1);
-}
+    .header-profile:hover .profile-avatar {
+        transform: scale(1.1);
+    }
 
-/* ===== Dropdown ===== */
-.profile-dropdown {
-    position: absolute;
-    top: 57px;
-    right: 0;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    list-style: none;
-    min-width: 160px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-    z-index: 100;
-    padding: 5px 0;
-}
+    /* ===== Dropdown ===== */
+    .profile-dropdown {
+        position: absolute;
+        top: 57px;
+        right: 0;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        list-style: none;
+        min-width: 160px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 100;
+        padding: 5px 0;
+    }
 
-/* Show dropdown on hover */
-.header-profile:hover .profile-dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
+    /* Show dropdown on hover */
+    .header-profile:hover .profile-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 
-/* Dropdown items */
-.profile-dropdown li {
-    margin: 0;
-    padding: 0;
-}
+    /* Dropdown items */
+    .profile-dropdown li {
+        margin: 0;
+        padding: 0;
+    }
 
-/* Links & Buttons inside dropdown */
-.profile-dropdown li a,
-.profile-dropdown li button {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding: 12px 20px;
-    background: transparent;
-    border: none;
-    color: #333;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: left;
-}
+    /* Links & Buttons inside dropdown */
+    .profile-dropdown li a,
+    .profile-dropdown li button {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        color: #333;
+        font-weight: 500;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: left;
+    }
 
-/* Hover effect */
-.profile-dropdown li a:hover,
-.profile-dropdown li button:hover {
-    background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
-    color: #fff;
-}
+    /* Hover effect */
+    .profile-dropdown li a:hover,
+    .profile-dropdown li button:hover {
+        background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
+        color: #fff;
+    }
 
-.profile-dropdown li button i,
-.profile-dropdown li a i {
-    width: 18px;
-    text-align: center;
-}
+    .profile-dropdown li button i,
+    .profile-dropdown li a i {
+        width: 18px;
+        text-align: center;
+    }
 
-/* Optional: add smooth icon + text alignment */
-.profile-dropdown li a i,
-.profile-dropdown li button i {
-    font-size: 16px;
-}
+    /* Optional: add smooth icon + text alignment */
+    .profile-dropdown li a i,
+    .profile-dropdown li button i {
+        font-size: 16px;
+    }
 </style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
@@ -137,46 +136,48 @@
 
                 <!-- Buttons -->
 
-        <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
+                <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
 
-    {{-- Always visible button --}}
-    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free visitor pass</a>
+                    {{-- Always visible button --}}
+                    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free visitor
+                        pass</a>
 
-    {{-- Become a speaker button changes route depending on login --}}
-    <a style="padding: 0 5px;" class="btn" href="{{ Auth::check() ? url('/speaker-booking') : url('/login') }}">
-        Become a speaker
-    </a>
+                    {{-- Become a speaker button changes route depending on login --}}
+                    <a style="padding: 0 5px;" class="btn"
+                        href="{{ Auth::check() ? url('/speaker-booking') : url('/login') }}">
+                        Become a speaker
+                    </a>
 
-    @if(Auth::check())
-        {{-- Logged in: show profile dropdown --}}
-        <div class="header-profile">
-            <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile" class="profile-avatar">
-            <ul class="profile-dropdown">
-                <li><a href="{{ url('/profile') }}">Profile</a></li>
-              <li>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit">
-                    <i class="fas fa-sign-out-alt"></i>
-                    Logout
-                </button>
-            </form>
-        </li>
-            </ul>
-        </div>
-    @else
-        {{-- Not logged in: show login/register links --}}
-        <a style="padding: 0 5px;" href="{{ url('/login') }}" class="btn">Login</a>
-       
-    @endif
-
-</div>
-
+                    @if (Auth::check())
+                        {{-- Logged in: show profile dropdown --}}
+                        <div class="header-profile">
+                            <img src="{{ asset('assets/frontend/img/profile.png') }}" alt="Profile"
+                                class="profile-avatar">
+                            <ul class="profile-dropdown">
+                                <li><a href="{{ url('/profile') }}"><i class="fas fa-user"></i> Profile</a></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            Logout
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    @else
+                        {{-- Not logged in: show login/register links --}}
+                        <a style="padding: 0 5px;" href="{{ url('/login') }}" class="btn">Login</a>
+                    @endif
 
                 </div>
 
+
             </div>
+
         </div>
+    </div>
 
     </div>
     <div class="header-menu header-menu-two">
@@ -249,12 +250,14 @@
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-1 mb-2" onclick="bvOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)"
+                                    class="mob-btn-1 mb-2" onclick="bvOpenModal()">
                                     Free visitor pass
                                 </a>
                             </li>
                             <li class="mobile-only-cta">
-                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2" onclick="bsOpenModal()">
+                                <a style="color: #fff; padding: 0 30px;" href="javascript:void(0)" class="mob-btn-2"
+                                    onclick="bsOpenModal()">
                                     Become a speaker
                                 </a>
                             </li>
