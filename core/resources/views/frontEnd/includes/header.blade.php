@@ -94,6 +94,28 @@
     .profile-dropdown li button i {
         font-size: 16px;
     }
+
+    @media (max-width: 767.98px) {
+    .desktop-lang {
+        display: none!important;
+    }
+}
+
+@media (max-width: 767px) {
+    .lang-mobile {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-start;
+        display: block!important;
+    }
+}
+
+@media (min-width: 768px) {
+    .lang-mobile {
+        display: none!important;
+    }
+}
+
 </style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
@@ -104,7 +126,6 @@
     <div class="header-two-top">
         <div class="container">
             <div class="row align-items-center justify-content-between flex-nowrap">
-
                 <!-- Logo -->
                 <div class="col-lg-auto logo-two-cover">
                     <a href="{{ url('/') }}" class="header-logo">
@@ -183,7 +204,7 @@
     <div class="header-menu header-menu-two">
         <div class="container">
             <div class="row">
-                <div class="col-10">
+                <div class="col-11">
                     <nav class="nav-menu">
                         <ul class="nav-list">
                             <!-- Home -->
@@ -202,9 +223,9 @@
                             </li>
 
                             <!-- Speakers -->
-                            <!-- <li class="{{ Request::is('speakers') ? 'active' : '' }}">
+                            {{-- <li class="{{ Request::is('speakers') ? 'active' : '' }}">
                                 <a href="{{ url('/speakers') }}">Speakers</a>
-                            </li> -->
+                            </li> --}}
 
                             <!-- Exhibitors -->
                             <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">
@@ -219,13 +240,6 @@
                             <li class="dropdown">
                                 <a href="#">Company <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                 <ul>
-                                    {{-- <li class="{{ Request::is('privacy') ? 'active' : '' }}">
-                                        <a href="{{ url('/privacy') }}">Privacy Policy</a>
-                                    </li>
-                                    <li class="{{ Request::is('error-404') ? 'active' : '' }}">
-                                        <a href="{{ url('/error-404') }}">404</a>
-                                    </li> --}}
-                                    <!-- Contact -->
                                     <!-- PROFXMEDIA Marketing Partner  -->
                                     <li class="{{ Request::is('profxmedia') ? 'active' : '' }}">
                                         <a href="{{ url('/profxmedia') }}">PROFX MEDIA</a>
@@ -236,9 +250,9 @@
                                     </li>
 
                                     <!-- News -->
-                                    <!-- <li class="{{ Request::is('news') ? 'active' : '' }}">
+                                    {{-- <li class="{{ Request::is('news') ? 'active' : '' }}">
                                         <a href="{{ url('/news') }}">News</a>
-                                    </li> -->
+                                    </li> --}}
                                     <li class="{{ Request::is('contact') ? 'active' : '' }}">
                                         <a href="{{ url('/contact') }}">Contacts</a>
                                     </li>
@@ -247,6 +261,8 @@
                             {{-- <li class="{{ Request::is('login') ? 'active' : '' }}">
                                 <a href="{{ url('/login') }}">Login</a>
                             </li> --}}
+
+                            <li class="desktop-lang">@include('frontEnd.includes.gtranslater')</li>
 
                             <!-- Mobile-only CTA buttons -->
                             <li class="mobile-only-cta">
@@ -265,7 +281,7 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-2">
+                <div class="col-1">
                     <div class="header-two-search">
                         <div class="header-search-icon">
                             <i class="fas fa-search"></i>
