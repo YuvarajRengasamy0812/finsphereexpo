@@ -102,7 +102,7 @@
             <img src="https://flagcdn.com/gb.svg" alt=""> English
         </button>
         <ul class="gtranslate-menu notranslate" translate="no">
-            <li><a href="#" data-lang="ar"><img src="https://flagcdn.com/ae.svg"> العربية</a></li>
+            <li><a href="#" data-lang="ar"><img src="https://flagcdn.com/kw.svg" > العربية</a></li>
             <li><a href="#" data-lang="en"><img src="https://flagcdn.com/gb.svg"> English</a></li>
             {{-- <li><a href="#" data-lang="hi"><img src="https://flagcdn.com/in.svg"> हिन्दी</a></li>
             <li><a href="#" data-lang="ms"><img src="https://flagcdn.com/my.svg"> Malay</a></li>
