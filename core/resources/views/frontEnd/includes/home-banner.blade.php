@@ -15,7 +15,7 @@
 
             <div class="container">
                 <div class="main-slide-item" style="margin-top: 100px">
-                    <div class="date-slide">Location: KUWAIT &nbsp; | &nbsp; Dates: 5 - 6 MAY 2026 &nbsp; | &nbsp;
+                    <div class="date-slide">Location: KUWAIT &nbsp; | &nbsp; Dates: 7 - 8 MAY 2026 &nbsp; | &nbsp;
                         Entry: FREE</div>
 
                     <h2>

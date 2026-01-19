@@ -127,7 +127,7 @@
 {{-- Countdown Timer --}}
 <script>
     // Set your event date here
-    const eventDate = new Date("May 5, 2026 09:00:00").getTime();
+    const eventDate = new Date("May 7, 2026 09:00:00").getTime();
 
     const countdown = setInterval(() => {
         const now = new Date().getTime();
