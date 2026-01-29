@@ -1,31 +1,32 @@
 <section class="s-about-home-two">
     <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 about-info">
-                <h2 class="title-line-left">
+            <div class="col-12 col-md-6 about-info" data-aos="fade-right" data-aos-duration="900"
+                data-aos-easing="ease-out-cubic">
+                <h2 class="title-line-left" data-aos="fade-up" data-aos-delay="100">
                     Welcome to <b>FINSPHERE EXPO KUWAIT</b>
                 </h2>
 
-                <div class="about-slogan-home-two">
+                <div class="about-slogan-home-two" data-aos="fade-up" data-aos-delay="200">
                     The first large-scale financial and trading ecosystem expo of its kind in Kuwait
                 </div>
 
                 <div class="about-info-text">
-                    <p>
+                    <p data-aos="fade-up" data-aos-delay="300">
                         <b>FINSPHERE EXPO KUWAIT</b> marks a historic milestone as a landmark platform
                         connecting the entire financial value chain - from brokers, fintech innovators,
                         crypto projects, and blockchain platforms to traders, investors, educators,
                         and influencers.
                     </p>
 
-                    <p>
+                    <p data-aos="fade-up" data-aos-delay="400">
                         This immersive experience blends knowledge-driven summit sessions with a
                         vibrant exhibition floor, creating a powerful environment for learning,
                         networking, discovery, and long-term business growth.
                     </p>
                 </div>
 
-                <ul class="soc-link">
+                <ul class="soc-link" data-aos="zoom-in" data-aos-delay="500">
                     <li>
                         <a target="_blank" href="www.instagram.com/finsphereexpo">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
@@ -53,15 +54,16 @@
                     </li>
                 </ul>
 
-                <a href="{{ url('/expo-summit') }}" class="btn btn-yellow">
+                <a href="{{ url('/expo-summit') }}" class="btn btn-yellow" data-aos="fade-up" data-aos-delay="600">
                     Explore Expo & Summit
                 </a>
             </div>
 
-            <div class="col-12 col-md-6 about-img">
+            <div class="col-12 col-md-6 about-img" data-aos="fade-left" data-aos-duration="1000"
+                data-aos-easing="ease-out-cubic">
                 <img class="lazy" src="{{ asset('assets/frontend/img/placeholder-all.png') }}"
                     data-src="{{ asset('assets/frontend/img/resources/finshpareabout.png') }}"
-                    alt="FINSPHERE EXPO KUWAIT">
+                    alt="FINSPHERE EXPO KUWAIT" loading="lazy">
             </div>
         </div>
     </div>

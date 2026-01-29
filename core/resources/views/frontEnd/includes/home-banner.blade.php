@@ -11,7 +11,7 @@
             <div class="main-slide-date">TBD</div>
             <div class="main-slider-bg" style="background-image: url('assets/frontend/img/bg-slider-home2.svg');"></div>
 
-            <img class="img-slide " src="{{ asset('assets/frontend/img/banner/5.png') }}" alt="FINSPHERE EXPO KUWAIT">
+            <img  loading="lazy" class="img-slide " src="{{ asset('assets/frontend/img/banner/5.png') }}" alt="FINSPHERE EXPO KUWAIT">
 
             <div class="container">
                 <div class="main-slide-item" style="margin-top: 100px">
