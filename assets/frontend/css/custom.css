@@ -1,0 +1,723 @@
+/* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+
+    /* ===== Wrapper ===== */
+    .fk-reg-wrapper {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #3E615D, #976737);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .fk-reg-container {
+        width: 100%;
+        max-width: 1100px;
+    }
+
+    /* ===== Grid ===== */
+    .fk-reg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    /* ===== Cards ===== */
+    .fk-reg-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* ===== Contact Card ===== */
+    .fk-reg-contact {
+        justify-content: space-between;
+    }
+
+    .fk-reg-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #976737;
+        margin-bottom: 15px;
+    }
+
+    .fk-reg-item {
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .fk-reg-item i {
+        color: #976737;
+        margin-right: 10px;
+    }
+
+    /* ===== Map ===== */
+    .fk-reg-map {
+        margin-top: 15px;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .fk-reg-map iframe {
+        width: 100%;
+        height: 200px;
+        border: none;
+    }
+
+    /* ===== Right Form ===== */
+    .fk-reg-title {
+        font-size: 22px;
+        font-weight: 800;
+        background: linear-gradient(to right, #976737, #3E615D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .fk-reg-subtitle {
+        text-align: center;
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    /* ===== Form ===== */
+    .fk-reg-form {
+        flex-grow: 1;
+    }
+
+    /* 🔒 GRID HARDENING (prevents width jump) */
+    .fk-reg-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* ===== Inputs (BASE) ===== */
+    .fk-reg-input {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        border: 1px solid #c6c6c6;
+        background: #F7F7F7;
+        /* border: none; */
+        border-radius: 25px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+
+        display: block;
+        box-sizing: border-box !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* 🔒 LOCK password & text to identical UI */
+    .fk-reg-input[type="password"],
+    .fk-reg-input[type="text"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+
+        background: #F7F7F7;
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+
+        display: block;
+        box-sizing: border-box !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* Focus */
+    .fk-reg-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25);
+    }
+
+    /* 🔒 PASSWORD WRAPPER FIX */
+    .fk-reg-password {
+        position: relative;
+        width: 100%;
+        flex: 1 1 0%;
+        min-width: 0;
+        /* CRITICAL */
+    }
+
+    /* Eye icon */
+    .fk-reg-eye {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #777;
+        z-index: 5;
+    }
+
+    .fk-reg-eye svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* ===== Button ===== */
+    .fk-reg-btn {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient(135deg, #976737, #3E615D);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .fk-reg-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ===== Switch ===== */
+    .fk-reg-switch {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+    }
+
+    .fk-reg-switch a {
+        color: #976737;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 992px) {
+        .fk-reg-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .fk-reg-accept-terms {
+        color: #976737;
+        font-size: 13px;
+        font-weight: 400;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        user-select: none;
+    }
+
+    /* Normalize checkbox UI across browsers */
+    .fk-reg-accept-terms input[type="checkbox"] {
+        width: 13px;
+        height: 13px;
+        margin: 0;
+
+        accent-color: #976737;
+        /* modern browsers */
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+    /* Optional hover effect */
+    .fk-reg-accept-terms:hover {
+        opacity: 0.9;
+    }
+
+    /* Link inside terms text (if any) */
+    .fk-reg-accept-terms a {
+        color: #976737;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .fk-reg-accept-terms a:hover {
+        text-decoration: underline;
+    }
+
+    .fk-phone-wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        padding: 0 12px;
+        height: 48px;
+        background: #fff;
+        transition: 0.3s ease;
+    }
+
+    /* Focus glow */
+    .fk-phone-wrapper:focus-within {
+        border-color: #f97316;
+        box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.25);
+    }
+
+    /* Country code select */
+    .fk-phone-wrapper select {
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        padding-right: 10px;
+        cursor: pointer;
+        color: #333;
+    }
+
+    /* Remove default arrow styling */
+    .fk-phone-wrapper select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* Phone input */
+    .fk-phone-wrapper input {
+        flex: 1;
+        border: none !important;
+        outline: none !important;
+        padding: 0 8px;
+        font-size: 14px;
+        background: transparent;
+    }
+
+    /* Placeholder style */
+    .fk-phone-wrapper input::placeholder {
+        color: #aaa;
+    }
+
+
+
+    /* =======================
+       LOGIN PAGE CSS (fk-log-)
+    ======================= */
+
+    /* ===== Wrapper ===== */
+    .fk-log-wrapper {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #3E615D, #976737);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    .fk-log-container {
+        width: 100%;
+        max-width: 1100px;
+    }
+
+    /* ===== Grid ===== */
+    .fk-log-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 30px;
+        align-items: stretch;
+    }
+
+    /* ===== Left Card ===== */
+    .fk-log-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .fk-log-contact {
+        justify-content: space-between;
+    }
+
+    .fk-log-card-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #976737;
+        margin-bottom: 15px;
+    }
+
+    .fk-log-item {
+        font-size: 14px;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .fk-log-item i {
+        color: #976737;
+        margin-right: 10px;
+    }
+
+    .fk-log-map {
+        margin-top: 15px;
+        border-radius: 18px;
+        overflow: hidden;
+    }
+
+    .fk-log-map iframe {
+        width: 100%;
+        height: 200px;
+        border: none;
+    }
+
+    /* ===== Right Form ===== */
+    .fk-log-title {
+        font-size: 22px;
+        font-weight: 800;
+        background: linear-gradient(to right, #976737, #3E615D);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+    }
+
+    .fk-log-subtitle {
+        text-align: center;
+        font-size: 13px;
+        color: #777;
+        margin-bottom: 25px;
+    }
+
+    .fk-log-form {
+        flex-grow: 1;
+    }
+
+    /* Inputs */
+
+
+    /* 🔒 LOCK password & text to identical UI */
+    .fk-log-input[type="email"],
+    .fk-log-input[type="password"],
+    .fk-log-input[type="text"] {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 0 15px 0;
+        background: #F7F7F7;
+        border: none;
+        border-radius: 25px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+
+        display: block;
+        box-sizing: border-box !important;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    .fk-log-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25) !important;
+    }
+
+    /* Password wrapper */
+    .fk-log-password {
+        position: relative;
+        width: 100%;
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+
+    .fk-log-eye {
+        position: absolute;
+        right: 18px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #777;
+        z-index: 5;
+    }
+
+    .fk-log-eye svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    /* Button */
+    .fk-log-btn {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 30px;
+        border: none;
+        background: linear-gradient(135deg, #976737, #3E615D);
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+    }
+
+    .fk-log-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Switch / links */
+    .fk-log-switch {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+    }
+
+    .fk-log-switch a {
+        color: #976737;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .fk-log-switch a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 992px) {
+        .fk-log-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+/* Forgot Password */
+/* ===== Wrapper ===== */
+.fk-forgot-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3E615D, #976737);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.fk-forgot-container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.fk-forgot-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;      /* ensures card aligns in the middle of grid area */
+    justify-items: center;    /* centers grid content horizontally */
+}
+
+/* ===== Card ===== */
+.fk-forgot-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Title & Subtitle ===== */
+.fk-forgot-title {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(to right, #976737, #3E615D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.fk-forgot-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* ===== Form Inputs ===== */
+.fk-forgot-input[type="email"] {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px;
+    background: #F7F7F7;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #707070;
+}
+
+.fk-forgot-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25);
+}
+
+/* ===== Button ===== */
+.fk-forgot-btn {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #976737, #3E615D);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.fk-forgot-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Switch / Link ===== */
+.fk-forgot-switch {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.fk-forgot-switch a {
+    color: #976737;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.fk-forgot-switch a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+    .fk-forgot-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Reset Password */
+/* ===== Wrapper ===== */
+.fx-reset-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3E615D, #976737);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+/* ===== Card ===== */
+.fx-reset-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* ===== Title & Subtitle ===== */
+.fx-reset-title {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(to right, #976737, #3E615D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.fx-reset-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* ===== Form Inputs ===== */
+.fx-reset-input[type="password"] {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px;
+    background: #F7F7F7;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #707070;
+}
+
+.fx-reset-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(151, 103, 55, 0.25);
+}
+
+/* ===== Button ===== */
+.fx-reset-btn {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg, #976737, #3E615D);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.fx-reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Switch / Link ===== */
+.fx-reset-switch {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+.fx-reset-switch a {
+    color: #976737;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.fx-reset-switch a:hover {
+    text-decoration: underline;
+}
+
+

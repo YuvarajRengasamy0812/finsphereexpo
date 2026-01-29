@@ -4,25 +4,38 @@
 
 @section('content')
 
-<div class="fk-auth-wrapper">
-    <div class="fk-auth-card">
-        <h2 class="fk-auth-title">Forgot Password</h2>
-        <p class="fk-auth-subtitle">
-            Enter your email and we’ll send a reset link
-        </p>
+<div class="fk-forgot-wrapper">
+    <div class="fk-forgot-container">
 
-        <form class="fk-auth-form">
-            <input type="email" class="fk-input" placeholder="Email address" required>
+        <div class="fk-forgot-grid" style="justify-content: center;">
+            {{-- CENTERED CARD --}}
+            <div class="fk-forgot-card" style="max-width: 500px;">
+                <h2 class="fk-forgot-title">Forgot Password</h2>
+                <p class="fk-forgot-subtitle">
+                    Enter your email and we’ll send a reset link
+                </p>
 
-            <button type="submit" class="fk-btn-primary">
-                Send Reset Link
-            </button>
-        </form>
+                <form class="fk-forgot-form" method="POST" action="{{ route('password.email') }}">
+                    @csrf
 
-        <p class="fk-switch">
-            Remembered your password?
-            <a href="{{ url('/login') }}">Sign in</a>
-        </p>
+                    <div class="fk-forgot-row">
+                        <input type="email" name="email" class="fk-forgot-input" placeholder="Email address" required>
+                    </div>
+
+                    <div style="display: flex; justify-content: center;">
+                        <button type="submit" class="fk-forgot-btn">
+                            Send Reset Link
+                        </button>
+                    </div>
+                </form>
+
+                <p class="fk-forgot-switch" style="text-align: center; margin-top: 15px;">
+                    Remembered your password?
+                    <a href="{{ url('/login') }}">Sign in</a>
+                </p>
+            </div>
+        </div>
+
     </div>
 </div>
 

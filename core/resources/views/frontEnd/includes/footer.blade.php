@@ -49,7 +49,7 @@
                 <ul class="footer-contacts">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Kuwait International Fairgrounds</span>
+                        <span>Kuwait - Al Badriya Ballroom</span>
                     </li>
                     <li>
                         <i class="fa fa-envelope"></i>
@@ -127,7 +127,7 @@
 {{-- Countdown Timer --}}
 <script>
     // Set your event date here
-    const eventDate = new Date("May 7, 2026 09:00:00").getTime();
+    const eventDate = new Date("May 6, 2026 09:00:00").getTime();
 
     const countdown = setInterval(() => {
         const now = new Date().getTime();

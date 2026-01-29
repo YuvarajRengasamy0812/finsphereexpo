@@ -282,8 +282,8 @@
 
                     <p class="fk-reg-item">
                         <i data-lucide="pin" class="w-4 h-4"></i>
-                        Kuwait International Fair,<br>
-                        Mubarak Al Abdullah Al Jaber, Block 6
+                        Al Badriya Ballroom - Kuwait,<br>
+                        Jumeirah Messilah Beach Hotel & Resort.
                     </p>
 
                     <p class="fk-reg-item">
@@ -302,7 +302,7 @@
 
                     <div class="fk-reg-map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.61839005281!2d48.04374752498063!3d29.269360204878335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9f71cb7149ff%3A0x82a12e9f4958c2e8!2sKuwait%20International%20Fairground!5e1!3m2!1sen!2sae!4v1767853127479!5m2!1sen!2sae"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.634731415047!2d48.08568337498055!3d29.268829804902936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf7564e3cd15f1%3A0x675d67bb213da8c9!2sjumeirah%20Badriya%20Hall%20rode%20no%20-%206!5e1!3m2!1sen!2sae!4v1769681084166!5m2!1sen!2sae"
                             loading="lazy" allowfullscreen>
                         </iframe>
                     </div>
@@ -313,53 +313,53 @@
                     <h2 class="fk-reg-title">Register for FinSphere Expo Kuwait 2026</h2>
                     <p class="fk-reg-subtitle">Join FinSphere Expo</p>
 
-                      @if (session('success'))
-            <script>
-                Toastify({
-                    text: "{{ session('success') }}",
-                    duration: 3000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#4CAF50",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
+                    @if (session('success'))
+                        <script>
+                            Toastify({
+                                text: "{{ session('success') }}",
+                                duration: 3000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#4CAF50",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
 
-        @if ($errors->any())
-            <script>
-                Toastify({
-                    text: "{{ $errors->first() }}",
-                    duration: 4000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#f44336",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
-                    <form class="fk-reg-form"  method="POST" action="{{ route('sportsRegister') }}">
-      @csrf
+                    @if ($errors->any())
+                        <script>
+                            Toastify({
+                                text: "{{ $errors->first() }}",
+                                duration: 4000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#f44336",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
+                    <form class="fk-reg-form" method="POST" action="{{ route('sportsRegister') }}">
+                        @csrf
                         <div class="fk-reg-row">
                             <input class="fk-reg-input" name="name" placeholder="Full Name">
                             <input class="fk-reg-input" name="email" placeholder="Email">
                         </div>
 
                         <div class="fk-reg-row">
-                           
-                            <input class="fk-reg-input"  placeholder="Nationality" id="nationality">
-                             <select class="fk-reg-input" name="nationalities">
+
+                            <input class="fk-reg-input" placeholder="Nationality" id="nationality">
+                            <select class="fk-reg-input" name="nationalities">
                                 <option value="">Select Country</option>
-                                @foreach($countries as $country)
+                                @foreach ($countries as $country)
                                     <option value="{{ $country['title_en'] }}">
                                         {{ $country['title_en'] }}
                                     </option>
                                 @endforeach
-                                
+
                             </select>
- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number">
+                            <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number">
                         </div>
 
                         <div class="fk-reg-row">
@@ -369,7 +369,8 @@
 
                         <div class="fk-reg-row">
                             <div class="fk-reg-password">
-                                <input type="password" name="password" id="password" class="fk-reg-input" placeholder="Password">
+                                <input type="password" name="password" id="password" class="fk-reg-input"
+                                    placeholder="Password">
 
                                 <span class="fk-reg-eye" data-target="password">
                                     <i data-lucide="eye"></i>
@@ -423,7 +424,7 @@
 
                         <div style="display: flex; justify-content: center;">
 
-                            <button  type="submit" class="fk-reg-btn">Register</button>
+                            <button type="submit" class="fk-reg-btn">Register</button>
                         </div>
 
                         <p class="fk-reg-switch">

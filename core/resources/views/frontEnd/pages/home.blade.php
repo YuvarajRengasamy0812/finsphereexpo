@@ -308,7 +308,9 @@
     <!--================== S-PRICING END ==================-->
 
     <!--================== S-partners ==================-->
-    @include('frontEnd.includes.partners')
+    {{-- @include('frontEnd.includes.partners') --}}
+    {{-- Counter --}}
+   @include('frontEnd.includes.counter')
     <!--================ S-partners END =================-->
 
     <!--===================== S-VENUE =====================-->

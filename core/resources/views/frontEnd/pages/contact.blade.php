@@ -32,36 +32,36 @@
         <div class="container">
             <h2 class="title-line-left">Get in Touch</h2>
             <div class="row">
-               
-                <div class="col-12 col-sm-8">
-                     {{-- Toastify Alerts --}}
-        @if (session('success'))
-            <script>
-                Toastify({
-                    text: "{{ session('success') }}",
-                    duration: 3000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#4CAF50",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
 
-        @if ($errors->any())
-            <script>
-                Toastify({
-                    text: "{{ $errors->first() }}",
-                    duration: 4000,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    backgroundColor: "#f44336",
-                    stopOnFocus: true
-                }).showToast();
-            </script>
-        @endif
+                <div class="col-12 col-sm-8">
+                    {{-- Toastify Alerts --}}
+                    @if (session('success'))
+                        <script>
+                            Toastify({
+                                text: "{{ session('success') }}",
+                                duration: 3000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#4CAF50",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
+
+                    @if ($errors->any())
+                        <script>
+                            Toastify({
+                                text: "{{ $errors->first() }}",
+                                duration: 4000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#f44336",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
                     <form action="{{ route('contact-submit') }}" method="POST">
                         @csrf
 
@@ -98,8 +98,9 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <h5>Address</h5>
                         <p>
-                            Kuwait international Fair,
-                            Mubarak Al Abdullah Al Jaber, Block 6, Sixth Ring Road.
+                            Al Badriya Ballroom,
+                            Jumeirah Messilah Beach Hotel & Resort,
+                            Kuwait
                         </p>
                     </div>
                     <div class="cont-info-item">
@@ -128,7 +129,7 @@
     <section class="s-map">
         <div id="map" class="cont-map google-map">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.61839005281!2d48.04374752498063!3d29.269360204878335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf9f71cb7149ff%3A0x82a12e9f4958c2e8!2sKuwait%20International%20Fairground!5e1!3m2!1sen!2sae!4v1767853127479!5m2!1sen!2sae"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3149.634731415047!2d48.08568337498055!3d29.268829804902936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf7564e3cd15f1%3A0x675d67bb213da8c9!2sjumeirah%20Badriya%20Hall%20rode%20no%20-%206!5e1!3m2!1sen!2sae!4v1769681084166!5m2!1sen!2sae"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>

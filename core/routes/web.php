@@ -114,6 +114,9 @@ Route::get('/speakers', function () {
 Route::get('/exhibitors', function () {
     return view('frontEnd.pages.exhibitors');
 });
+Route::get('/floorplan', function () {
+    return view('frontEnd.floorplan.index');
+});
 Route::get('/Influencer', function () {
     return view('frontEnd.pages.Influencer');
 });

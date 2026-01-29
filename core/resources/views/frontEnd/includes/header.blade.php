@@ -96,26 +96,25 @@
     }
 
     @media (max-width: 767.98px) {
-    .desktop-lang {
-        display: none!important;
+        .desktop-lang {
+            display: none !important;
+        }
     }
-}
 
-@media (max-width: 767px) {
-    .lang-mobile {
-        -webkit-box-pack: end;
-        -ms-flex-pack: end;
-        justify-content: flex-start;
-        display: block!important;
+    @media (max-width: 767px) {
+        .lang-mobile {
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+            justify-content: flex-start;
+            display: block !important;
+        }
     }
-}
 
-@media (min-width: 768px) {
-    .lang-mobile {
-        display: none!important;
+    @media (min-width: 768px) {
+        .lang-mobile {
+            display: none !important;
+        }
     }
-}
-
 </style>
 <header class="header-two">
     <a href="{{ url('#') }}" class="nav-btn">
@@ -148,8 +147,8 @@
                 <div class="col-auto header-top-info">
                     <ul class="header-two-adr header-cont mb-0">
                         <li>
-                            <a href="https://maps.app.goo.gl/rn4eWwFDc815gEyN6">
-                                <i class="fas fa-map-marker-alt"></i> Kuwait International Fairgrounds
+                            <a href="https://maps.app.goo.gl/1MbF5Gcgimr4dVHU8">
+                                <i class="fas fa-map-marker-alt"></i> Kuwait - Al Badriya Ballroom
                             </a>
                         </li>
                     </ul>
@@ -230,6 +229,11 @@
                             <!-- Exhibitors -->
                             <li class="{{ Request::is('exhibitors') ? 'active' : '' }}">
                                 <a href="{{ url('/exhibitors') }}">Exhibitors</a>
+                            </li>
+
+                            <!-- Floorplan -->
+                            <li class="{{ Request::is('floorplan') ? 'active' : '' }}">
+                                <a href="{{ url('/floorplan') }}">Floorplan</a>
                             </li>
 
                             <!-- Influencers -->
