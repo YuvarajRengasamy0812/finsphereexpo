@@ -11,11 +11,14 @@ use App\Models\User;
 use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use App\Services\MailService;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Carbon;
 class AuthController extends Controller
 {
     // REGISTER
-  
+    	protected $redirectTo = '/email/verify';
+    protected $mailService;
 
     // LOGIN
     public function customerlogin(Request $request)
@@ -133,17 +136,40 @@ public function logoutcustomer(Request $request)
             'userid' => 'PROFX' . (10000 + $user->id),
         ]);
 
-        DB::commit();
+         $verificationLink = URL::temporarySignedRoute(
+                'verification.verify',
+                Carbon::now()->addMinutes(60),
+                ['id' => $user->id, 'hash' => sha1($user->email)]
+            );
+            
+            $templateVars = [
+                'name'             => $user->name,
+                'server_name'      => 'PROFX SportsClub',
+                'site_link'        => 'https://profxsportsclub.com',
+                'email'            => $user->email,
+                'verificationUrl'=> $verificationLink,
+            ];
+            
+            $this->mailService->sendEmail(
+                $user->email,         // recipient
+                'PROFX SPORTSCLUB - Email Verification!', // subject
+                [],                   // headers (ignored)
+                'emails.account_verification',      // <- use the Blade template here
+                $templateVars         // variables for template
+            );
 
-        return redirect("/login")
-            ->with('success', 'Register  successfully.');
 
-    } catch (\Exception $e) {
-        DB::rollBack();
 
-        return redirect()->back()
-            ->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
-    }
+			// event(new Registered($user));
+			//$this->distributeRegistrationCommission($user->id, $user->name, 100);
+			DB::commit();
+
+
+			return redirect()->route('verification.notice')->with('status', 'Verification email sent.');
+		} catch (\Exception $e) {
+			DB::rollBack();
+			return redirect()->back()->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
+		}
 }
 
   public function customerdashboard(){
