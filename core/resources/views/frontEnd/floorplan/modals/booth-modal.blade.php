@@ -85,7 +85,7 @@
                     <div class="fpk-support-card">
                         <p class="fpk-support-title">Contact us for booking support</p>
                         <p class="fpk-support-whatsapp">
-                            WhatsApp: <strong>+965 5222 2347</strong>
+                            WhatsApp: <strong><a href="https://wa.me/+971588845033" target="_blank">+971 58 884 5033</a></strong>
                         </p>
                     </div>
 

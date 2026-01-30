@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/custom.css') }}">
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body id="home" class="version-2" style="background-color: #fff;">
@@ -52,6 +54,15 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            // once: true, 
+            easing: 'ease-in-out',
+        });
+    </script>
+
 </body>
 
 </html>
