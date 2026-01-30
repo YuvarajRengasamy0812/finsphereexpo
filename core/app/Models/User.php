@@ -89,4 +89,16 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Models\Permissions', 'permissions_id');
     }
+
+        /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+
+
+	public function sendEmailVerificationNotification()
+	{
+		$this->notify(new \App\Mail\CustomVerifyEmail());
+	}
 }

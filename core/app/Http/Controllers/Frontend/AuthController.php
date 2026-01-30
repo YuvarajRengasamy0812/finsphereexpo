@@ -178,3 +178,97 @@ public function logoutcustomer(Request $request)
         return view('frontEnd.pages.register',compact('countries'));
         }
 }
+
+
+
+//     protected function sportsRegister(Request $request)
+// {
+//     $validator = Validator::make($request->all(), [
+//         'name'              => 'required|string|max:255',
+        
+//         'email'                  => 'required|string|email|max:255|unique:users',
+//         'password'               => 'required|string|min:6',
+//         'real_password'          => 'required|string|min:6|same:password',
+//         'phone'          => 'required|string|max:20',
+//         'nationalities'          => 'required|string|max:20',
+//          'company'          => 'required|string|max:20',
+//         'designation'          => 'required|string|max:20',
+//          'source'          => 'required|string|max:20',
+//         'type'          => 'required|string|max:20',
+//         'country_code' =>'required|string|max:20',
+      
+//     ], [
+//         'email.unique'           => 'This email is already registered.',
+//         'real_password.same'      => 'Password and Confirm Password do not match.',
+//     ]);
+
+//     if ($validator->fails()) {
+//         return redirect()->back()
+//             ->withErrors($validator)
+//             ->withInput();
+//     }
+
+//     DB::beginTransaction();
+
+//     try {
+//         $user = User::create([
+//             'name'      => $request->name,
+//           'type'  => $request->type,
+//              'source'  => $request->source,
+//             'company'  => $request->company,
+//              'designation'  => $request->designation,
+//             'email'     => $request->email,
+//             'phone'     => $request->phone,
+//             'nationalities'=>$request->nationalities,
+//             'country_code' => $request->country_code,
+//             'password'  => Hash::make($request->password),
+//             'real_password'   => $request->real_password,
+//             'status'    => true,
+//             'user_type' => 2,
+//              'permissions_id' => 2, // ⭐ ADD THIS LINE
+//         ]);
+
+//         $user->update([
+//             'userid' => 'PROFX' . (10000 + $user->id),
+//         ]);
+
+//     // ✅ Send registration email via Brevo API
+//     try {
+//         $mailService = new MailService();
+
+//         $mailData = [
+//             'title'             => 'Welcome to PROFX Summit Dubai 2026',
+//             'details'           => "Hi {$user->full_name},<br><br>Thank you for registering for PROFX Summit Dubai 2026.<br>You can now login with your email.<br><br>Regards,<br>PROFX Team",
+//             'logo'              => 'https://profxsummit.com/assets/images/logo/profx-dark.png',
+//             'ticket_header'     => 'https://profxsummit.com/assets/images/ticket-header.png',
+//             'ticket_footer'     => 'https://profxsummit.com/assets/images/ticket-footer.png',
+//             'barcodeBase64'     => $barcodeBase64,
+//             'downloadTicketUrl' => $downloadTicketUrl,
+//         ];
+
+//         $result = $mailService->sendEmail(
+//             $user->email,
+//             'Registration Successful - PROFX Summit',
+//             'emails.registration', // Blade template
+//             $mailData
+//         );
+
+//         \Log::info('Brevo Mail Response', $result);
+
+//         if (isset($result['error'])) {
+//             \Log::error('Failed to send registration email: ' . $result['message']);
+//         }
+
+//     } catch (\Exception $e) {
+//         \Log::error('Exception sending registration email: ' . $e->getMessage());
+//     }
+
+
+// 		 return redirect()->back()->with('success', 
+//             'Registration successful! Please check your email for confirmation.'
+//         );
+// 		} catch (\Exception $e) {
+// 			DB::rollBack();
+// 			return redirect()->back()->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
+// 		}
+// }
