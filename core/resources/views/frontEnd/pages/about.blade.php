@@ -29,31 +29,35 @@
                         <div class="overview-info-item">
                             <!-- <h5>Experience Since 2012</h5> -->
                             <ul class="MP-points">
-    <li>
-        <i data-lucide="check-circle"></i>
-        Premier financial expo in Kuwait connecting global fintech, trading, and digital finance leaders
-    </li>
-    <li>
-        <i data-lucide="check-circle"></i>
-        Focused on fintech, forex, blockchain, AI, and digital asset innovation shaping the future of finance
-    </li>
-    <li>
-        <i data-lucide="check-circle"></i>
-        Brings together investors, regulators, startups, and enterprises under one powerful platform
-    </li>
-    <li>
-        <i data-lucide="check-circle"></i>
-        Features keynote sessions, expert panels, live demos, and hands-on workshops
-    </li>
-    <li>
-        <i data-lucide="check-circle"></i>
-        Designed to foster strategic partnerships, knowledge exchange, and market expansion
-    </li>
-    <li>
-        <i data-lucide="check-circle"></i>
-        A future-focused experience positioning Kuwait as a regional hub for financial innovation
-    </li>
-</ul>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    Premier financial expo in Kuwait connecting global fintech, trading, and digital finance
+                                    leaders
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    Focused on fintech, forex, blockchain, AI, and digital asset innovation shaping the
+                                    future of finance
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    Brings together investors, regulators, startups, and enterprises under one powerful
+                                    platform
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    Features keynote sessions, expert panels, live demos, and hands-on workshops
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    Designed to foster strategic partnerships, knowledge exchange, and market expansion
+                                </li>
+                                <li>
+                                    <i data-lucide="check-circle"></i>
+                                    A future-focused experience positioning Kuwait as a regional hub for financial
+                                    innovation
+                                </li>
+                            </ul>
 
                         </div>
 
@@ -158,108 +162,108 @@
 
     <!--=================== S-OUR-TEAM ===================-->
     <!-- <section class="s-our-team about-team">
-                        <div class="our-team-bg" style="background-image: url(assets/frontend/img/bg-team-about.svg);"></div>
-                        <div class="container">
-                            <h2 class="title-line">Our Team</h2>
-                            <p class="slogan">They possess the secret knowledge and interesting experience of creating a digital
-                                product.</p>
-                            <div class="row team-cover">
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-1.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Anthony Watson</a></h4>
-                                    <div class="prof">CEO, Infodex</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-2.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Marybeth Hoover</a></h4>
-                                    <div class="prof">CEO, IT Metrix</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-3.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Stewart Collins</a></h4>
-                                    <div class="prof">CEO, IT Metrix</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-4.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Anthony Watson</a></h4>
-                                    <div class="prof">CEO, Infodex</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-5.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Marybeth Hoover</a></h4>
-                                    <div class="prof">CEO, IT Metrix</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-6 col-sm-4 team-item">
-                                    <a href="{{ url('/about') }}" class="team-img">
-                                        <img src="{{ asset('assets/frontend/img/team-6.jpg') }}" alt="team">
-                                    </a>
-                                    <h4 class="title"><a href="{{ url('/about') }}">Stewart Collins</a></h4>
-                                    <div class="prof">CEO, IT Metrix</div>
-                                    <ul class="soc-link">
-                                        <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                        <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
-                                    </ul>
+                            <div class="our-team-bg" style="background-image: url(assets/frontend/img/bg-team-about.svg);"></div>
+                            <div class="container">
+                                <h2 class="title-line">Our Team</h2>
+                                <p class="slogan">They possess the secret knowledge and interesting experience of creating a digital
+                                    product.</p>
+                                <div class="row team-cover">
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-1.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Anthony Watson</a></h4>
+                                        <div class="prof">CEO, Infodex</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-2.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Marybeth Hoover</a></h4>
+                                        <div class="prof">CEO, IT Metrix</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-3.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Stewart Collins</a></h4>
+                                        <div class="prof">CEO, IT Metrix</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-4.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Anthony Watson</a></h4>
+                                        <div class="prof">CEO, Infodex</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-5.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Marybeth Hoover</a></h4>
+                                        <div class="prof">CEO, IT Metrix</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 col-sm-4 team-item">
+                                        <a href="{{ url('/about') }}" class="team-img">
+                                            <img src="{{ asset('assets/frontend/img/team-6.jpg') }}" alt="team">
+                                        </a>
+                                        <h4 class="title"><a href="{{ url('/about') }}">Stewart Collins</a></h4>
+                                        <div class="prof">CEO, IT Metrix</div>
+                                        <ul class="soc-link">
+                                            <li><a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li><a target="_blank" href="https://www.behance.net/rovadex"><i class="fab fa-behance"></i></a>
+                                            </li>
+                                            <li><a target="_blank" href="https://www.linkedin.com/company/rovadex-com"><i
+                                                        class="fab fa-linkedin-in"></i></a></li>
+                                            <li><a target="_blank" href="#"><i class="fab fa-twitter"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </section> -->
+                        </section> -->
     <!--================= S-OUR-TEAM END =================-->
 
     <!--================ S-UPCOMING-COURSE ================-->
@@ -279,7 +283,7 @@
                             </div>
                         </div>
                         <!-- <h3 class="title"><a href="{{ url('/events') }}">Information Technology in The Banking
-                                                Sector</a></h3> -->
+                                                    Sector</a></h3> -->
                         <p>
                             Kuwait stands at the crossroads of financial growth and technological transformation in the
                             Middle East. <b>FINSPHERE EXPO KUWAIT</b> aims to unlock this potential by introducing a
@@ -300,8 +304,8 @@
     </section>
     <!--============== S-UPCOMING-COURSE END ==============-->
 
-   {{-- Counter --}}
-   @include('frontEnd.includes.counter')
+    {{-- Counter --}}
+    @include('frontEnd.includes.counter')
 
     <!--================= S-TESTIMONIALS =================-->
     <section class="s-testimonials about-testimonials-slider">

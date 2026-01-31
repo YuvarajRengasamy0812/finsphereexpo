@@ -46,10 +46,6 @@
                          <input type="text" placeholder="Full Name" class="fs-spon-input" required>
                      </div>
 
-                     <div class="fs-spon-form-group">
-                         <input type="text" placeholder="Company Name" class="fs-spon-input" required>
-                     </div>
-
                      <div class="fs-spon-form-row">
                          <div class="fs-spon-form-group">
                              <input type="tel" placeholder="Phone Number" class="fs-spon-input" required>
@@ -58,6 +54,29 @@
                              <input type="email" placeholder="Email Address" class="fs-spon-input" required>
                          </div>
                      </div>
+
+                     <div class="fs-spon-form-row">
+                         <div class="fs-spon-form-group">
+                             <input type="text" placeholder="Company Name" class="fs-spon-input" required>
+                         </div>
+                         <div class="fs-spon-form-group">
+                             <select class="fs-spon-select" name="" id="">
+                                 <option value="">Select Sponsorship Type</option>
+                                 <option value="">Official</option>
+                                 <option value="">Exclusive</option>
+                                 <option value="">Diamond</option>
+                                 <option value="">Platinum</option>
+                                 <option value="">Elite</option>
+                                 <option value="">Title</option>
+                                 <option value="">Regional</option>
+                                 <option value="">Gold</option>
+                                 <option value="">Silver</option>
+                                 <option value="">Standard</option>
+                             </select>
+                         </div>
+
+                     </div>
+
 
                      <div class="fs-spon-form-group">
                          <textarea placeholder="Tell us about your sponsorship interests..." class="fs-spon-textarea" rows="4"></textarea>
@@ -227,6 +246,18 @@
          display: grid;
          grid-template-columns: 1fr 1fr;
          gap: 16px;
+     }
+
+     .fs-spon-select {
+         width: 100%;
+         padding: 10px;
+         border: 2px solid #e5e5e5;
+         border-radius: 5px;
+         font-size: 15px;
+         color: #2d2d2d;
+         transition: all 0.3s ease;
+         background: #fafafa;
+         font-family: inherit;
      }
 
      .fs-spon-input,
