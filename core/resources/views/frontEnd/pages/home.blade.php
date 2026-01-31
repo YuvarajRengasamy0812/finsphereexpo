@@ -52,7 +52,8 @@
     <!--================== EVENT HIGHLIGHTS END ==================-->
 
     <!--==================== Industry Sector ====================-->
-    @include('frontEnd.includes.industry-sector')
+    {{-- @include('frontEnd.includes.industry-sector') --}}
+    @include('frontEnd.includes.industries')
     <!--================== Industry Sector END ==================-->
 
     <!--==================== MARKETING-PARTNER ====================-->
@@ -316,6 +317,9 @@
     <!--===================== S-VENUE =====================-->
     @include('frontEnd.includes.venue')
     <!--=================== S-VENUE END ===================-->
+
+    {{-- Sponsorship CTA --}}
+    @include('frontEnd.includes.sponsorship-cta')
 
     <!--==================== S-PARTNERS ====================-->
     {{-- <section class="s-partners partners-home-two">

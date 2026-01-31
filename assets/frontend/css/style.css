@@ -247,7 +247,8 @@ body {
 
 /* ===== Industry Sectors Section ===== */
 .IS-section {
-  padding: 100px 0;
+  padding-top: 10px;
+  padding-bottom: 25px;
   /* background: linear-gradient(135deg, #f3f4f6, #ffffff); */
   position: relative;
 }
@@ -264,7 +265,7 @@ body {
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  background: linear-gradient(90deg, #976737, #ae4b84);
+  background: linear-gradient(to right, #c19a5f, #976737, #6b4a26);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -282,14 +283,13 @@ body {
   line-height: 1.7;
 }
 
-/* Grid */
-.IS-grid {
+/* Old */
+/* .IS-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
-/* Cards */
 .IS-card {
   background: rgba(255, 255, 255, 0.95);
   padding: 30px 25px;
@@ -339,7 +339,6 @@ body {
   line-height: 1.7;
 }
 
-/* Card Images */
 .IS-card-img {
   width: 70px;
   height: 70px;
@@ -352,7 +351,6 @@ body {
   transform: rotate(-10deg) scale(1.1);
 }
 
-/* Wide card */
 .IS-wide {
   grid-column: span 3;
   background: rgba(255, 255, 255, 0.98);
@@ -387,10 +385,10 @@ body {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
-}
+} */
 
 /* Responsive */
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .IS-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -402,15 +400,15 @@ body {
   .IS-wide-img img {
     margin-top: 20px;
   }
-}
+} */
 
 @media (max-width: 575px) {
-  .IS-grid {
+  /* .IS-grid {
     grid-template-columns: 1fr;
   }
   .IS-wide {
     grid-column: span 1;
-  }
+  } */
   .IS-title {
     font-size: 28px;
   }
@@ -421,11 +419,11 @@ body {
 /* ===== Marketing Partner Section ===== */
 .MP-section {
   padding: 100px 0;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     rgba(151, 103, 55, 0.08),
     rgba(62, 97, 93, 0.08)
-  );
+  ); */
 }
 
 .MP-container {
@@ -453,7 +451,7 @@ body {
 }
 
 .MP-title span {
-  background: linear-gradient(135deg, #A12B36, #CB404C, #E06670);
+  background: linear-gradient(135deg, #a12b36, #cb404c, #e06670);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text; /* standard version */
@@ -467,6 +465,32 @@ body {
   line-height: 1.7;
   margin-bottom: 20px;
 }
+
+.MP-points {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 30px;
+}
+
+.MP-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.MP-points svg {
+  width: 20px;
+  height: 20px;
+  color: #3e615d;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 
 .MP-btn {
   display: inline-block;
@@ -565,70 +589,66 @@ body {
   color: #f1f1f1;
 }
 
-
-
-
 /* Hide mobile CTAs by default */
 .mobile-only-cta {
-    display: none!important;
+  display: none !important;
 }
 
 /* Show inside mobile menu only */
 @media (max-width: 767px) {
-    .mobile-only-cta {
-        display: block!important;
-    }
+  .mobile-only-cta {
+    display: block !important;
+  }
 
-    .mobile-only-cta a {
-        text-align: center;
-        padding: 12px 16px;
-        font-size: 14px;
-        width: 75%;
-        margin-left: 30px
-    }
+  .mobile-only-cta a {
+    text-align: center;
+    padding: 12px 16px;
+    font-size: 14px;
+    width: 75%;
+    margin-left: 30px;
+  }
 }
 
 @media (max-width: 767px) {
-    .header-two-btn {
-        display: none !important;
-    }
+  .header-two-btn {
+    display: none !important;
+  }
 }
 
 .mob-btn-1 {
-    margin-top: 10px;
-    padding: 14px;
-    border-radius: 16px;
-    border: none;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-    background: linear-gradient(135deg, #b8860b, #f2b41e);
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #b8860b, #f2b41e);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .mob-btn-1:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 .mob-btn-2 {
-    margin-top: 10px;
-    padding: 14px;
-    border-radius: 16px;
-    border: none;
-    font-weight: 600;
-    font-size: 15px;
-    color: #fff;
-    background: linear-gradient(135deg, #3E615D, #6b4a26);
-    cursor: pointer;
-    transition: 0.3s;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #3e615d, #6b4a26);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .mob-btn-2:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Custom css End */
 /* ------------------------------------------------------------------------------------------- */
@@ -996,8 +1016,12 @@ header {
   display: block;
   margin: 6px 0;
   position: relative;
-  -webkit-transition: all 0.4s ease, visibility 0.1s ease;
-  transition: all 0.4s ease, visibility 0.1s ease;
+  -webkit-transition:
+    all 0.4s ease,
+    visibility 0.1s ease;
+  transition:
+    all 0.4s ease,
+    visibility 0.1s ease;
 }
 .nav-btn:hover span:nth-child(2) {
   margin-left: -8px;
@@ -1672,8 +1696,22 @@ input[type="submit"],
   transform-origin: right; /* move towards left */
 }
 
-
 /*  */
+
+.btn.btn-theme {
+  border-color: #3e615d;
+  color: #fff !important;
+}
+.btn.btn-theme:hover {
+  color: #fff !important;
+}
+.btn.btn-theme:hover:before {
+  width: 0;
+}
+.btn.btn-theme:before {
+  background-color: #3e615d;
+  width: 100%;
+}
 
 .btn.btn-yellow {
   border-color: #3e615d;
@@ -2253,7 +2291,8 @@ footer h6 {
     250ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 250ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 250ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 250ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 250ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 250ms;
 }
 .stateEnd.main-slide .title {
@@ -2262,7 +2301,9 @@ footer h6 {
   -webkit-transition: -webkit-transform 400ms ease-in 40ms;
   transition: -webkit-transform 400ms ease-in 40ms;
   transition: transform 400ms ease-in 40ms;
-  transition: transform 400ms ease-in 40ms, -webkit-transform 400ms ease-in 40ms;
+  transition:
+    transform 400ms ease-in 40ms,
+    -webkit-transform 400ms ease-in 40ms;
 }
 .slide-category {
   background: #23033c;
@@ -2284,7 +2325,8 @@ footer h6 {
     150ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 150ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 150ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 150ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 150ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 150ms;
 }
 .stateEnd .slide-category {
@@ -2293,7 +2335,9 @@ footer h6 {
   -webkit-transition: -webkit-transform 400ms ease-in;
   transition: -webkit-transform 400ms ease-in;
   transition: transform 400ms ease-in;
-  transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
+  transition:
+    transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
 }
 .main-slide .btn {
   border-color: #3e615d;
@@ -2308,7 +2352,8 @@ footer h6 {
     350ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 350ms;
 }
 .stateEnd.main-slide .btn {
@@ -2317,7 +2362,9 @@ footer h6 {
   -webkit-transition: -webkit-transform 400ms ease-in 80ms;
   transition: -webkit-transform 400ms ease-in 80ms;
   transition: transform 400ms ease-in 80ms;
-  transition: transform 400ms ease-in 80ms, -webkit-transform 400ms ease-in 80ms;
+  transition:
+    transform 400ms ease-in 80ms,
+    -webkit-transform 400ms ease-in 80ms;
 }
 .main-slide .btn:before {
   background-color: #3e615d;
@@ -4637,6 +4684,18 @@ blockquote:before {
 .main-slide-two .container .slide-btn-cover .btn-yellow:hover:before {
   width: 0;
 }
+.main-slide-two .container .slide-btn-cover .btn-theme {
+  border-color: #3e615d;
+  margin-right: 20px;
+  color: #fff;
+}
+.main-slide-two .container .slide-btn-cover .btn-theme:before {
+  background-color: #3e615d;
+  width: 100%;
+}
+.main-slide-two .container .slide-btn-cover .btn-theme:hover:before {
+  width: 0;
+}
 .main-slide-two .container .slide-btn-cover .btn-border {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.3);
@@ -4651,7 +4710,8 @@ blockquote:before {
   -webkit-transition: -webkit-transform 400ms ease-in 200ms;
   transition: -webkit-transform 400ms ease-in 200ms;
   transition: transform 400ms ease-in 200ms;
-  transition: transform 400ms ease-in 200ms,
+  transition:
+    transform 400ms ease-in 200ms,
     -webkit-transform 400ms ease-in 200ms;
 }
 .main-slide-two.stateEnd .main-slide-date {
@@ -4665,7 +4725,9 @@ blockquote:before {
   -webkit-transition: -webkit-transform 400ms ease-in;
   transition: -webkit-transform 400ms ease-in;
   transition: transform 400ms ease-in;
-  transition: transform 400ms ease-in, -webkit-transform 400ms ease-in;
+  transition:
+    transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
 }
 .main-slide-two.stateEnd .container h2 {
   -webkit-transform: translate3d(0, -500px, 0);
@@ -4673,7 +4735,9 @@ blockquote:before {
   -webkit-transition: -webkit-transform 400ms ease-in 50ms;
   transition: -webkit-transform 400ms ease-in 50ms;
   transition: transform 400ms ease-in 50ms;
-  transition: transform 400ms ease-in 50ms, -webkit-transform 400ms ease-in 50ms;
+  transition:
+    transform 400ms ease-in 50ms,
+    -webkit-transform 400ms ease-in 50ms;
 }
 .main-slide-two.stateEnd .container .slide-tag {
   -webkit-transform: translate3d(0, -500px, 0);
@@ -4681,7 +4745,8 @@ blockquote:before {
   -webkit-transition: -webkit-transform 400ms ease-in 100ms;
   transition: -webkit-transform 400ms ease-in 100ms;
   transition: transform 400ms ease-in 100ms;
-  transition: transform 400ms ease-in 100ms,
+  transition:
+    transform 400ms ease-in 100ms,
     -webkit-transform 400ms ease-in 100ms;
 }
 .main-slide-two.stateEnd .container .slide-btn-cover {
@@ -4690,7 +4755,8 @@ blockquote:before {
   -webkit-transition: -webkit-transform 400ms ease-in 200ms;
   transition: -webkit-transform 400ms ease-in 200ms;
   transition: transform 400ms ease-in 200ms;
-  transition: transform 400ms ease-in 200ms,
+  transition:
+    transform 400ms ease-in 200ms,
     -webkit-transform 400ms ease-in 200ms;
 }
 .main-slide-two.slick-active .img-slide {
@@ -4700,7 +4766,8 @@ blockquote:before {
     625ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
 }
 .main-slide-two.slick-active .main-slide-date {
@@ -4715,7 +4782,8 @@ blockquote:before {
     625ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 625ms;
 }
 .main-slide-two.slick-active .container h2 {
@@ -4725,7 +4793,8 @@ blockquote:before {
     550ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 550ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 550ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 550ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 550ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 550ms;
 }
 .main-slide-two.slick-active .container .slide-tag {
@@ -4735,7 +4804,8 @@ blockquote:before {
     475ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 475ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 475ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 475ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 475ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 475ms;
 }
 .main-slide-two.slick-active .container .slide-btn-cover {
@@ -4745,7 +4815,8 @@ blockquote:before {
     400ms;
   transition: -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 400ms;
   transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 400ms;
-  transition: transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 400ms,
+  transition:
+    transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 400ms,
     -webkit-transform 700ms cubic-bezier(0.22, 0.61, 0.36, 1) 400ms;
 }
 .s-about-home-two {
