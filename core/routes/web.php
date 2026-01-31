@@ -36,7 +36,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Auth::routes(['verify' => true]);
+
 
 // Forgot Password Routes
 Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])
