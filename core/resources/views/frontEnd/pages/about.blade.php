@@ -28,16 +28,33 @@
                         <h2 class="title-line-left">Overview</h2>
                         <div class="overview-info-item">
                             <!-- <h5>Experience Since 2012</h5> -->
-                            <p>FINSPHERE EXPO is a premier international platform dedicated to accelerating financial
-                                innovation and fostering global collaboration across the financial ecosystem. Built around
-                                the rapidly evolving worlds of fintech, trading, blockchain, artificial intelligence, and
-                                digital assets, FINSPHERE EXPO brings together industry leaders, innovators, investors,
-                                regulators, and entrepreneurs under one roof</p>
-                            <p>The expo serves as a dynamic meeting point where ideas transform into action, emerging
-                                technologies gain real-world exposure, and strategic partnerships are forged. Through
-                                keynote sessions, expert panels, live demonstrations, workshops, and networking forums,
-                                FINSPHERE EXPO delivers a future-focused experience designed to shape the next era of
-                                finance</p>
+                            <ul class="MP-points">
+    <li>
+        <i data-lucide="check-circle"></i>
+        Premier financial expo in Kuwait connecting global fintech, trading, and digital finance leaders
+    </li>
+    <li>
+        <i data-lucide="check-circle"></i>
+        Focused on fintech, forex, blockchain, AI, and digital asset innovation shaping the future of finance
+    </li>
+    <li>
+        <i data-lucide="check-circle"></i>
+        Brings together investors, regulators, startups, and enterprises under one powerful platform
+    </li>
+    <li>
+        <i data-lucide="check-circle"></i>
+        Features keynote sessions, expert panels, live demos, and hands-on workshops
+    </li>
+    <li>
+        <i data-lucide="check-circle"></i>
+        Designed to foster strategic partnerships, knowledge exchange, and market expansion
+    </li>
+    <li>
+        <i data-lucide="check-circle"></i>
+        A future-focused experience positioning Kuwait as a regional hub for financial innovation
+    </li>
+</ul>
+
                         </div>
 
                     </div>
@@ -345,5 +362,8 @@
         </div>
     </section>
     <!--=============== S-TESTIMONIALS END ===============-->
+
+    {{-- Sponsorship CTA --}}
+    @include('frontEnd.includes.sponsorship-cta')
 
 @endsection

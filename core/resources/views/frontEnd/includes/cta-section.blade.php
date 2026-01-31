@@ -13,7 +13,7 @@
             <div class="col-12 col-md-6">
                 <form action="#" class="cta-form-vertical">
                     <input type="email" name="your-email" placeholder="Your Email Address">
-                    <button class="btn btn-yellow" type="submit">Subscribe</button>
+                    <button class="btn btn-theme" type="submit">Subscribe</button>
                 </form>
             </div>
 

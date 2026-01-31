@@ -52,7 +52,7 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-theme">
                             Free visitor pass
                         </a>
                         <a href="{{ Auth::check() ? url('/exhibitor-booking') : url('/login') }}" class="btn btn-border">Become an
@@ -88,7 +88,7 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-theme">
                             Free visitor pass
                         </a>
                         <a href="{{ url('/expo-summit') }}" class="btn btn-border">
@@ -124,7 +124,7 @@
                     </div> -->
 
                     <div class="slide-btn-cover">
-                        <a href="{{ url('/visitor-booking') }}" class="btn btn-yellow">
+                        <a href="{{ url('/visitor-booking') }}" class="btn btn-theme">
                             Free visitor pass
                         </a>
                         <a class="btn btn-border" href="{{ url('/speaker-booking') }}">

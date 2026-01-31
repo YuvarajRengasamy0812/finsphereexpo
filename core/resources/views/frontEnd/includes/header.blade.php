@@ -159,7 +159,7 @@
                 <div class="col-auto header-two-btn d-flex" style="gap: 0.5rem">
 
                     {{-- Always visible button --}}
-                    <a style="padding: 0 5px;" class="btn-gold" href="{{ url('/visitor-booking') }}">Free visitor
+                    <a style="padding: 0 5px;" class="btn" href="{{ url('/visitor-booking') }}">Free visitor
                         pass</a>
 
                     {{-- Become a speaker button changes route depending on login --}}

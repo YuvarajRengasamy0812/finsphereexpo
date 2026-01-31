@@ -93,9 +93,9 @@ Route::get('/speaker-booking', function () {
 Route::get('/exhibitor-booking', function () {
     return view('frontEnd.pages.exhibitor-booking');
 });
-// Route::get('/home1', function () {
-//     return view('frontEnd.pages.home-1');
-// });
+Route::get('/home1', function () {
+    return view('frontEnd.pages.home-1');
+});
 Route::get('/about', function () {
     return view('frontEnd.pages.about');
 });

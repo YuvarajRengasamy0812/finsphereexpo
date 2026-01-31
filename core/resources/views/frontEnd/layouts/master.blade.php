@@ -62,6 +62,7 @@
             easing: 'ease-in-out',
         });
     </script>
+    @stack('scripts')
 
 </body>
 
