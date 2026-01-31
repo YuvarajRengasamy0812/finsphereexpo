@@ -1,3 +1,13 @@
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+ 
+ <style>
+    /* Optional custom styles for Toastify */
+    .toastify {
+        font-weight: bold;
+    }
+</style>
+ 
  <div class="fs-spon-container">
      <div class="fs-spon-content container">
          <!-- Left Section -->
@@ -40,38 +50,65 @@
                  <p class="fs-spon-card-subtitle">
                      Get detailed information about our sponsorship opportunities
                  </p>
+                    @if (session('success'))
+                        <script>
+                            Toastify({
+                                text: "{{ session('success') }}",
+                                duration: 3000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#4CAF50",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
 
-                 <form class="fs-spon-form">
+                    @if ($errors->any())
+                        <script>
+                            Toastify({
+                                text: "{{ $errors->first() }}",
+                                duration: 4000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#f44336",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
+                 <form action="{{ route('contact-submit') }}" method="POST" class="fs-spon-form">
+                     @csrf
                      <div class="fs-spon-form-group">
-                         <input type="text" placeholder="Full Name" class="fs-spon-input" required>
+                         <input type="text" placeholder="Full Name"name="contact_name" class="fs-spon-input" required>
                      </div>
 
                      <div class="fs-spon-form-row">
                          <div class="fs-spon-form-group">
-                             <input type="tel" placeholder="Phone Number" class="fs-spon-input" required>
+                             <input type="tel" placeholder="Phone Number"name="contact_phone" class="fs-spon-input" required>
                          </div>
                          <div class="fs-spon-form-group">
-                             <input type="email" placeholder="Email Address" class="fs-spon-input" required>
+                             <input type="email" placeholder="Email Address"name="contact_email" class="fs-spon-input" required>
                          </div>
                      </div>
 
                      <div class="fs-spon-form-row">
                          <div class="fs-spon-form-group">
-                             <input type="text" placeholder="Company Name" class="fs-spon-input" required>
+                             <input type="text" placeholder="Company Name"name="contact_subject" class="fs-spon-input" required>
                          </div>
                          <div class="fs-spon-form-group">
-                             <select class="fs-spon-select" name="" id="">
+                             <select class="fs-spon-select" name="contact_person" id="">
                                  <option value="">Select Sponsorship Type</option>
-                                 <option value="">Official</option>
-                                 <option value="">Exclusive</option>
-                                 <option value="">Diamond</option>
-                                 <option value="">Platinum</option>
-                                 <option value="">Elite</option>
-                                 <option value="">Title</option>
-                                 <option value="">Regional</option>
-                                 <option value="">Gold</option>
-                                 <option value="">Silver</option>
-                                 <option value="">Standard</option>
+                                 <option value="Official">Official</option>
+                                 <option value="Exclusive">Exclusive</option>
+                                 <option value="Diamond">Diamond</option>
+                                 <option value="Platinum">Platinum</option>
+                                 <option value="Elite">Elite</option>
+                                 <option value="Title">Title</option>
+                                 <option value="Regional">Regional</option>
+                                 <option value="Gold">Gold</option>
+                                 <option value="Silver">Silver</option>
+                                 <option value="Standard">Standard</option>
                              </select>
                          </div>
 
@@ -79,7 +116,7 @@
 
 
                      <div class="fs-spon-form-group">
-                         <textarea placeholder="Tell us about your sponsorship interests..." class="fs-spon-textarea" rows="4"></textarea>
+                         <textarea placeholder="Tell us about your sponsorship interests..." name="contact_message" class="fs-spon-textarea" rows="4"></textarea>
                      </div>
 
                      <button type="submit" class="fs-spon-btn">

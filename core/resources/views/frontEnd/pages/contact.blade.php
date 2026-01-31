@@ -13,6 +13,8 @@
 
 
 
+
+
     <!--=================== PAGE-TITLE ===================-->
     <div class="page-title" style="background-image: url(assets/frontend/img/bg-page-title.jpg);">
         <div class="container">
@@ -68,6 +70,10 @@
                         <ul class="form-cover">
                             <li class="inp-name"><input id="name" type="text" name="contact_name"
                                     placeholder="Name"></li>
+
+<input type="hidden" name="contact_person" value="contact">
+
+
                             <li class="inp-name"><input id="last-name" type="text" name="contact_subject"
                                     placeholder="Company"></li>
                             <li class="inp-phone"><input id="phone" type="tel" name="contact_phone"

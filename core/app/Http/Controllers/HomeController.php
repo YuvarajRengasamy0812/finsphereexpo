@@ -573,7 +573,9 @@ class HomeController extends Controller
             'contact_email' => 'required|email',
             'contact_phone' => 'required',
             'contact_subject' => 'required',
-            'contact_message' => 'required'
+            'contact_message' => 'required',
+            'contact_person' => 'required',
+        
         ];
         if (config('smartend.nocaptcha_status')) {
             $validation['g-recaptcha-response'] = 'required|captcha';
@@ -588,6 +590,7 @@ class HomeController extends Controller
             $Webmail->cat_id = 0;
             $Webmail->group_id = null;
             $Webmail->title = strip_tags($request->contact_subject);
+            $Webmail->person = strip_tags($request->contact_person);
             $Webmail->details = strip_tags($request->contact_message);
             $Webmail->date = date("Y-m-d H:i:s");
             $Webmail->from_email = strip_tags($request->contact_email);
@@ -613,8 +616,9 @@ class HomeController extends Controller
                             "title" => strip_tags($request->contact_subject),
                             "details" => $message_details,
                             "from_email" => strip_tags($request->contact_email),
-                            "from_name" => strip_tags($request->contact_name)
-                        ]
+                            "from_name" => strip_tags($request->contact_name),
+                            "person" => strip_tags($request->contact_person),
+                        ]   
                     ));
                 } catch (\Exception $e) {
 
