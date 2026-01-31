@@ -1,55 +1,34 @@
-@extends('dashboard.layouts.auth')
-@section('title', __('backend.forgotPassword'))
+@extends('frontEnd.layouts.master')
+@section('title', 'Forgot Password - FinSphere Expo Kuwait')
+
 @section('content')
-    @if(config('smartend.mail_driver') != "" && config('smartend.mail_username') !="" && config('smartend.mail_password'))
-        <div class="center-block w-xxl p-a-2">
-            <div class="p-a-md box-color r box-shadow-z4 text-color">
-                <div class="text-center">
-                    @if(Helper::GeneralSiteSettings("style_logo_" . @Helper::currentLanguage()->code) !="")
-                        <img alt="" class="app-logo"
-                             src="{{ URL::to('uploads/settings/'.Helper::GeneralSiteSettings("style_logo_" . @Helper::currentLanguage()->code)) }}">
-                    @else
-                        <img alt="" src="{{ URL::to('uploads/settings/nologo.png') }}">
-                    @endif
-                </div>
-                <div class="m-y text-muted text-center">
-                    {{ __('backend.forgotPassword') }}
-                </div>
-                <div class="text-muted text-left">
-                    <p class="text-xs m-t">{{ __('backend.enterYourEmail') }}</p>
-                </div>
+<div class="fk-forgot-wrapper">
+    <div class="fk-forgot-container">
+        <div class="fk-forgot-grid" style="justify-content: center;">
+            <div class="fk-forgot-card" style="max-width: 500px;">
+                <h2 class="fk-forgot-title">Forgot Password</h2>
+                <p class="fk-forgot-subtitle">Enter your email and we’ll send a reset link</p>
+
                 @if (session('status'))
-                    <div class="alert alert-success">
-                        {{ session('status') }}
-                    </div>
+                    <div class="alert alert-success">{{ session('status') }}</div>
                 @endif
 
-                <form name="reset" method="POST"
-                      action="{{ url('/'.config('smartend.backend_path').'/password/email') }}">
-                    {{ csrf_field() }}
-                    <div class="md-form-group {{ $errors->has('email') ? ' has-error' : '' }}">
-                        <input type="email" name="email" value="{{ old('email') }}" class="md-input" required>
-                        <label>{{ __('backend.yourEmail') }}</label>
+                <form class="fk-forgot-form" method="POST" action="{{ route('password.email') }}">
+                    @csrf
+                    <div class="fk-forgot-row">
+                        <input type="email" name="email" class="fk-forgot-input" placeholder="Email address" required>
                     </div>
-                    @if ($errors->has('email'))
-                        <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                            {{ $errors->first('email') }}
-                        </div>
-                    @endif
-                    <button type="submit"
-                            class="btn primary btn-block p-x-md">{{ __('backend.sendPasswordResetLink') }}</button>
+
+                    <div style="display: flex; justify-content: center;">
+                        <button type="submit" class="fk-forgot-btn">Send Reset Link</button>
+                    </div>
                 </form>
 
-                <p id="alerts-container"></p>
-                <div class="p-v-lg text-center">{{ __('backend.returnTo') }} <a
-                        href="{{ url('/'.config('smartend.backend_path').'/login') }}"
-                        class="text-primary _600">{{ __('backend.signIn') }}</a>
-                </div>
+                <p class="fk-forgot-switch" style="text-align: center; margin-top: 15px;">
+                    Remembered your password? <a href="{{ url('/login') }}">Sign in</a>
+                </p>
             </div>
         </div>
-    @endif
+    </div>
+</div>
 @endsection
-
