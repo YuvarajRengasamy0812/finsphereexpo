@@ -10,7 +10,7 @@ $mnu_title_var2 = "title_" . config('smartend.default_language');
 ?>
 
 <div id="aside" class="app-aside modal fade folded md nav-expand">
-    <div class="left navside dark dk" layout="column">
+    <div class="left navside grey dk" layout="column">
 
         <div class="navbar navbar-md no-radius">
             <a class="hidden-folded inline folded-toggle m-t p-t-xs pull-right">

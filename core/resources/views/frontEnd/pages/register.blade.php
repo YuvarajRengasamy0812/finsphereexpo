@@ -4,6 +4,58 @@
 <!-- Include Toastify CSS & JS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/intlTelInput.min.js"></script>
+
+<style>
+    /* Wrapper */
+    .fk-phone .iti {
+        width: 100%;
+    }
+
+    /* Main input */
+    .fk-phone .iti input {
+        width: 100% !important;
+        height: 50px;
+        border-radius: 25px !important;
+        background: #F7F7F7;
+        border: 1px solid #c6c6c6;
+        /* padding-left: 70px !important;  */
+        font-size: 14px;
+        line-height: 50px;
+        color: #707070;
+    }
+
+    /* Flag container */
+    .fk-phone .iti__flag-container {
+        border-radius: 25px 0 0 25px;
+    }
+
+    /* Flag button */
+    .fk-phone .iti__selected-flag {
+        padding: 0 4px;
+        border-radius: 25px 0 0 25px;
+    }
+
+    /* Dropdown */
+    .fk-phone .iti__country-list {
+        border-radius: 12px;
+    }
+
+    /* Focus state */
+    .fk-phone .iti input:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: #00b100;
+        /* FinSphere green */
+    }
+
+    /* Remove intl default weird borders */
+    .iti--allow-dropdown input,
+    .iti--allow-dropdown input:focus {
+        border: 1px solid #c6c6c6 !important;
+    }
+</style>
 
 @section('content')
     <div class="fk-reg-wrapper">
@@ -83,31 +135,20 @@
                         </div>
 
                         <div class="fk-reg-row">
-                            <select class="fk-reg-input" name="nationalities">
+                            <select class="fk-reg-input" name="nationalities" id="nationality_select">
                                 <option value="">Select Country</option>
                                 @foreach ($countries as $country)
                                     <option value="{{ $country['title_en'] }}">
                                         {{ $country['title_en'] }}
                                     </option>
                                 @endforeach
-
                             </select>
+
                             <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
-
-                            <div class="fk-phone-wrapper">
-                                <select id="country_code" name="country_code">
-                                    <option value="">+Code</option>
-                                    @foreach ($countries as $country)
-                                        <option value="{{ $country->code }}">
-                                            {{ $country->code }} {{ $country->tel }}
-                                        </option>
-                                    @endforeach
-                                </select>
-
-                                <input type="text" id="phone_number" name="phone" placeholder="Enter phone " required>
+                            <div class="w-100 fk-phone">
+                                <input type="tel" id="phone" class="fk-reg-input" placeholder="Phone number">
+                                <input type="hidden" name="phone" id="full_phone">
                             </div>
-
-
 
                         </div>
 
@@ -236,3 +277,54 @@
         });
     });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const phoneInput = document.querySelector("#phone");
+    const hiddenPhone = document.querySelector("#full_phone");
+    const countrySelect = document.querySelector("#nationality_select");
+
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "auto",
+        separateDialCode: true,
+        geoIpLookup: function (callback) {
+            fetch("https://ipapi.co/json/")
+                .then(res => res.json())
+                .then(data => {
+                    callback(data.country_code);
+                    syncNationality(data.country_name);
+                })
+                .catch(() => {
+                    callback("kw");
+                    syncNationality("Kuwait");
+                });
+        },
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js"
+    });
+
+    // Save full phone number
+    phoneInput.addEventListener("blur", function () {
+        if (iti.isValidNumber()) {
+            hiddenPhone.value = iti.getNumber();
+        }
+    });
+
+    // When user changes flag manually
+    phoneInput.addEventListener("countrychange", function () {
+        const countryData = iti.getSelectedCountryData();
+        syncNationality(countryData.name);
+    });
+
+    function syncNationality(countryName) {
+        if (!countrySelect) return;
+
+        [...countrySelect.options].forEach(option => {
+            option.selected =
+                option.text.trim().toLowerCase() === countryName.toLowerCase();
+        });
+    }
+
+});
+</script>
+
