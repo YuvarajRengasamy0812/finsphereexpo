@@ -2,8 +2,8 @@
 
 
 namespace App\Http\Controllers\Frontend;
-
 use App\Http\Controllers\Controller;
+use App\Services\MailService; // ✅ THIS IS THE FIX
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
@@ -11,15 +11,23 @@ use App\Models\User;
 use App\Models\Country;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use App\Services\MailService;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Str;
+
+
+
 class AuthController extends Controller
 {
-    // REGISTER
-    	protected $redirectTo = '/email/verify';
+    
+      	protected $redirectTo = '/email/verify';
     protected $mailService;
+
+    
+
+    public function __construct(MailService $mailService)
+    {
+        $this->mailService = $mailService;
+    }
 
     // LOGIN
     public function customerlogin(Request $request)
@@ -86,9 +94,73 @@ public function logoutcustomer(Request $request)
 }
 
 
-    protected function sportsRegister(Request $request)
-{
-    $validator = Validator::make($request->all(), [
+//     protected function sportsRegister(Request $request)
+// {
+//     $validator = Validator::make($request->all(), [
+//         'name'              => 'required|string|max:255',
+        
+//         'email'                  => 'required|string|email|max:255|unique:users',
+//         'password'               => 'required|string|min:6',
+//         'real_password'          => 'required|string|min:6|same:password',
+//         'phone'          => 'required|string|max:20',
+//         'nationalities'          => 'required|string|max:20',
+//          'company'          => 'required|string|max:20',
+//         'designation'          => 'required|string|max:20',
+//          'source'          => 'required|string|max:20',
+//         'type'          => 'required|string|max:20',
+//         'country_code' =>'required|string|max:20',
+      
+//     ], [
+//         'email.unique'           => 'This email is already registered.',
+//         'real_password.same'      => 'Password and Confirm Password do not match.',
+//     ]);
+
+//     if ($validator->fails()) {
+//         return redirect()->back()
+//             ->withErrors($validator)
+//             ->withInput();
+//     }
+
+//     DB::beginTransaction();
+
+//     try {
+//         $user = User::create([
+//             'name'      => $request->name,
+//           'type'  => $request->type,
+//              'source'  => $request->source,
+//             'company'  => $request->company,
+//              'designation'  => $request->designation,
+//             'email'     => $request->email,
+//             'phone'     => $request->phone,
+//             'nationalities'=>$request->nationalities,
+//             'country_code' => $request->country_code,
+//             'password'  => Hash::make($request->password),
+//             'real_password'   => $request->real_password,
+//             'status'    => true,
+//             'user_type' => 2,
+//              'permissions_id' => 2, // тнР ADD THIS LINE
+//         ]);
+
+//         $user->update([
+//             'userid' => 'PROFX' . (10000 + $user->id),
+//         ]);
+
+//         DB::commit();
+
+//         return redirect("/login")
+//             ->with('success', 'Register  successfully.');
+
+//     } catch (\Exception $e) {
+//         DB::rollBack();
+
+//         return redirect()->back()
+//             ->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
+//     }
+// }
+
+
+protected function sportsRegister(Request $request)
+{ $validator = Validator::make($request->all(), [
         'name'              => 'required|string|max:255',
         
         'email'                  => 'required|string|email|max:255|unique:users',
@@ -137,40 +209,46 @@ public function logoutcustomer(Request $request)
             'userid' => 'PROFX' . (10000 + $user->id),
         ]);
 
-         $verificationLink = URL::temporarySignedRoute(
-                'verification.verify',
-                Carbon::now()->addMinutes(60),
-                ['id' => $user->id, 'hash' => sha1($user->email)]
-            );
-            
-            $templateVars = [
-                'name'             => $user->name,
-                'server_name'      => 'PROFX SportsClub',
-                'site_link'        => 'https://profxsportsclub.com',
-                'email'            => $user->email,
-                'verificationUrl'=> $verificationLink,
-            ];
-            
-            $this->mailService->sendEmail(
-                $user->email,         // recipient
-                'PROFX SPORTSCLUB - Email Verification!', // subject
-                [],                   // headers (ignored)
-                'emails.account_verification',      // <- use the Blade template here
-                $templateVars         // variables for template
-            );
+        // Email verification link
+        $verificationLink = URL::temporarySignedRoute(
+            'verification.verify',
+            Carbon::now()->addMinutes(60),
+            [
+                'id'   => $user->id,
+                'hash' => sha1($user->email)
+            ]
+        );
 
+        // Mail template data
+        $templateVars = [
+            'name'            => $user->name,
+            'server_name'     => 'FinSphere Expo Kuwait 2026',
+            'site_link'       => 'https://finsphereexpo.com/',
+            'email'           => $user->email,
+            'verificationUrl' => $verificationLink,
+        ];
 
+        // Send mail
+        $this->mailService->sendEmail(
+            $user->email,
+            'FinSphere Expo Kuwait 2026 - Email Verification!',
+            [],
+            'emails.account_verification',
+            $templateVars
+        );
 
-			// event(new Registered($user));
-			//$this->distributeRegistrationCommission($user->id, $user->name, 100);
-			DB::commit();
+        DB::commit();
 
+        // ✅ SAME PAGE SUCCESS MESSAGE (NO REDIRECT)
+        return back()->with('success', 'Registration successful! Verification email sent to your email address.');
 
-			return redirect()->route('verification.notice')->with('status', 'Verification email sent.');
-		} catch (\Exception $e) {
-			DB::rollBack();
-			return redirect()->back()->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
-		}
+    } catch (\Exception $e) {
+        DB::rollBack();
+
+        return back()->withErrors([
+            'error' => 'Registration failed. ' . $e->getMessage()
+        ])->withInput();
+    }
 }
 
   public function customerdashboard(){
@@ -178,110 +256,4 @@ public function logoutcustomer(Request $request)
 
         return view('frontEnd.pages.register',compact('countries'));
         }
-
-
-        public function showForgotForm()
-    {
-        return view('frontEnd.pages.forgot-password');
-    }
-
-    /* SEND RESET LINK (BREVO) */
- /* SEND RESET LINK (BREVO) */
-public function sendResetLink(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email'
-    ]);
-
-    $user = User::where('email', $request->email)->first();
-
-    if (! $user) {
-        return back()->withErrors([
-            'email' => 'Email not found'
-        ]);
-    }
-
-    // ✅ Generate token
-    $token = Str::random(64);
-
-    DB::table('password_reset_tokens')->updateOrInsert(
-        ['email' => $user->email],
-        [
-            'token'      => Hash::make($token),
-            'created_at' => Carbon::now()
-        ]
-    );
-
-    // ✅ Reset URL
-    $resetUrl = url('/reset-password/' . $token . '?email=' . urlencode($user->email));
-
-    // ✅ SEND MAIL USING BREVO
-    try {
-        $mailService = new MailService();
-
-       $templateVars = [
-                'name'             => $user->name,
-                'server_name'      => 'PROFX SportsClub',
-                'site_link'        => 'https://profxsportsclub.com',
-                'email'            => $user->email,
-               
-            ];
-            
-            $this->mailService->sendEmail(
-                $user->email,         // recipient
-                'PROFX SPORTSCLUB - Email Verification!', // subject
-                [],                   // headers (ignored)
-                'emails.account_verification',      // <- use the Blade template here
-                $templateVars         // variables for template
-            );
-
-
-    } catch (\Exception $e) {
-        \Log::error('Forgot password mail error: ' . $e->getMessage());
-    }
-
-    return back()->with(
-        'success',
-        'Password reset link has been sent to your email.'
-    );
 }
-
-
-    /* SHOW RESET FORM */
-    public function showResetForm(Request $request, $token)
-    {
-        return view('frontEnd.auth.reset-password', [
-            'token' => $token,
-            'email' => $request->email
-        ]);
-    }
-
-    /* RESET PASSWORD */
-    public function resetPassword(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|min:6|confirmed'
-        ]);
-
-        $record = DB::table('password_reset_tokens')
-            ->where('email', $request->email)
-            ->first();
-
-        if (!$record || !Hash::check($request->token, $record->token)) {
-            return back()->withErrors(['email' => 'Invalid or expired token']);
-        }
-
-        $user = User::where('email', $request->email)->firstOrFail();
-
-        $user->update([
-            'password' => Hash::make($request->password),
-            'real_password' => $request->password,
-        ]);
-
-        DB::table('password_reset_tokens')->where('email', $request->email)->delete();
-
-        return redirect('/login')->with('success', 'Password reset successful. Please login.');
-    }
-}
-

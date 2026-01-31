@@ -14,7 +14,7 @@ class CustomVerifyEmail extends BaseVerifyEmail
         $verificationUrl = $this->verificationUrl($notifiable);
 		
 		return (new MailMessage)
-			->subject('PROFXSPORTSCLUB - Email Verification!')
+			->subject('FINSPHERE EXPO KUWAIT - Email Verification!')
 			->view('emails.account_verification', [
 				'user' => $notifiable,
 				'verificationUrl' => $verificationUrl

@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\Frontend\AuthController;
 use App\Http\Controllers\Auth\SocialAuthController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ClientAuthController;
@@ -9,12 +11,16 @@ use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\VisitorBookingController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Services\ReferralService;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Http\Request;
 
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
+|
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
@@ -30,7 +36,23 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
-// Home route
+Auth::routes(['verify' => true]);
+
+// Forgot Password Routes
+Route::get('forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])
+    ->name('password.request');
+
+Route::post('forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])
+    ->name('password.email');
+
+
+    
+// Reset Password Routes
+Route::get('reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])
+    ->name('password.reset');
+
+Route::post('reset-password', [ResetPasswordController::class, 'reset'])
+    ->name('password.update');
 Route::get('/', function () {
     return view('frontEnd.pages.home');
 });
@@ -48,25 +70,6 @@ Route::post('/visitor-booking-submit', [VisitorBookingController::class, 'store'
 Route::post('/exhibitor-request-submit', [VisitorBookingController::class, 'exhibitorstore'])->name('exhibitor.request.submit');
 
 Route::post('/speaker-apply', [VisitorBookingController::class, 'speakerstore'])->name('speaker.apply');// Route::get('/clientregister', fn()=>view('frontEnd.pages.register'));
-
-
-// forget
-
-
-Route::get('/forgot-password', [AuthController::class, 'showForgotForm'])
-    ->name('password.request');
-
-Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])
-    ->name('password.email.custom');
-
-Route::get('/reset-password/{token}', [AuthController::class, 'showResetForm'])
-    ->name('password.reset.custom');
-
-Route::post('/reset-password', [AuthController::class, 'resetPassword'])
-    ->name('password.update.custom');
-
-
-
 // Route::get('/clientlogin', fn()=>view('frontEnd.pages.login'));
 
 // // Register & Login
@@ -132,6 +135,9 @@ Route::get('/speakers', function () {
 Route::get('/exhibitors', function () {
     return view('frontEnd.pages.exhibitors');
 });
+Route::get('/floorplan', function () {
+    return view('frontEnd.floorplan.index');
+});
 Route::get('/Influencer', function () {
     return view('frontEnd.pages.Influencer');
 });
@@ -154,6 +160,68 @@ Route::get('/contact', function () {
 });
 
 
+Route::get('/email/verify', function () {
+    return view('frontEnd.pages.verify');
+})->name('verification.notice');
+
+// Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'verify'])
+//     ->name('verification.verify')
+//     ->middleware('signed');
+Route::get('/email/verify/{id}/{hash}', function ($id, $hash, ReferralService $referralService) {
+
+    $user = \App\Models\User::findOrFail($id);
+
+    // Validate signed hash
+    if (! hash_equals((string) $hash, sha1($user->getEmailForVerification()))) {
+        abort(403, 'Invalid verification link.');
+    }
+
+    // Mark email as verified if not already
+    if (! $user->hasVerifiedEmail()) {
+        $user->markEmailAsVerified();
+        event(new Verified($user));
+    }
+
+    // Auto-login the user (works on new browsers/devices)
+    Auth::guard('web')->login($user);
+
+   // try {
+    //     $referralService->distributeRegistrationCommission($user->id, $user->name, 100);
+    // } catch (\Exception $e) {
+    //     Log::error('Commission error: ' . $e->getMessage());
+    // }
+
+    // Send welcome email
+    try {
+        // Mail::to($user->email)->send(new WelcomeEmail($user));
+        $templateVars = [
+                'name'             => $user->name,
+                'server_name'      => 'PROFXSPORTSCLUB',
+                'site_link'        => 'https://profxsportsclub.com/',
+                'email'            => $user->email,
+                'user'             => $user
+            ];
+
+            app(\App\Services\MailService::class)->sendEmail(
+                $user->email,         // recipient
+                'Welcome to PROFXSPORTSCLUB – Your Journey Starts Here', // subject
+                [],                   // headers (ignored)
+                'emails.greetings',      // <- use the Blade template here
+                $templateVars         // variables for template
+            );
+    } catch (\Exception $e) {
+        Log::error('Welcome email failed: ' . $e->getMessage());
+    }
+
+    return redirect('/crmdashboard')->with('status', 'Email verified successfully. Welcome!');
+
+})->middleware(['signed'])->name('verification.verify');
+
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('resent', true);
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 /*
 |--------------------------------------------------------------------------
 | Web Routes - Frontend Route End

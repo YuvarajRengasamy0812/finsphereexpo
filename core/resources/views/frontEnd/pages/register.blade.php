@@ -56,7 +56,6 @@
         border: 1px solid #c6c6c6 !important;
     }
 </style>
-
 @section('content')
     <div class="fk-reg-wrapper">
         <div class="fk-reg-container">
@@ -142,13 +141,36 @@
                                         {{ $country['title_en'] }}
                                     </option>
                                 @endforeach
-                            </select>
 
+                            </select>
                             <!-- <input class="fk-reg-input" name="phone"placeholder="Phone Number" id="phone_number"> -->
-                            <div class="w-100 fk-phone">
-                                <input type="tel" id="phone" class="fk-reg-input" placeholder="Phone number">
-                                <input type="hidden" name="phone" id="full_phone">
-                            </div>
+
+                            <!--<div class="w-100 fk-phone">-->
+                            <!--    <select id="country_code" name="country_code">-->
+                            <!--        <option value="">+Code</option>-->
+                            <!--        @foreach ($countries as $country)-->
+                            <!--            <option value="{{ $country->code }}">-->
+                            <!--                {{ $country->code }} {{ $country->tel }}-->
+                            <!--            </option>-->
+                            <!--        @endforeach-->
+                            <!--    </select>-->
+
+                            <!--    <input type="text" id="phone_number" name="phone" placeholder="Enter phone " required>-->
+                            <!--</div>-->
+
+<div class="w-100 fk-phone">
+    <input 
+        type="tel" 
+        id="phone"
+        class="fk-reg-input"
+        placeholder="Phone number">
+
+    <input type="hidden" name="phone" id="full_phone">
+    <input type="hidden" name="country_code" id="country_code">
+</div>
+
+
+
 
                         </div>
 
@@ -230,6 +252,51 @@
     </div>
 
 @endsection
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const phoneInput  = document.getElementById("phone");
+    const fullPhone   = document.getElementById("full_phone");
+    const countryCode = document.getElementById("country_code");
+
+    if (!phoneInput) return;
+
+    const iti = window.intlTelInput(phoneInput, {
+        initialCountry: "kw",
+        separateDialCode: true,
+        nationalMode: true,
+        utilsScript:
+            "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js"
+    });
+
+    function updatePayload() {
+        const data = iti.getSelectedCountryData();
+        const number = phoneInput.value.trim();
+
+        // ONLY NUMBER (no country code)
+        fullPhone.value = number
+            ? number.replace(/\D/g, "")
+            : "";
+
+        // COUNTRY CODE separate
+        countryCode.value = "+" + data.dialCode;
+    }
+
+    phoneInput.addEventListener("input", updatePayload);
+    phoneInput.addEventListener("blur", updatePayload);
+    phoneInput.addEventListener("countrychange", updatePayload);
+
+    // FINAL SAFETY
+    document.querySelector("form").addEventListener("submit", function () {
+        updatePayload();
+    });
+
+});
+</script>
+
+
+
 <script>
     document.getElementById('country_select').addEventListener('change', function() {
         let code = this.value; // +91, +971 etc
@@ -241,14 +308,7 @@
         }
     });
 
-    // Allow only numbers after country code
-    document.getElementById('phone_number').addEventListener('input', function() {
-        let value = this.value;
 
-        // keep + at start
-        let clean = value.replace(/(?!^\+)[^0-9]/g, '');
-        this.value = clean;
-    });
 </script>
 
 <script>
@@ -278,53 +338,4 @@
     });
 </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    const phoneInput = document.querySelector("#phone");
-    const hiddenPhone = document.querySelector("#full_phone");
-    const countrySelect = document.querySelector("#nationality_select");
-
-    const iti = window.intlTelInput(phoneInput, {
-        initialCountry: "auto",
-        separateDialCode: true,
-        geoIpLookup: function (callback) {
-            fetch("https://ipapi.co/json/")
-                .then(res => res.json())
-                .then(data => {
-                    callback(data.country_code);
-                    syncNationality(data.country_name);
-                })
-                .catch(() => {
-                    callback("kw");
-                    syncNationality("Kuwait");
-                });
-        },
-        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js"
-    });
-
-    // Save full phone number
-    phoneInput.addEventListener("blur", function () {
-        if (iti.isValidNumber()) {
-            hiddenPhone.value = iti.getNumber();
-        }
-    });
-
-    // When user changes flag manually
-    phoneInput.addEventListener("countrychange", function () {
-        const countryData = iti.getSelectedCountryData();
-        syncNationality(countryData.name);
-    });
-
-    function syncNationality(countryName) {
-        if (!countrySelect) return;
-
-        [...countrySelect.options].forEach(option => {
-            option.selected =
-                option.text.trim().toLowerCase() === countryName.toLowerCase();
-        });
-    }
-
-});
-</script>
 
