@@ -19,8 +19,8 @@ class MailService
             'timeout'  => 10.0,
         ]);
 
-        $this->apiKey       = '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';
-        $this->senderName   = 'FINSPHERE EXPO';
+        $this->apiKey       = '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';
+        $this->senderName   = 'FinSphere Expo';
         $this->senderEmail  = 'info@finsphereexpo.com';
     }
    
@@ -130,7 +130,7 @@ class MailService
 //             'timeout'  => 10.0,
 //         ]);
 
-//         // 🔹 Replace with your Mailjet API keys
+//         // ðŸ”¹ Replace with your Mailjet API keys
 //         $this->apiKey      = '9f759e1a17fe32931ae9fc663a442e77';
 //         $this->apiSecret   = '100880e2736750f309421f1fffc71e06';
 //         $this->senderName  = 'PROFXSPORTSCLUB';
