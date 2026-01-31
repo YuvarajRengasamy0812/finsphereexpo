@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Services\MailService;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     // REGISTER
@@ -177,98 +178,110 @@ public function logoutcustomer(Request $request)
 
         return view('frontEnd.pages.register',compact('countries'));
         }
+
+
+        public function showForgotForm()
+    {
+        return view('frontEnd.pages.forgot-password');
+    }
+
+    /* SEND RESET LINK (BREVO) */
+ /* SEND RESET LINK (BREVO) */
+public function sendResetLink(Request $request)
+{
+    $request->validate([
+        'email' => 'required|email'
+    ]);
+
+    $user = User::where('email', $request->email)->first();
+
+    if (! $user) {
+        return back()->withErrors([
+            'email' => 'Email not found'
+        ]);
+    }
+
+    // ✅ Generate token
+    $token = Str::random(64);
+
+    DB::table('password_reset_tokens')->updateOrInsert(
+        ['email' => $user->email],
+        [
+            'token'      => Hash::make($token),
+            'created_at' => Carbon::now()
+        ]
+    );
+
+    // ✅ Reset URL
+    $resetUrl = url('/reset-password/' . $token . '?email=' . urlencode($user->email));
+
+    // ✅ SEND MAIL USING BREVO
+    try {
+        $mailService = new MailService();
+
+       $templateVars = [
+                'name'             => $user->name,
+                'server_name'      => 'PROFX SportsClub',
+                'site_link'        => 'https://profxsportsclub.com',
+                'email'            => $user->email,
+               
+            ];
+            
+            $this->mailService->sendEmail(
+                $user->email,         // recipient
+                'PROFX SPORTSCLUB - Email Verification!', // subject
+                [],                   // headers (ignored)
+                'emails.account_verification',      // <- use the Blade template here
+                $templateVars         // variables for template
+            );
+
+
+    } catch (\Exception $e) {
+        \Log::error('Forgot password mail error: ' . $e->getMessage());
+    }
+
+    return back()->with(
+        'success',
+        'Password reset link has been sent to your email.'
+    );
 }
 
 
+    /* SHOW RESET FORM */
+    public function showResetForm(Request $request, $token)
+    {
+        return view('frontEnd.auth.reset-password', [
+            'token' => $token,
+            'email' => $request->email
+        ]);
+    }
 
-//     protected function sportsRegister(Request $request)
-// {
-//     $validator = Validator::make($request->all(), [
-//         'name'              => 'required|string|max:255',
-        
-//         'email'                  => 'required|string|email|max:255|unique:users',
-//         'password'               => 'required|string|min:6',
-//         'real_password'          => 'required|string|min:6|same:password',
-//         'phone'          => 'required|string|max:20',
-//         'nationalities'          => 'required|string|max:20',
-//          'company'          => 'required|string|max:20',
-//         'designation'          => 'required|string|max:20',
-//          'source'          => 'required|string|max:20',
-//         'type'          => 'required|string|max:20',
-//         'country_code' =>'required|string|max:20',
-      
-//     ], [
-//         'email.unique'           => 'This email is already registered.',
-//         'real_password.same'      => 'Password and Confirm Password do not match.',
-//     ]);
+    /* RESET PASSWORD */
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6|confirmed'
+        ]);
 
-//     if ($validator->fails()) {
-//         return redirect()->back()
-//             ->withErrors($validator)
-//             ->withInput();
-//     }
+        $record = DB::table('password_reset_tokens')
+            ->where('email', $request->email)
+            ->first();
 
-//     DB::beginTransaction();
+        if (!$record || !Hash::check($request->token, $record->token)) {
+            return back()->withErrors(['email' => 'Invalid or expired token']);
+        }
 
-//     try {
-//         $user = User::create([
-//             'name'      => $request->name,
-//           'type'  => $request->type,
-//              'source'  => $request->source,
-//             'company'  => $request->company,
-//              'designation'  => $request->designation,
-//             'email'     => $request->email,
-//             'phone'     => $request->phone,
-//             'nationalities'=>$request->nationalities,
-//             'country_code' => $request->country_code,
-//             'password'  => Hash::make($request->password),
-//             'real_password'   => $request->real_password,
-//             'status'    => true,
-//             'user_type' => 2,
-//              'permissions_id' => 2, // ⭐ ADD THIS LINE
-//         ]);
+        $user = User::where('email', $request->email)->firstOrFail();
 
-//         $user->update([
-//             'userid' => 'PROFX' . (10000 + $user->id),
-//         ]);
+        $user->update([
+            'password' => Hash::make($request->password),
+            'real_password' => $request->password,
+        ]);
 
-//     // ✅ Send registration email via Brevo API
-//     try {
-//         $mailService = new MailService();
+        DB::table('password_reset_tokens')->where('email', $request->email)->delete();
 
-//         $mailData = [
-//             'title'             => 'Welcome to PROFX Summit Dubai 2026',
-//             'details'           => "Hi {$user->full_name},<br><br>Thank you for registering for PROFX Summit Dubai 2026.<br>You can now login with your email.<br><br>Regards,<br>PROFX Team",
-//             'logo'              => 'https://profxsummit.com/assets/images/logo/profx-dark.png',
-//             'ticket_header'     => 'https://profxsummit.com/assets/images/ticket-header.png',
-//             'ticket_footer'     => 'https://profxsummit.com/assets/images/ticket-footer.png',
-//             'barcodeBase64'     => $barcodeBase64,
-//             'downloadTicketUrl' => $downloadTicketUrl,
-//         ];
+        return redirect('/login')->with('success', 'Password reset successful. Please login.');
+    }
+}
 
-//         $result = $mailService->sendEmail(
-//             $user->email,
-//             'Registration Successful - PROFX Summit',
-//             'emails.registration', // Blade template
-//             $mailData
-//         );
-
-//         \Log::info('Brevo Mail Response', $result);
-
-//         if (isset($result['error'])) {
-//             \Log::error('Failed to send registration email: ' . $result['message']);
-//         }
-
-//     } catch (\Exception $e) {
-//         \Log::error('Exception sending registration email: ' . $e->getMessage());
-//     }
-
-
-// 		 return redirect()->back()->with('success', 
-//             'Registration successful! Please check your email for confirmation.'
-//         );
-// 		} catch (\Exception $e) {
-// 			DB::rollBack();
-// 			return redirect()->back()->withErrors(['error' => 'Registration failed. ' . $e->getMessage()]);
-// 		}
-// }
