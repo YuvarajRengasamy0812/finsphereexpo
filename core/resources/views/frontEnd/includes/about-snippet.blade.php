@@ -11,20 +11,34 @@
                     The first large-scale financial and trading ecosystem expo of its kind in Kuwait
                 </div>
 
-                <div class="about-info-text">
-                    <p data-aos="fade-up" data-aos-delay="300">
-                        <b>FINSPHERE EXPO KUWAIT</b> marks a historic milestone as a landmark platform
-                        connecting the entire financial value chain - from brokers, fintech innovators,
-                        crypto projects, and blockchain platforms to traders, investors, educators,
-                        and influencers.
-                    </p>
+                <!--<div class="about-info-text">-->
+                <!--    <p data-aos="fade-up" data-aos-delay="300">-->
+                <!--        <b>FINSPHERE EXPO KUWAIT</b> marks a historic milestone as a landmark platform-->
+                <!--        connecting the entire financial value chain - from brokers, fintech innovators,-->
+                <!--        crypto projects, and blockchain platforms to traders, investors, educators,-->
+                <!--        and influencers.-->
+                <!--    </p>-->
 
-                    <p data-aos="fade-up" data-aos-delay="400">
-                        This immersive experience blends knowledge-driven summit sessions with a
-                        vibrant exhibition floor, creating a powerful environment for learning,
-                        networking, discovery, and long-term business growth.
-                    </p>
-                </div>
+                <!--    <p data-aos="fade-up" data-aos-delay="400">-->
+                <!--        This immersive experience blends knowledge-driven summit sessions with a-->
+                <!--        vibrant exhibition floor, creating a powerful environment for learning,-->
+                <!--        networking, discovery, and long-term business growth.-->
+                <!--    </p>-->
+                <!--</div>-->
+                <ul class="MP-points">
+                    <li data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="check-circle"></i>
+                        FINSPHERE EXPO KUWAIT is a landmark platform connecting the entire financial value chain —
+                        brokers, fintech innovators, crypto projects, blockchain platforms, traders, investors,
+                        educators, and influencers
+                    </li>
+                    <li data-aos="fade-up" data-aos-delay="400">
+                        <i data-lucide="check-circle"></i>
+                        Blends knowledge-driven summit sessions with a vibrant exhibition floor for learning,
+                        networking, discovery, and long-term business growth
+                    </li>
+                </ul>
+
 
                 <ul class="soc-link" data-aos="zoom-in" data-aos-delay="500">
                     <li>

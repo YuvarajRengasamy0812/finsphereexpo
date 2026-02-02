@@ -115,13 +115,46 @@
             display: none !important;
         }
     }
+
+    /* Hide on desktop */
+.mobile-translator {
+    display: none;
+}
+
+/* Show only on mobile and stick to nav button */
+@media (max-width: 767px) {
+
+    .mobile-translator {
+        display: block;
+        position: absolute;
+        left: 65px;      /* distance from nav icon */
+        top: 39px;       /* align vertically with nav */
+        z-index: 9999;
+    }
+
+    .mobile-translator .goog-te-gadget {
+        font-size: 12px !important;
+    }
+
+    .mobile-translator select {
+        height: 28px !important;
+        padding: 2px 6px;
+        border-radius: 6px;
+    }
+}
+
 </style>
 <header class="header-two">
-    <a href="{{ url('#') }}" class="nav-btn">
-        <span></span>
-        <span></span>
-        <span></span>
-    </a>
+    <a href="javascript:void(0)" class="nav-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+</a>
+
+<div class="mobile-translator">
+    @include('frontEnd.includes.mobile-screen-translation')
+</div>
+
     <div class="header-two-top">
         <div class="container">
             <div class="row align-items-center justify-content-between flex-nowrap">
