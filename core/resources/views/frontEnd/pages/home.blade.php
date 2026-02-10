@@ -349,8 +349,10 @@
     {{-- @include('frontEnd.includes.partners') --}}
     <!--================== S-PARTNERS END ==================-->
 
-    <!--================== CTA SECTION ==================-->
+    @include('frontEnd.includes.cta_3')
+    <!--================== Newsletter SECTION ==================-->
     @include('frontEnd.includes.cta-section')
-    <!--================== CTA SECTION END ==================-->
+    <!--================== Newsletter SECTION END ==================-->
+
 
 @endsection
