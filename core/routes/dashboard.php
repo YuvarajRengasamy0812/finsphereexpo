@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\CategoriesController;
 use App\Http\Controllers\Dashboard\TopicsController;
 use App\Http\Controllers\Dashboard\ContactsController;
 use App\Http\Controllers\Dashboard\WebmailsController;
+use App\Http\Controllers\Dashboard\FloorplanController;
 use App\Http\Controllers\Dashboard\EventsController;
 use App\Http\Controllers\Dashboard\AnalyticsController;
 use App\Http\Controllers\Dashboard\MenusController;
@@ -223,6 +224,13 @@ Route::get('/calendar/destroy/{id}', [EventsController::class, 'destroy'])->name
 Route::get('/calendar/updateAll', [EventsController::class, 'updateAll'])->name('calendarUpdateAll');
 Route::post('/calendar/{id}/extend', [EventsController::class, 'extend'])->name('calendarExtend');
 
+
+// floorplan
+// FloorPlan
+Route::get('/floorplanList', [FloorplanController::class, 'floorplanList'])->name('floorplanList');
+Route::get('/floorplansView/{id}', [FloorplanController::class, 'floorplansView'])->name('floorplansView');
+Route::post('/floorplans/{id}/approve', [FloorplanController::class, 'approve'])
+    ->name('floorplans.approve');
 // Analytics
 Route::get('/ip/{ip_code?}', [AnalyticsController::class, 'ip'])->name('visitorsIP');
 Route::post('/ip/search', [AnalyticsController::class, 'search'])->name('visitorsSearch');

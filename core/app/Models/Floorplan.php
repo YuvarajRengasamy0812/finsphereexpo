@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Floorplan extends Model
 {
     use HasFactory;
-
-    protected $table = 'floorplans';
-
+protected $table = 'floorplans';
     protected $fillable = [
         'name',
         'email',
@@ -22,7 +20,7 @@ class Floorplan extends Model
         'boothsize',
         'boothammount',
         'paymenttype',
+        'networktype',
         'file',
-        'networktype'
     ];
 }

@@ -1,149 +1,136 @@
 {{-- core\resources\views\frontEnd\floorplan\modals\booth-modal.blade.php --}}
-<div id="boothModal" class="ticket-custom-modal-overlay" style="display:none;">
+<div id="boothModal" class="ticket-custom-modal-overlay" style="display:none;" onclick="closeBoothModal()">
     <div class="ticket-custom-modal" onclick="event.stopPropagation()">
+        <form id="floorplanForm" method="POST" action="{{ route('floorplan.submit') }}" enctype="multipart/form-data">
+            @csrf
 
-        <!-- HEADER -->
-        <div class="modal-header d-flex justify-content-between align-items-center">
-            <h4 id="modalTitle">Booth Reservation</h4>
-            <button class="fpk-modal-close" onclick="closeBoothModal()">
-                <i data-lucide="x" class="w-2 h-2 mt-1"></i>
-            </button>
-        </div>
+            <input type="hidden" name="boothno" id="formBoothNo">
+            <input type="hidden" name="boothtitle" id="formBoothTitle">
+            <input type="hidden" name="boothsize" id="formBoothSize">
+            <input type="hidden" name="boothammount" id="formBoothAmount">
+            <input type="hidden" name="paymenttype" id="formPaymentType">
+            <input type="hidden" name="networktype" id="formNetworkType">
 
-        <!-- STEPS -->
-        <div class="steps d-flex justify-content-center my-4">
-            <div class="step active" id="stepIndicator1">Step 1</div>
-            <div class="step" id="stepIndicator2">Step 2</div>
-        </div>
-
-        <!-- STEP 1 -->
-        <div id="fpk-step-1" class="fpk-step">
-
-            <div class="fpk-grid-2">
-
-                <!-- LEFT : FORM -->
-                <div class="fpk-form-card">
-                    <h5 class="fpk-card-title">Exhibitor Details</h5>
-
-                    <div class="fpk-form-group">
-                        <input type="text" placeholder="Full Name" class="fpk-input">
-                    </div>
-
-                    <div class="fpk-form-group">
-                        <input type="email" placeholder="Email Address" class="fpk-input">
-                    </div>
-
-                    <div class="fpk-form-group">
-                        <input type="text" placeholder="Company Name" class="fpk-input">
-                    </div>
-
-                    <div class="fpk-form-group">
-                        <input type="text" placeholder="Phone Number" class="fpk-input">
-                    </div>
-
-                    <div class="fpk-form-group">
-                        <input type="text" placeholder="Referral Code (optional)" class="fpk-input">
-                    </div>
-                </div>
-
-                <!-- RIGHT : SUMMARY -->
-                <div class="fpk-summary-wrapper">
-
-                    <div class="fpk-summary-card">
-                        <h5 class="fpk-card-title">Booth Summary</h5>
-
-                        <div class="fpk-summary-row" id="rowBoothNo">
-                            <span>Booth No:</span>
-                            <strong id="sBoothNo">-</strong>
-                        </div>
-
-                        <div class="fpk-summary-row">
-                            <span id="labelTitle">Booth Title:</span>
-                            <strong id="sTitle">-</strong>
-                        </div>
-
-                        <div class="fpk-summary-row" id="rowSize">
-                            <span id="labelSize">Booth Size:</span>
-                            <strong id="sSize">-</strong>
-                        </div>
-
-
-                        <div class="fpk-divider"></div>
-
-                        <div class="fpk-summary-row">
-                            <span>Booth Amount:</span>
-                            <strong>$ 0.00</strong>
-                        </div>
-
-                        <div class="fpk-total">
-                            <span>Total Payable</span>
-                            <strong>$ 0.00</strong>
-                        </div>
-                    </div>
-
-                    <!-- SUPPORT CARD -->
-                    <div class="fpk-support-card">
-                        <p class="fpk-support-title">Contact us for booking support</p>
-                        <p class="fpk-support-whatsapp">
-                            WhatsApp: <strong><a href="https://wa.me/+971588845033" target="_blank">+971 58 884 5033</a></strong>
-                        </p>
-                    </div>
-
-                </div>
-
+            <!-- HEADER -->
+            <div class="modal-header d-flex justify-content-between align-items-center">
+                <h4 id="modalTitle">Booth Reservation</h4>
+                <button type="button" class="fpk-modal-close" onclick="closeBoothModal()">
+                    <i data-lucide="x" class="w-2 h-2 mt-1"></i>
+                </button>
             </div>
 
-            <!-- FOOTER BUTTONS -->
-            <div class="fpk-modal-footer">
-                <button class="fpk-btn-outline" onclick="closeBoothModal()">Close</button>
-                <button class="fpk-btn-primary" onclick="goStep2()">Continue</button>
+            <!-- STEPS -->
+            <div class="steps d-flex justify-content-center my-4">
+                <div class="step active" id="stepIndicator1">Step 1</div>
+                <div class="step" id="stepIndicator2">Step 2</div>
             </div>
 
-        </div>
+            <!-- STEP 1 -->
+            <div id="fpk-step-1" class="fpk-step">
+                <div class="fpk-grid-2">
+                    <!-- LEFT : FORM -->
+                    <div class="fpk-form-card">
+                        <h5 class="fpk-card-title">Exhibitor Details</h5>
 
+                        <div class="fpk-form-group">
+                            <input id="inputName" type="text" name="name" placeholder="Full Name" class="fpk-input" required>
+                        </div>
 
-        <!-- STEP 2 -->
-        <div id="modalStep2" class="fpk-step" style="display:none;">
+                        <div class="fpk-form-group">
+                            <input id="inputEmail" type="email" name="email" placeholder="Email Address" class="fpk-input" required>
+                        </div>
 
-            <h5 class="fpk-section-title">Choose Payment Method</h5>
+                        <div class="fpk-form-group">
+                            <input type="text" name="company" placeholder="Company Name" class="fpk-input">
+                        </div>
 
-            <!-- PAYMENT METHOD CARDS -->
-            <div class="fpk-payment-methods">
+                        <div class="fpk-form-group">
+                            <input id="inputPhone" type="text" name="phone" placeholder="Phone Number" class="fpk-input" required>
+                        </div>
 
-                <div class="fpk-pay-card" data-pay="nowpayments" onclick="fpkSelectPayment(this)">
-                    <img src="{{ asset('assets/frontend/img/payments/nowpayments.png') }}" alt="NowPayments">
-                    {{-- <span>NowPayments</span> --}}
+                        <div class="fpk-form-group">
+                            <input type="text" name="referal_code" placeholder="Referral Code (optional)" class="fpk-input">
+                        </div>
+                    </div>
+
+                    <!-- RIGHT : SUMMARY -->
+                    <div class="fpk-summary-wrapper">
+                        <div class="fpk-summary-card">
+                            <h5 class="fpk-card-title">Booth Summary</h5>
+
+                            <div class="fpk-summary-row" id="rowBoothNo">
+                                <span>Booth No:</span>
+                                <strong id="sBoothNo">-</strong>
+                            </div>
+
+                            <div class="fpk-summary-row">
+                                <span id="labelTitle">Booth Title:</span>
+                                <strong id="sTitle">-</strong>
+                            </div>
+
+                            <div class="fpk-summary-row" id="rowSize">
+                                <span id="labelSize">Booth Size:</span>
+                                <strong id="sSize">-</strong>
+                            </div>
+
+                            <div class="fpk-divider"></div>
+
+                            <div class="fpk-summary-row">
+                                <span>Booth Amount:</span>
+                                <strong id="sAmount">$ 0.00</strong>
+                            </div>
+
+                            <div class="fpk-total">
+                                <span>Total Payable</span>
+                                <strong id="sTotal">$ 0.00</strong>
+                            </div>
+                        </div>
+
+                        <div class="fpk-support-card">
+                            <p class="fpk-support-title">Contact us for booking support</p>
+                            <p class="fpk-support-whatsapp">
+                                WhatsApp: <strong><a href="https://wa.me/+971588845033" target="_blank">+971 58 884 5033</a></strong>
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="fpk-pay-card" data-pay="stripe" onclick="fpkSelectPayment(this)">
-                    <img src="{{ asset('assets/frontend/img/payments/stripe.png') }}" alt="Stripe">
-                    {{-- <span>Stripe</span> --}}
+                <div class="fpk-modal-footer">
+                    <button type="button" class="fpk-btn-outline" onclick="closeBoothModal()">Close</button>
+                    <button type="button" class="fpk-btn-primary" onclick="goStep2()">Continue</button>
                 </div>
-
-                <div class="fpk-pay-card" data-pay="usdt" onclick="fpkSelectPayment(this)">
-                    <img src="{{ asset('assets/frontend/img/payments/usdt.png') }}" alt="USDT">
-                    {{-- <span>USDT</span> --}}
-                </div>
-
-                <div class="fpk-pay-card" data-pay="bank" onclick="fpkSelectPayment(this)">
-                    <img src="{{ asset('assets/frontend/img/payments/bank-deposit.png') }}" alt="Bank Deposit">
-                    {{-- <span>Bank Deposit</span> --}}
-                </div>
-
             </div>
 
-            <!-- PAYMENT DETAIL AREA -->
-            <div id="fpkPaymentDetails" class="fpk-payment-details"></div>
+            <!-- STEP 2 -->
+            <div id="modalStep2" class="fpk-step" style="display:none;">
+                <h5 class="fpk-section-title">Choose Payment Method</h5>
 
-            <!-- FOOTER -->
-            <div class="fpk-modal-footer">
-                <button class="fpk-btn-outline" onclick="goStep1()">Back</button>
-                <button class="fpk-btn-primary">Submit Deposit</button>
+                <div class="fpk-payment-methods">
+                    <div class="fpk-pay-card" data-pay="nowpayments" onclick="fpkSelectPayment(this)">
+                        <img src="{{ asset('assets/frontend/img/payments/nowpayments.png') }}" alt="NowPayments">
+                    </div>
+
+                    <div class="fpk-pay-card" data-pay="stripe" onclick="fpkSelectPayment(this)">
+                        <img src="{{ asset('assets/frontend/img/payments/stripe.png') }}" alt="Stripe">
+                    </div>
+
+                    <div class="fpk-pay-card" data-pay="usdt" onclick="fpkSelectPayment(this)">
+                        <img src="{{ asset('assets/frontend/img/payments/usdt.png') }}" alt="USDT">
+                    </div>
+
+                    <div class="fpk-pay-card" data-pay="bank" onclick="fpkSelectPayment(this)">
+                        <img src="{{ asset('assets/frontend/img/payments/bank-deposit.png') }}" alt="Bank Deposit">
+                    </div>
+                </div>
+
+                <div id="fpkPaymentDetails" class="fpk-payment-details"></div>
+
+                <div class="fpk-modal-footer">
+                    <button type="button" class="fpk-btn-outline" onclick="goStep1()">Back</button>
+                    <button type="submit" class="fpk-btn-primary" id="submitDepositBtn" disabled>Submit Deposit</button>
+                </div>
             </div>
-
-        </div>
-
-
+        </form>
     </div>
 </div>
 <style>

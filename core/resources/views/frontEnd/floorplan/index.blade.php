@@ -1,7 +1,10 @@
 {{-- core/resources/views/frontEnd/floorplan/index.blade.php --}}
 
 @extends('frontEnd.layouts.master')
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/intlTelInput.min.js"></script>
 @section('content')
     <style>
         .floorplan-wrapper {
@@ -48,7 +51,33 @@
             </div>
         </div>
     </div>
+  @if (session('success'))
+                        <script>
+                            Toastify({
+                                text: "{{ session('success') }}",
+                                duration: 3000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#4CAF50",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
 
+                    @if ($errors->any())
+                        <script>
+                            Toastify({
+                                text: "{{ $errors->first() }}",
+                                duration: 4000,
+                                close: true,
+                                gravity: "top",
+                                position: "right",
+                                backgroundColor: "#f44336",
+                                stopOnFocus: true
+                            }).showToast();
+                        </script>
+                    @endif
     <section class="floorplan-page py-16">
         <div class="container-fluid mx-auto px-4">
             <div class="floorplan-wrapper relative overflow-x-auto mt-5">
@@ -161,14 +190,25 @@
         function openBoothModal(data) {
             const modal = document.getElementById("boothModal");
             modal.style.display = "flex";
+            const form = document.getElementById("floorplanForm");
+            const submitBtn = document.getElementById("submitDepositBtn");
+
+            form.dataset.currentPrice = (data.price || 0).toFixed(2);
+            document.getElementById("formBoothNo").value = data.no || "";
+            document.getElementById("formBoothTitle").value = (data.title || "").replace(/\n/g, " ").trim();
+            document.getElementById("formBoothSize").value = data.size || "";
+            document.getElementById("formBoothAmount").value = form.dataset.currentPrice;
+            document.getElementById("formPaymentType").value = "";
+            document.getElementById("formNetworkType").value = "";
+            document.getElementById("fpkPaymentDetails").innerHTML = "";
+            submitBtn.disabled = true;
+            document.querySelectorAll(".fpk-pay-card").forEach(c => c.classList.remove("active"));
 
             // Update summary card
             const summaryTitle = data.isSponsorship ? "Sponsorship Summary" : "Booth Summary";
             document.querySelector(".fpk-summary-card .fpk-card-title").innerText = summaryTitle;
 
             const rowBoothNo = document.getElementById("rowBoothNo");
-            const rowSize = document.getElementById("rowSize");
-
             const labelTitle = document.getElementById("labelTitle");
             const labelSize = document.getElementById("labelSize");
 
@@ -195,9 +235,9 @@
             }
 
             // Update amount dynamically
-            const amountEl = document.querySelectorAll(".fpk-summary-card .fpk-summary-row strong")[3]; // Booth Amount
-            const totalEl = document.querySelector(".fpk-summary-card .fpk-total strong");
-            const price = data.price.toFixed(2);
+            const amountEl = document.getElementById("sAmount");
+            const totalEl = document.getElementById("sTotal");
+            const price = form.dataset.currentPrice;
 
             amountEl.innerText = `$ ${price}`;
             totalEl.innerText = `$ ${price}`;
@@ -209,8 +249,6 @@
             document.getElementById("stepIndicator1").classList.add("active");
             document.getElementById("stepIndicator2").classList.remove("active");
 
-            // Store current price for step 2 payments
-            modal.dataset.currentPrice = price;
         }
 
         function closeBoothModal() {
@@ -218,8 +256,16 @@
         }
 
         function goStep2() {
-            const modal = document.getElementById("boothModal");
-            const price = modal.dataset.currentPrice || "0.00";
+            const form = document.getElementById("floorplanForm");
+            const nameInput = document.getElementById("inputName");
+            const emailInput = document.getElementById("inputEmail");
+            const phoneInput = document.getElementById("inputPhone");
+
+            if (!nameInput.checkValidity()) return nameInput.reportValidity();
+            if (!emailInput.checkValidity()) return emailInput.reportValidity();
+            if (!phoneInput.checkValidity()) return phoneInput.reportValidity();
+
+            const price = form.dataset.currentPrice || "0.00";
 
             document.getElementById("fpk-step-1").style.display = "none";
             document.getElementById("modalStep2").style.display = "block";
@@ -247,15 +293,20 @@
 
             const type = el.dataset.pay;
             const box = document.getElementById('fpkPaymentDetails');
-            const modal = document.getElementById("boothModal");
-            const price = modal.dataset.currentPrice || "0.00";
+            const form = document.getElementById("floorplanForm");
+            const price = form.dataset.currentPrice || "0.00";
+            const submitBtn = document.getElementById("submitDepositBtn");
+
+            document.getElementById("formPaymentType").value = type;
+            document.getElementById("formNetworkType").value = "";
+            submitBtn.disabled = false;
 
             if (type === 'nowpayments' || type === 'stripe') {
                 box.innerHTML = `
             <div class="fpk-pay-box">
                 <h6>${type.charAt(0).toUpperCase() + type.slice(1)}</h6>
                 <p>Amount: <strong>$ ${price}</strong></p>
-                <button class="fpk-btn-primary w-full">Pay Now</button>
+                <p>Click "Submit Deposit" to continue.</p>
             </div>`;
             }
 
@@ -284,20 +335,31 @@
                     <div class="fpk-right">
                         ${type === 'usdt' ? `
                         <label>Select Network</label>
-                        <select class="fpk-input">
-                            <option>TRON (TRC20)</option>
-                            <option>ETHEREUM (ERC20)</option>
+                        <select class="fpk-input" id="networkTypeSelect" required>
+                            <option value="">Select Network</option>
+                            <option value="TRON (TRC20)">TRON (TRC20)</option>
+                            <option value="ETHEREUM (ERC20)">ETHEREUM (ERC20)</option>
                         </select>
                         <label>Amount to be Paid</label>
                         <input class="fpk-input" disabled value="$ ${price}">
                         <label>Upload Payment Proof</label>
-                        <input type="file" class="fpk-file">` : `
+                        <input type="file" class="fpk-file" name="file" required accept=".jpg,.jpeg,.png,.pdf">` : `
                         <label>Amount to be Paid</label>
                         <input class="fpk-input" disabled value="$ ${price}">
                         <label>Upload Payment Proof</label>
-                        <input type="file" class="fpk-file">`}
+                        <input type="file" class="fpk-file" name="file" required accept=".jpg,.jpeg,.png,.pdf">`}
                     </div>
                 </div>`;
+
+                if (type === 'usdt') {
+                    const networkSelect = document.getElementById("networkTypeSelect");
+                    submitBtn.disabled = true;
+
+                    networkSelect.addEventListener("change", function() {
+                        document.getElementById("formNetworkType").value = this.value;
+                        submitBtn.disabled = !this.value;
+                    });
+                }
             }
         }
     </script>

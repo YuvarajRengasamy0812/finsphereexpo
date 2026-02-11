@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ClientAuthController;
+use App\Http\Controllers\FloorplanController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteMapController;
 use App\Http\Controllers\VisitorBookingController;
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Services\ReferralService;
 use Illuminate\Auth\Events\Verified;
+
 use Illuminate\Http\Request;
 
 
@@ -159,6 +161,12 @@ Route::get('/contact', function () {
     return view('frontEnd.pages.contact');
 });
 
+
+Route::post('/floorplan/submit', [FloorplanController::class, 'FloorplanSubmit'])
+    ->name('floorplan.submit');
+
+    Route::get('/floorplanList', [FloorplanController::class, 'floorplanList'])
+    ->name('floorplanList');
 
 Route::get('/email/verify', function () {
     return view('frontEnd.pages.verify');
