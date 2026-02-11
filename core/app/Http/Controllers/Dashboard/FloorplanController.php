@@ -164,7 +164,7 @@ class FloorplanController extends Controller
         $file = $request->file('company_logo');
         $filename = time() . '_' . $file->getClientOriginalName();
         $file->storeAs('public/company_logos', $filename);
-        $floorplan->company_logo = $filename;
+        $floorplan->company_logo = 'company_logos/' . $filename;
     }
 
     $floorplan->save();

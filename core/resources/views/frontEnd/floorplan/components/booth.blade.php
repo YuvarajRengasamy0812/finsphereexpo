@@ -22,6 +22,17 @@
 ])
 
 @php
+    $reservationMap = $reservedBooths ?? [];
+    $boothNoKey = isset($boothNo) && $boothNo !== '' ? trim((string) $boothNo) : null;
+    $reservation = $boothNoKey !== null ? ($reservationMap[$boothNoKey] ?? null) : null;
+
+    if (is_array($reservation) && (($reservation['reserved'] ?? false) === true)) {
+        $reserved = true;
+        $companyName = $reservation['companyName'] ?? $companyName;
+        $companyLogo = $reservation['companyLogo'] ?? $companyLogo;
+        $companyUrl = $reservation['companyUrl'] ?? $companyUrl;
+    }
+
     // === Colors ===
     $categoryColors = [
         'platinum' => '#4a4843',
@@ -106,8 +117,8 @@
     data-title="{{ $title }}" data-size="{{ $size }}" data-status="{{ $status }}"
     data-category="{{ $category }}" data-price="{{ $price }}"
     data-is-sponsorship="{{ $isSponsorship ? 1 : 0 }}" {{-- 🔥 reservation --}} data-reserved="{{ $reserved ? 1 : 0 }}"
-    data-company-name="{{ $companyName }}" data-company-logo="{{ $companyLogo }}"
-    data-company-url="{{ $companyUrl }}" @endif
+    data-company-name="{{ $companyName ?? '' }}" data-company-logo="{{ $companyLogo ?? '' }}"
+    data-company-url="{{ $companyUrl ?? '#' }}" @endif
     style="cursor: {{ $isInteractiveBooth && !$reserved && $status === 'available' ? 'pointer' : 'default' }};">
 
 

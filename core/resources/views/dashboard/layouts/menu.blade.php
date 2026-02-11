@@ -228,8 +228,8 @@ $mnu_title_var2 = "title_" . config('smartend.default_language');
                         @endif
                     @endif
 
-                    <li class="{{ request()->routeIs('floorplanList') || request()->routeIs('floorplanList') ? 'active' : '' }}">
-						<a href="{{ route('floorplanList') }}" ><span class="nav-icon"><i class="material-icons">&#xe7fb;</i></span>
+                    <li class="{{ request()->routeIs('admin.floorplanList') || request()->routeIs('admin.floorplansView') ? 'active' : '' }}">
+						<a href="{{ route('admin.floorplanList') }}" ><span class="nav-icon"><i class="material-icons">&#xe7fb;</i></span>
 							<span class="nav-text">FloorPlan </span>
 						</a>
 					</li>

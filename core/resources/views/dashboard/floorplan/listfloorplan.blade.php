@@ -13,7 +13,7 @@
             </div>
 
             <div class="p-a">
-                <form method="GET" action="{{ route('floorplanList') }}" class="row">
+                <form method="GET" action="{{ route('admin.floorplanList') }}" class="row">
                     <div class="col-md-4 m-b">
                         <input type="text" name="email" value="{{ request('email') }}" class="form-control"
                                placeholder="Search by email">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-4 m-b">
                         <button type="submit" class="btn btn-primary">Filter</button>
-                        <a href="{{ route('floorplanList') }}" class="btn btn-default">Reset</a>
+                        <a href="{{ route('admin.floorplanList') }}" class="btn btn-default">Reset</a>
                     </div>
                 </form>
             </div>
@@ -68,7 +68,7 @@
                             </td>
                             <td>{{ $floorplan->created_at ?? '-' }}</td>
                             <td>
-                                <a href="{{ route('floorplansView', $floorplan->id) }}" class="btn btn-xs btn-info">
+                                <a href="{{ route('admin.floorplansView', $floorplan->id) }}" class="btn btn-xs btn-info">
                                     View
                                 </a>
                             </td>

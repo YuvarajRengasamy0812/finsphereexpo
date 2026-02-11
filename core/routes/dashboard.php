@@ -227,10 +227,10 @@ Route::post('/calendar/{id}/extend', [EventsController::class, 'extend'])->name(
 
 // floorplan
 // FloorPlan
-Route::get('/floorplanList', [FloorplanController::class, 'floorplanList'])->name('floorplanList');
-Route::get('/floorplansView/{id}', [FloorplanController::class, 'floorplansView'])->name('floorplansView');
+Route::get('/floorplanList', [FloorplanController::class, 'floorplanList'])->name('admin.floorplanList');
+Route::get('/floorplansView/{id}', [FloorplanController::class, 'floorplansView'])->name('admin.floorplansView');
 Route::post('/floorplans/{id}/approve', [FloorplanController::class, 'approve'])
-    ->name('floorplans.approve');
+    ->name('admin.floorplans.approve');
 // Analytics
 Route::get('/ip/{ip_code?}', [AnalyticsController::class, 'ip'])->name('visitorsIP');
 Route::post('/ip/search', [AnalyticsController::class, 'search'])->name('visitorsSearch');

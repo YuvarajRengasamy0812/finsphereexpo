@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Floorplan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class FloorplanController extends Controller
 {
+    public function index()
+    {
+        return view('frontEnd.floorplan.index', [
+            'reservedBooths' => $this->getReservedBoothMap(),
+        ]);
+    }
+
     public function FloorplanSubmit(Request $request)
     {
         $validated = $request->validate([
@@ -38,40 +46,74 @@ class FloorplanController extends Controller
 
      public function floorplanList(Request $request)
  {
-       
-
-        $exporttitle = 'All';
         $query = DB::table('floorplans');
 
-       
         if ($request->filled('email')) {
             $query->where('email', 'like', '%' . $request->email . '%');
         }
 
         if ($request->filled('boothtitle')) {
-            $query->where('boothtitle', 'like', '%' . $request->location . '%');
+            $query->where('boothtitle', 'like', '%' . $request->boothtitle . '%');
         }
 
-        
         $floorplans = $query
             ->orderBy('created_at', 'DESC')
             ->paginate(10)
             ->appends($request->query());
 
-        
-        $stats = (object) [
-            'total' => DB::table('floorplans')->count(),
-        ];
-
-        // return view('dashboard.floorplan.listfloorplan', compact('GeneralWebmasterSections', 'floorplans', 'stats'));
-
         return response()->json([
-        'msg' => 'All Floorplans fetched successfully',
-        'details' => [
-            'tickets' => $floorplans,
-           
-           
-        ]
-    ], 200);
- }
+            'msg' => 'All Floorplans fetched successfully',
+            'details' => [
+                'tickets' => $floorplans,
+                'reserved_booths' => $this->getReservedBoothMap(),
+            ],
+        ], 200);
+    }
+
+    private function getReservedBoothMap(): array
+    {
+        return Floorplan::query()
+            ->where('status', 'approved')
+            ->whereNotNull('boothno')
+            ->where('boothno', '!=', '')
+            ->get()
+            ->mapWithKeys(function (Floorplan $floorplan) {
+                $boothNo = trim((string) $floorplan->boothno);
+                $companyLogo = $this->resolveCompanyLogoUrl($floorplan->company_logo);
+
+                return [
+                    $boothNo => [
+                        'reserved' => true,
+                        'companyName' => $floorplan->company ?: $floorplan->name,
+                        'companyLogo' => $companyLogo,
+                        'companyUrl' => $floorplan->company_url ?: '#',
+                    ],
+                ];
+            })
+            ->toArray();
+    }
+
+    private function resolveCompanyLogoUrl(?string $companyLogo): ?string
+    {
+        if (empty($companyLogo)) {
+            return null;
+        }
+
+        if (filter_var($companyLogo, FILTER_VALIDATE_URL)) {
+            return $companyLogo;
+        }
+
+        if (str_starts_with($companyLogo, 'storage/')) {
+            return asset($companyLogo);
+        }
+
+
+        
+        if (Storage::disk('public')->exists('company_logos/' . $companyLogo)) {
+            return asset('storage/company_logos/' . $companyLogo);
+        }
+
+         
+        return asset($companyLogo);
+    }
 }
