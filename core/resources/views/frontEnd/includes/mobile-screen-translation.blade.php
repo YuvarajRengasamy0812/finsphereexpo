@@ -86,7 +86,8 @@
 
     <div class="lang-dropdown">
         <button class="lang-btn notranslate" translate="no">
-            🌐 Language
+            <img class="lang-flag" src="https://flagcdn.com/gb.svg" alt="">
+            <span class="lang-label">EN</span>
         </button>
 
         <ul class="lang-menu notranslate" translate="no">
@@ -95,98 +96,3 @@
         </ul>
     </div>
 </div>
-
-@once
-    <!-- 🌍 GTranslate Widget -->
-    <script>
-        window.gtranslateSettings = {
-            default_language: "en",
-            native_language_names: true,
-            languages: ["ar", "en"],
-            wrapper_selector: ".lang_wrapper",
-            horizontal_position: "inline",
-            flag_size: 16
-        };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/dwf.js" defer></script>
-@endonce
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const defaultLang = "en";
-
-    const shortNames = {
-        ar: "AR",
-        en: "EN"
-    };
-
-    function waitForGTranslate(cb) {
-        const i = setInterval(() => {
-            if (typeof doGTranslate === "function") {
-                clearInterval(i);
-                cb();
-            }
-        }, 100);
-    }
-
-    document.querySelectorAll(".lang_wrapper").forEach(wrapper => {
-        const btn = wrapper.querySelector(".lang-btn");
-        const menu = wrapper.querySelector(".lang-menu");
-        if (!btn || !menu) return;
-
-        function updateButtonLabel(lang) {
-            const selected = menu.querySelector(`[data-lang="${lang}"]`);
-            if (!selected) return;
-
-            const flag = selected.querySelector("img").outerHTML;
-            const fullText = selected.textContent.trim();
-            const shortText = shortNames[lang] || fullText;
-
-            btn.innerHTML =
-                window.innerWidth < 510
-                    ? `${flag} ${shortText}`
-                    : `${flag} ${fullText}`;
-        }
-
-        function translate(lang) {
-            waitForGTranslate(() => {
-                doGTranslate(`${defaultLang}|${lang}`);
-                localStorage.setItem("selectedLang", lang);
-                updateButtonLabel(lang);
-                menu.classList.remove("show");
-            });
-        }
-
-        // Restore previous language
-        const savedLang = localStorage.getItem("selectedLang");
-        if (savedLang) updateButtonLabel(savedLang);
-
-        // Toggle dropdown
-        btn.addEventListener("click", e => {
-            e.stopPropagation();
-            menu.classList.toggle("show");
-        });
-
-        // Menu click
-        menu.querySelectorAll("[data-lang]").forEach(item => {
-            item.addEventListener("click", e => {
-                e.preventDefault();
-                translate(item.dataset.lang);
-            });
-        });
-
-        // Close on outside click
-        document.addEventListener("click", e => {
-            if (!wrapper.contains(e.target)) {
-                menu.classList.remove("show");
-            }
-        });
-
-        // Responsive label update
-        window.addEventListener("resize", () => {
-            const currentLang = localStorage.getItem("selectedLang");
-            if (currentLang) updateButtonLabel(currentLang);
-        });
-    });
-});
-</script>
