@@ -162,9 +162,18 @@ class FloorplanController extends Controller
     // Handle company logo upload
     if ($request->hasFile('company_logo')) {
         $file = $request->file('company_logo');
-        $filename = time() . '_' . $file->getClientOriginalName();
-        $file->storeAs('public/company_logos', $filename);
-        $floorplan->company_logo = 'company_logos/' . $filename;
+        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $safeName = preg_replace('/[^A-Za-z0-9_-]+/', '_', (string) $originalName);
+        $extension = strtolower((string) $file->getClientOriginalExtension());
+        $filename = time() . '_' . trim($safeName ?: 'company_logo', '_') . ($extension ? '.' . $extension : '');
+
+        $uploadDirectory = base_path('../uploads/company_logos');
+        if (!File::exists($uploadDirectory)) {
+            File::makeDirectory($uploadDirectory, 0755, true);
+        }
+
+        $file->move($uploadDirectory, $filename);
+        $floorplan->company_logo = 'uploads/company_logos/' . $filename;
     }
 
     $floorplan->save();

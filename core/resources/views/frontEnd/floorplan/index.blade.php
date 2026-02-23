@@ -97,6 +97,7 @@
         document.addEventListener("DOMContentLoaded", () => {
             const tooltip = document.getElementById("fpTooltip");
             const booths = document.querySelectorAll(".booth");
+            const defaultCompanyLogo = @json(asset('assets/frontend/img/resources/logo.png'));
 
             booths.forEach(booth => {
 
@@ -106,12 +107,13 @@
 
                     // 🔒 RESERVED TOOLTIP
                     if (isReserved) {
+                        const companyLogo = booth.dataset.companyLogo || defaultCompanyLogo;
                         tooltip.innerHTML = `
                     <div style="text-align:center">
                         <strong>${booth.dataset.title.replace(/\n/g,' ')}</strong>
                         <div style="margin:8px 0">
                             <a href="${booth.dataset.companyUrl}" target="_blank">
-                                <img src="${booth.dataset.companyLogo}"
+                                <img src="${companyLogo}" onerror="this.onerror=null;this.src='${defaultCompanyLogo}'"
                                      style="height:55px;background:#fff;padding:6px;border-radius:6px;object-fit:contain;">
                             </a>
                         </div>

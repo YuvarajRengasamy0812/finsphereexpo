@@ -14,10 +14,22 @@
                     $companyLogoUrl = asset('storage/' . ltrim(substr($logoPath, 7), '/'));
                 } elseif (str_starts_with($logoPath, 'storage/')) {
                     $companyLogoUrl = asset($logoPath);
+                } elseif (str_starts_with($logoPath, 'uploads/')) {
+                    $companyLogoUrl = asset($logoPath);
                 } elseif (str_starts_with($logoPath, 'company_logos/')) {
-                    $companyLogoUrl = asset('storage/' . $logoPath);
+                    $coreStorageFile = base_path('storage/app/public/' . $logoPath);
+                    if (is_file($coreStorageFile)) {
+                        $companyLogoUrl = asset('core/storage/app/public/' . $logoPath);
+                    } else {
+                        $companyLogoUrl = asset('storage/' . $logoPath);
+                    }
                 } else {
-                    $companyLogoUrl = asset('storage/company_logos/' . $logoPath);
+                    $coreStorageFile = base_path('storage/app/public/company_logos/' . $logoPath);
+                    if (is_file($coreStorageFile)) {
+                        $companyLogoUrl = asset('core/storage/app/public/company_logos/' . $logoPath);
+                    } else {
+                        $companyLogoUrl = asset('storage/company_logos/' . $logoPath);
+                    }
                 }
             }
         }

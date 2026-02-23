@@ -99,6 +99,8 @@ class FloorplanController extends Controller
             return null;
         }
 
+        $companyLogo = trim($companyLogo);
+
         if (filter_var($companyLogo, FILTER_VALIDATE_URL)) {
             return $companyLogo;
         }
@@ -107,13 +109,43 @@ class FloorplanController extends Controller
             return asset($companyLogo);
         }
 
-
-        
-        if (Storage::disk('public')->exists('company_logos/' . $companyLogo)) {
-            return asset('storage/company_logos/' . $companyLogo);
+        if (str_starts_with($companyLogo, 'uploads/')) {
+            return asset($companyLogo);
         }
 
-         
+        if (str_starts_with($companyLogo, 'public/')) {
+            return $this->toPublicStorageAssetUrl(substr($companyLogo, 7));
+        }
+
+        if (str_starts_with($companyLogo, 'company_logos/')) {
+            return $this->toPublicStorageAssetUrl($companyLogo);
+        }
+
+        if (Storage::disk('public')->exists($companyLogo)) {
+            return $this->toPublicStorageAssetUrl($companyLogo);
+        }
+
+        if (Storage::disk('public')->exists('company_logos/' . ltrim($companyLogo, '/'))) {
+            return $this->toPublicStorageAssetUrl('company_logos/' . ltrim($companyLogo, '/'));
+        }
+
         return asset($companyLogo);
+    }
+
+    private function toPublicStorageAssetUrl(string $relativePath): string
+    {
+        $relativePath = ltrim($relativePath, '/');
+        $rootStoragePath = base_path('../storage/' . $relativePath);
+        $coreStoragePath = base_path('storage/app/public/' . $relativePath);
+
+        if (is_file($rootStoragePath)) {
+            return asset('storage/' . $relativePath);
+        }
+
+        if (is_file($coreStoragePath)) {
+            return asset('core/storage/app/public/' . $relativePath);
+        }
+
+        return asset('storage/' . $relativePath);
     }
 }
